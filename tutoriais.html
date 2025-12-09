@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tutoriais de IA para Ganhar Dinheiro — MozaIA</title>
-  <meta name="description" content="Aprenda como usar Inteligência Artificial para ganhar dinheiro em Moçambique. Tutoriais práticos, passo a passo e estratégias reais para freelancing, negócios e mais.">
+  <title>Tutoriais Práticos de IA para Moçambique — MozaIA</title>
+  <meta name="description" content="Aprenda passo a passo como usar IA para ganhar dinheiro em Moçambique. Tutoriais práticos, freelancing, negócios digitais e estratégias reais comprovadas.">
   <meta name="keywords" content="ganhar dinheiro com IA Moçambique, tutoriais IA grátis, freelancing IA MZ, como usar IA para lucrar, IA para negócios MZ">
   <meta name="author" content="MozaIA">
-  <meta property="og:title" content="Tutoriais de IA para Ganhar Dinheiro — MozaIA">
-  <meta property="og:description" content="Aprenda como usar Inteligência Artificial para ganhar dinheiro em Moçambique. Tutoriais práticos, passo a passo e estratégias reais para freelancing, negócios e mais.">
+  <meta property="og:title" content="Tutoriais Práticos de IA para Moçambique — MozaIA">
+  <meta property="og:description" content="Aprenda passo a passo como usar IA para ganhar dinheiro em Moçambique. Tutoriais práticos, freelancing, negócios digitais e estratégias reais comprovadas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://benjanuario.github.io/MozaIA/tutoriais.html">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <style>
     :root {
@@ -21,6 +21,7 @@
       --primary-green: #2ECF8F;
       --secondary-purple: #8B5CF6;
       --accent-orange: #FF8A3D;
+      --accent-pink: #EC4899;
       --bg-dark: #0F172A;
       --bg-light: #F8FAFC;
       --text-dark: #1E293B;
@@ -29,9 +30,11 @@
       --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
       --gradient-secondary: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
       --gradient-tertiary: linear-gradient(135deg, #1e3a8a, #0d9488);
-      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --gradient-rainbow: linear-gradient(90deg, #0B4A7A, #2ECF8F, #8B5CF6, #FF8A3D);
+      --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 25px 50px rgba(0, 0, 0, 0.15);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --border-radius: 20px;
     }
 
     * {
@@ -40,350 +43,644 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg-light);
       color: var(--text-dark);
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
+      position: relative;
     }
 
-    /* Animação de Entrada */
-    .fade-in {
-      animation: fadeIn 1s ease-out forwards;
+    /* Container de largura total */
+    .full-width-container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Animções modernas */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
-    .slide-in {
-      animation: slideIn 0.8s ease-out forwards;
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-30px); }
-      to { opacity: 1; transform: translateX(0); }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
 
-    /* Header */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Header moderno */
     .header {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      position: sticky;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      position: fixed;
+      width: 100%;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
       transition: var(--transition);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .navbar {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1.2rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Menu à esquerda */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-toggle {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--primary-blue);
+      transition: var(--transition);
+      order: -1;
+    }
+
+    .nav-toggle:hover {
+      transform: rotate(90deg);
+      color: var(--primary-green);
     }
 
     .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 2rem;
+      font-weight: 900;
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-    }
-
-    .logo-icon {
-      font-size: 1.5rem;
-      color: var(--primary-blue);
-    }
-
-    .logo-text {
-      background: var(--gradient-primary);
+      background: var(--gradient-rainbow);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
+      letter-spacing: -0.5px;
       cursor: pointer;
-      color: var(--text-dark);
     }
 
     .nav-menu {
       display: flex;
       list-style: none;
       gap: 2rem;
+      align-items: center;
     }
 
     .nav-link {
       text-decoration: none;
       color: var(--text-dark);
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      transition: var(--transition);
       position: relative;
-      padding: 0.5rem 0;
-      transition: var(--transition);
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gradient-primary);
-      transition: var(--transition);
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
+      overflow: hidden;
+      cursor: pointer;
     }
 
     .nav-link:hover {
+      background: linear-gradient(135deg, rgba(11, 74, 122, 0.1), rgba(46, 207, 143, 0.1));
       color: var(--primary-blue);
+      transform: translateY(-2px);
     }
 
-    /* Hero Section */
+    .nav-link.active {
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    /* Hero Section otimizada */
     .hero {
       background: var(--gradient-tertiary);
       color: var(--text-light);
-      padding: 4rem 2rem;
+      padding: 8rem 5% 5rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(46, 207, 143, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      background: linear-gradient(to right, #ffffff, #e0f2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero p {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       max-width: 800px;
-      margin: 0 auto 2rem;
-      opacity: 0.9;
+      margin: 0 auto 3rem;
+      opacity: 0.95;
+      line-height: 1.6;
+      font-weight: 400;
     }
 
-    /* Categories Section */
+    /* Categories Section moderna */
     .categories {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
+      padding: 5rem 5%;
+      position: relative;
+      width: 100%;
+      background: white;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .section-header h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
       background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      font-weight: 900;
+      line-height: 1.2;
     }
 
     .section-header p {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
       color: var(--text-dark);
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
+      opacity: 0.85;
+      line-height: 1.6;
     }
 
     .categories-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .category-card {
       background: white;
-      border-radius: 16px;
-      padding: 2rem;
+      border-radius: var(--border-radius);
+      padding: 2.5rem;
       box-shadow: var(--shadow);
       transition: var(--transition);
       text-align: center;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .category-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
       box-shadow: var(--shadow-hover);
     }
 
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--gradient-secondary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .category-card:hover::before {
+      transform: scaleX(1);
+    }
+
     .category-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
       background: var(--gradient-secondary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      display: inline-block;
+      animation: float 4s ease-in-out infinite;
     }
 
     .category-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
       color: var(--text-dark);
+      font-weight: 800;
     }
 
     .category-card p {
       color: var(--text-dark);
-      opacity: 0.7;
-      margin-bottom: 1rem;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
     }
 
     .category-count {
       display: inline-block;
-      background: #f0f9ff;
+      background: linear-gradient(135deg, rgba(11, 74, 122, 0.1), rgba(139, 92, 246, 0.1));
       color: var(--primary-blue);
-      padding: 4px 12px;
+      padding: 8px 20px;
       border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: var(--transition);
     }
 
-    /* Tutorials Grid */
+    .category-card:hover .category-count {
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    /* Tutorials Section moderna */
     .tutorials-section {
-      padding: 0 2rem 4rem;
+      padding: 5rem 5%;
+      background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+      position: relative;
+      width: 100%;
     }
 
     .tutorials-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     .tutorial-card {
       background: white;
-      border-radius: 16px;
+      border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: var(--transition);
+      position: relative;
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .tutorial-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-12px);
       box-shadow: var(--shadow-hover);
     }
 
+    .tutorial-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--gradient-secondary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .tutorial-card:hover::before {
+      transform: scaleX(1);
+    }
+
     .tutorial-image {
-      height: 200px;
-      background: var(--gradient-primary);
+      height: 220px;
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 1.1rem;
+      color: var(--primary-blue);
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tutorial-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.6s;
+    }
+
+    .tutorial-card:hover .tutorial-image::after {
+      left: 100%;
     }
 
     .tutorial-content {
-      padding: 1.5rem;
+      padding: 2.5rem;
     }
 
     .tutorial-tag {
       display: inline-block;
-      padding: 4px 10px;
-      background: var(--primary-green);
-      color: white;
-      border-radius: 15px;
-      font-size: 0.8rem;
-      margin-bottom: 0.8rem;
+      padding: 8px 20px;
+      background: linear-gradient(135deg, rgba(46, 207, 143, 0.1), rgba(255, 138, 61, 0.1));
+      color: var(--primary-green);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
     .tutorial-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
       color: var(--text-dark);
+      font-weight: 800;
+      line-height: 1.3;
     }
 
     .tutorial-card p {
       color: var(--text-dark);
-      opacity: 0.7;
-      margin-bottom: 1rem;
-      line-height: 1.6;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      font-size: 1.1rem;
     }
 
     .tutorial-meta {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 1.5rem;
-      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
       color: var(--text-dark);
-      opacity: 0.6;
+      opacity: 0.7;
+      font-weight: 500;
+    }
+
+    .tutorial-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .tutorial-link {
-      display: block;
-      text-align: center;
-      padding: 12px;
-      background: var(--gradient-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px;
+      background: var(--gradient-primary);
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
+      border-radius: 12px;
+      font-weight: 800;
       transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-size: 1.05rem;
     }
 
     .tutorial-link:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(11, 74, 122, 0.2);
     }
 
-    /* CTA Section */
+    /* CTA Section moderna */
     .cta-section {
-      padding: 6rem 2rem;
+      padding: 6rem 5%;
       background: var(--gradient-primary);
       color: white;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circles" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23circles)"/></svg>');
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .cta-content h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      font-weight: 900;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      line-height: 1.2;
     }
 
     .cta-content p {
-      font-size: 1.3rem;
-      margin-bottom: 2.5rem;
-      opacity: 0.9;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+      opacity: 0.95;
+      line-height: 1.6;
     }
 
-    /* Footer */
+    /* Botões modernos */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 36px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.1rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      gap: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: 0.6s;
+    }
+
+    .btn:hover::after {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: var(--gradient-secondary);
+      color: white;
+      box-shadow: 0 20px 40px rgba(46, 207, 143, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 30px 60px rgba(46, 207, 143, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-8px);
+      border-color: white;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 6rem 2rem;
+      grid-column: 1 / -1;
+    }
+
+    .empty-state i {
+      font-size: 5rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+    }
+
+    .empty-state h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .empty-state p {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      opacity: 0.7;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Footer moderno */
     .footer {
       background: var(--bg-dark);
       color: var(--text-light);
-      padding: 4rem 2rem 2rem;
+      padding: 6rem 5% 3rem;
+      position: relative;
+      width: 100%;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
     }
 
     .footer-grid {
-      max-width: 1400px;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      margin-bottom: 3rem;
+      gap: 4rem;
+      max-width: 1400px;
+      margin: 0 auto 4rem;
     }
 
     .footer-section h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
       background: var(--gradient-secondary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      font-weight: 800;
     }
 
     .footer-links {
@@ -391,160 +688,296 @@
     }
 
     .footer-links li {
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 0.5rem;
+      border-radius: 8px;
     }
 
-    .footer-links a {
+    .footer-links li:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateX(10px);
+    }
+
+    .footer-links li span {
       color: var(--text-light);
       opacity: 0.8;
       text-decoration: none;
       transition: var(--transition);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1rem;
+      font-size: 1.1rem;
     }
 
-    .footer-links a:hover {
+    .footer-links li:hover span {
       opacity: 1;
       color: var(--primary-green);
+      gap: 1.2rem;
     }
 
     .footer-bottom {
       max-width: 1400px;
       margin: 0 auto;
-      padding-top: 2rem;
+      padding-top: 3rem;
       border-top: 1px solid rgba(255,255,255,0.1);
       text-align: center;
       opacity: 0.7;
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
+    /* Responsividade */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 3.2rem;
       }
+      
+      .section-header h2 {
+        font-size: 2.8rem;
+      }
+      
+      .categories-grid,
+      .tutorials-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+      
+      .cta-content h2 {
+        font-size: 2.8rem;
+      }
+    }
 
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+      }
+      
+      .nav-toggle {
+        order: -1;
+      }
+      
       .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 80px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
-        background: white;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 2rem;
+        padding: 2rem;
         transition: var(--transition);
         z-index: 999;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
       }
-
+      
       .nav-menu.active {
         left: 0;
       }
-
+      
+      .hero {
+        padding: 7rem 5% 4rem;
+      }
+      
       .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      .section-header h2 {
         font-size: 2.2rem;
       }
-
-      .categories-grid {
-        grid-template-columns: 1fr;
+      
+      .section-header p {
+        font-size: 1.2rem;
       }
-
+      
+      .categories-grid,
       .tutorials-grid {
         grid-template-columns: 1fr;
       }
+      
+      .category-card,
+      .tutorial-card {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      
+      .cta-content h2 {
+        font-size: 2.2rem;
+      }
+      
+      .cta-content p {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+      
+      .category-card,
+      .tutorial-card {
+        padding: 2rem;
+      }
+      
+      .tutorial-image {
+        height: 180px;
+      }
+      
+      .tutorial-card h3 {
+        font-size: 1.5rem;
+      }
+      
+      .cta-content h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Loading overlay para transições */
+    .page-transition {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+    }
+
+    .page-transition.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
+  <!-- Loading overlay -->
+  <div class="page-transition" id="pageTransition">
+    <div class="loader"></div>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <nav class="navbar">
-      <a href="/MozaIA/" class="logo">
-        <span class="logo-icon">🧠</span>
-        <span class="logo-text">MozaIA</span>
-      </a>
-      <button class="nav-toggle" id="navToggle">
-        <i class="ri-menu-line"></i>
-      </button>
+      <div class="nav-left">
+        <button class="nav-toggle" id="navToggle">
+          <i class="ri-menu-line"></i>
+        </button>
+        <span class="logo" onclick="navigateTo('index.html')">
+          <i class="ri-brain-line"></i>
+          <span>MozaIA</span>
+        </span>
+      </div>
       <ul class="nav-menu" id="navMenu">
-        <li class="nav-item"><a href="/MozaIA/" class="nav-link">Início</a></li>
-        <li class="nav-item"><a href="/MozaIA/sobre.html" class="nav-link">Sobre</a></li>
-        <li class="nav-item"><a href="/MozaIA/tutoriais.html" class="nav-link">Tutoriais</a></li>
-        <li class="nav-item"><a href="/MozaIA/ferramentas.html" class="nav-link">Ferramentas</a></li>
-        <li class="nav-item"><a href="/MozaIA/contacto.html" class="nav-link">Contacto</a></li>
+        <li><span class="nav-link" onclick="navigateTo('index.html')">Início</span></li>
+        <li><span class="nav-link" onclick="navigateTo('sobre.html')">Sobre</span></li>
+        <li><span class="nav-link active" onclick="navigateTo('tutoriais.html')">Tutoriais</span></li>
+        <li><span class="nav-link" onclick="navigateTo('ferramentas.html')">Ferramentas</span></li>
+        <li><span class="nav-link" onclick="navigateTo('recursos.html')">Recursos</span></li>
+        <li><span class="nav-link" onclick="navigateTo('oportunidade.html')">Oportunidades</span></li>
+        <li><span class="nav-link" onclick="navigateTo('contacto.html')">Contacto</span></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero fade-in">
-    <h1>Tutoriais de IA para Ganhar Dinheiro</h1>
-    <p>Aprenda passo a passo como usar Inteligência Artificial para criar fontes de renda online em Moçambique. Estratégias reais e comprovadas.</p>
+  <section class="hero fade-in-up">
+    <h1>Tutoriais Práticos de IA para Moçambique</h1>
+    <p>Aprenda passo a passo como usar Inteligência Artificial para criar fontes de renda online. Cada tutorial tem exemplos reais e adaptados para a realidade moçambicana.</p>
   </section>
 
   <!-- Categories Section -->
-  <section class="categories slide-in">
-    <div class="section-header">
-      <h2>Categorias de Tutoriais</h2>
-      <p>Encontre o tutorial ideal para o seu objetivo de ganhar dinheiro com IA.</p>
+  <section class="categories">
+    <div class="section-header slide-in-left">
+      <h2>Escolha Sua Jornada</h2>
+      <p>Selecione a categoria que mais combina com seus objetivos e comece a aprender hoje mesmo.</p>
     </div>
     <div class="categories-grid">
-      <div class="category-card" onclick="filterCategory('freelancing')">
+      <div class="category-card fade-in-up" onclick="filterCategory('freelancing')">
         <div class="category-icon">
           <i class="ri-briefcase-line"></i>
         </div>
         <h3>Freelancing com IA</h3>
-        <p>Serviços que você pode oferecer usando IA</p>
-        <span class="category-count">8 Tutoriais</span>
+        <p>Aprenda a oferecer serviços online usando IA como ferramenta para aumentar sua produtividade e qualidade.</p>
+        <span class="category-count">6 Tutoriais Práticos</span>
       </div>
-      <div class="category-card" onclick="filterCategory('negocios')">
+      <div class="category-card fade-in-up" onclick="filterCategory('negocios')" style="animation-delay: 0.1s;">
         <div class="category-icon">
           <i class="ri-store-line"></i>
         </div>
         <h3>IA para Negócios</h3>
-        <p>Automatize e cresça seu negócio</p>
-        <span class="category-count">6 Tutoriais</span>
+        <p>Descubra como automatizar processos, melhorar atendimento e escalar seu negócio usando IA.</p>
+        <span class="category-count">5 Tutoriais Práticos</span>
       </div>
-      <div class="category-card" onclick="filterCategory('conteudo')">
+      <div class="category-card fade-in-up" onclick="filterCategory('conteudo')" style="animation-delay: 0.2s;">
         <div class="category-icon">
           <i class="ri-video-line"></i>
         </div>
-        <h3>Criar Conteúdo</h3>
-        <p>Ganhe com vídeos, imagens e textos</p>
-        <span class="category-count">7 Tutoriais</span>
+        <h3>Criação de Conteúdo</h3>
+        <p>Aprenda a gerar vídeos, imagens e textos profissionais usando IA para monetizar sua criatividade.</p>
+        <span class="category-count">7 Tutoriais Práticos</span>
       </div>
-      <div class="category-card" onclick="filterCategory('renda-passiva')">
+      <div class="category-card fade-in-up" onclick="filterCategory('renda-passiva')" style="animation-delay: 0.3s;">
         <div class="category-icon">
           <i class="ri-coins-line"></i>
         </div>
-        <h3>Renda Passiva</h3>
-        <p>Métodos para ganhar enquanto dorme</p>
-        <span class="category-count">5 Tutoriais</span>
+        <h3>Renda Passiva com IA</h3>
+        <p>Descubra métodos comprovados para gerar receita recorrente usando sistemas automatizados com IA.</p>
+        <span class="category-count">4 Tutoriais Práticos</span>
       </div>
     </div>
   </section>
 
   <!-- Tutorials Section -->
-  <section class="tutorials-section slide-in">
-    <div class="section-header">
-      <h2>Tutoriais Recentes</h2>
-      <p>Últimos tutoriais publicados com estratégias para ganhar dinheiro com IA.</p>
+  <section class="tutorials-section">
+    <div class="section-header fade-in-up">
+      <h2>Tutoriais Mais Procurados</h2>
+      <p>Conteúdo prático e direto para você começar a aplicar IA hoje mesmo. Todos os tutoriais são 100% gratuitos.</p>
     </div>
     <div class="tutorials-grid" id="tutorialsGrid">
-      <!-- Os tutoriais serão carregados via JS -->
+      <!-- Os tutoriais serão carregados via JavaScript -->
     </div>
   </section>
 
   <!-- CTA Section -->
   <section class="cta-section">
-    <div class="cta-content fade-in">
-      <h2>Comece a Ganhar Hoje</h2>
-      <p>Não espere mais. Escolha um tutorial e comece a aplicar IA para gerar renda agora mesmo.</p>
-      <a href="/MozaIA/ferramentas.html" class="tutorial-link" style="max-width: 350px; margin: 0 auto; display: inline-block;">
-        <i class="ri-rocket-line"></i> Acessar Ferramentas Grátis
-      </a>
+    <div class="cta-content fade-in-up">
+      <h2>Pronto para Transformar Seus Conhecimentos em Renda?</h2>
+      <p>Comece hoje mesmo aplicando o que aprendeu nos tutoriais. A IA está aqui para ajudar você a alcançar seus objetivos financeiros.</p>
+      <span class="btn btn-primary" onclick="navigateTo('ferramentas.html')">
+        <i class="ri-tools-line"></i> Acessar Ferramentas Grátis
+      </span>
+      <span class="btn btn-secondary" onclick="navigateTo('oportunidade.html')" style="margin-left: 1rem;">
+        <i class="ri-money-dollar-circle-line"></i> Ver Oportunidades
+      </span>
     </div>
   </section>
 
@@ -553,194 +986,370 @@
     <div class="footer-grid">
       <div class="footer-section">
         <h3>MozaIA</h3>
-        <p>O primeiro hub de Inteligência Artificial Gratuita em Moçambique, criado para transformar vidas com tecnologia acessível.</p>
+        <p style="color: var(--text-light); opacity: 0.8; line-height: 1.6;">
+          O hub definitivo para aprender a ganhar dinheiro e automatizar tarefas com IA gratuita em Moçambique. Democratizando tecnologia, criando oportunidades.
+        </p>
       </div>
+      
       <div class="footer-section">
-        <h3>Links Rápidos</h3>
+        <h3>Explorar</h3>
         <ul class="footer-links">
-          <li><a href="/MozaIA/"><i class="ri-home-line"></i> Início</a></li>
-          <li><a href="/MozaIA/sobre.html"><i class="ri-information-line"></i> Sobre</a></li>
-          <li><a href="/MozaIA/tutoriais.html"><i class="ri-book-open-line"></i> Tutoriais</a></li>
-          <li><a href="/MozaIA/ferramentas.html"><i class="ri-tools-line"></i> Ferramentas</a></li>
-          <li><a href="/MozaIA/contacto.html"><i class="ri-mail-line"></i> Contacto</a></li>
+          <li onclick="navigateTo('index.html')">
+            <span><i class="ri-home-line"></i> Página Inicial</span>
+          </li>
+          <li onclick="navigateTo('sobre.html')">
+            <span><i class="ri-information-line"></i> Sobre Nós</span>
+          </li>
+          <li onclick="navigateTo('tutoriais.html')">
+            <span><i class="ri-book-open-line"></i> Tutoriais IA</span>
+          </li>
+          <li onclick="navigateTo('ferramentas.html')">
+            <span><i class="ri-tools-line"></i> Ferramentas Grátis</span>
+          </li>
+          <li onclick="navigateTo('oportunidade.html')">
+            <span><i class="ri-money-dollar-circle-line"></i> Oportunidades</span>
+          </li>
         </ul>
       </div>
+      
       <div class="footer-section">
-        <h3>Ferramentas Grátis</h3>
+        <h3>Categorias de Tutoriais</h3>
         <ul class="footer-links">
-          <li><a href="/MozaIA/ferramentas.html#texto"><i class="ri-file-text-line"></i> Geração de Texto</a></li>
-          <li><a href="/MozaIA/ferramentas.html#imagens"><i class="ri-image-line"></i> Geração de Imagens</a></li>
-          <li><a href="/MozaIA/ferramentas.html#produtividade"><i class="ri-check-double-line"></i> Produtividade</a></li>
-          <li><a href="/MozaIA/ferramentas.html#estudos"><i class="ri-graduation-cap-line"></i> Para Estudos</a></li>
-          <li><a href="/MozaIA/ferramentas.html#negocios"><i class="ri-briefcase-line"></i> Para Negócios</a></li>
+          <li onclick="filterCategory('freelancing')">
+            <span><i class="ri-briefcase-line"></i> Freelancing com IA</span>
+          </li>
+          <li onclick="filterCategory('negocios')">
+            <span><i class="ri-store-line"></i> IA para Negócios</span>
+          </li>
+          <li onclick="filterCategory('conteudo')">
+            <span><i class="ri-video-line"></i> Criação de Conteúdo</span>
+          </li>
+          <li onclick="filterCategory('renda-passiva')">
+            <span><i class="ri-coins-line"></i> Renda Passiva</span>
+          </li>
+          <li onclick="showAllTutorials()">
+            <span><i class="ri-apps-line"></i> Todos os Tutoriais</span>
+          </li>
         </ul>
       </div>
+      
       <div class="footer-section">
-        <h3>Contacto</h3>
+        <h3>Contacte-nos</h3>
         <ul class="footer-links">
-          <li><a href="mailto:info@mozaia.mz"><i class="ri-mail-line"></i> info@mozaia.mz</a></li>
-          <li><a href="https://wa.me/258841234567"><i class="ri-whatsapp-line"></i> WhatsApp</a></li>
-          <li><a href="/MozaIA/contacto.html"><i class="ri-phone-line"></i> Fale Conosco</a></li>
+          <li onclick="window.open('mailto:info@mozaia.mz')">
+            <span><i class="ri-mail-line"></i> info@mozaia.mz</span>
+          </li>
+          <li onclick="window.open('https://wa.me/258841234567')">
+            <span><i class="ri-whatsapp-line"></i> WhatsApp</span>
+          </li>
+          <li onclick="window.open('https://facebook.com/mozaia')">
+            <span><i class="ri-facebook-line"></i> Facebook</span>
+          </li>
+          <li onclick="navigateTo('contacto.html')">
+            <span><i class="ri-phone-line"></i> Contacto</span>
+          </li>
         </ul>
       </div>
     </div>
+    
     <div class="footer-bottom">
-      <p>&copy; 2025 MozaIA. O Primeiro Hub de IA Gratuita em Moçambique. Todos os direitos reservados.</p>
+      <p>&copy; 2025 MozaIA. O Portal de IA Gratuita para Moçambicanos. Transformando vidas com tecnologia acessível.</p>
+      <p style="margin-top: 1rem; font-size: 1rem;">🇲🇿 Orgulhosamente Moçambicano • Feito com ❤️ para Moçambique</p>
     </div>
   </footer>
 
   <script>
-    // Dados dos tutoriais (em produção, viria de um JSON externo)
+    // Dados dos tutoriais com conteúdo realista
     const tutorialsData = [
       {
         id: 1,
-        title: "Como Ganhar Dinheiro com ChatGPT como Freelancer",
-        description: "Aprenda a oferecer serviços de escrita, tradução e geração de conteúdo usando ChatGPT.",
+        title: "Como Iniciar no Freelancing com ChatGPT em Moçambique",
+        description: "Guia completo para começar a oferecer serviços de escrita, tradução e criação de conteúdo usando ChatGPT. Aprenda a encontrar clientes, precificar seus serviços e criar portfólio.",
         category: "freelancing",
-        time: "15 min",
-        image: "💬 ChatGPT Freelancer",
-        link: "#"
+        time: "18 min",
+        image: "💼",
+        link: "#",
+        tags: ["Freelance", "ChatGPT", "Escrita", "Iniciante"]
       },
       {
         id: 2,
-        title: "Criar E-books com IA e Vender Online",
-        description: "Passo a passo para criar e-books lucrativos usando ferramentas de IA e vendê-los em plataformas locais.",
+        title: "Criar E-books Lucrativos com IA em 3 Passos",
+        description: "Passo a passo para criar e-books profissionais usando ferramentas de IA gratuitas. Aprenda desde a ideia até a publicação em plataformas moçambicanas.",
         category: "renda-passiva",
-        time: "20 min",
-        image: "📚 E-book IA",
-        link: "#"
+        time: "22 min",
+        image: "📚",
+        link: "#",
+        tags: ["E-books", "Passiva", "Publicação", "Design"]
       },
       {
         id: 3,
-        title: "Automatizar seu Pequeno Negócio com IA",
-        description: "Como usar IA para atendimento, marketing e gestão em pequenos negócios em Moçambique.",
+        title: "Automatizar Atendimento ao Cliente com IA",
+        description: "Como configurar chatbots e sistemas de atendimento automatizado para seu negócio usando ferramentas gratuitas. Reduza custos e melhore a experiência do cliente.",
         category: "negocios",
-        time: "18 min",
-        image: "💼 Negócio IA",
-        link: "#"
+        time: "16 min",
+        image: "🤖",
+        link: "#",
+        tags: ["Negócios", "Atendimento", "Chatbot", "Automação"]
       },
       {
         id: 4,
-        title: "Como Ganhar Dinheiro Criando Vídeos com IA",
-        description: "Crie vídeos profissionais do zero usando IA para ganhar com anúncios e parcerias.",
+        title: "Criar Vídeos para YouTube com IA - Guia Completo",
+        description: "Aprenda a criar vídeos profissionais do zero usando IA para roteiro, narração e edição. Estratégias para monetizar seu canal no contexto moçambicano.",
         category: "conteudo",
         time: "25 min",
-        image: "🎥 Vídeo IA",
-        link: "#"
+        image: "🎬",
+        link: "#",
+        tags: ["YouTube", "Vídeo", "Edição", "Monetização"]
       },
       {
         id: 5,
-        title: "Fazer Logos Profissionais com IA e Cobrar",
-        description: "Use ferramentas de IA para criar logos e ofereça esse serviço como freelancer.",
+        title: "Design Gráfico com IA: Criar Logos Profissionais",
+        description: "Use ferramentas de IA para criar logos e identidade visual para clientes. Tutorial prático com exemplos reais e precificação para o mercado local.",
         category: "freelancing",
-        time: "12 min",
-        image: "🎨 Logo IA",
-        link: "#"
+        time: "14 min",
+        image: "🎨",
+        link: "#",
+        tags: ["Design", "Logo", "Freelance", "Branding"]
       },
       {
         id: 6,
-        title: "Como Usar IA para Fazer Resumos Pagos",
-        description: "Ofereça serviços de resumo acadêmico e profissional usando IA para acelerar o processo.",
+        title: "Resumos Acadêmicos e Profissionais com IA",
+        description: "Ofereça serviços de resumo de textos, artigos e documentos usando IA para acelerar o processo. Técnicas para garantir qualidade e atender clientes específicos.",
         category: "freelancing",
-        time: "10 min",
-        image: "📝 Resumo IA",
-        link: "#"
+        time: "12 min",
+        image: "📝",
+        link: "#",
+        tags: ["Resumos", "Acadêmico", "Produtividade", "Serviços"]
       },
       {
         id: 7,
-        title: "IA para Criar Cursos Online e Vender",
-        description: "Crie conteúdo para cursos online rapidamente com IA e monetize sua expertise.",
+        title: "Criar Cursos Online com Conteúdo Gerado por IA",
+        description: "Metodologia para criar cursos online de qualidade usando IA na produção de conteúdo. Plataformas locais para vender e estratégias de marketing.",
         category: "renda-passiva",
-        time: "22 min",
-        image: "🎓 Curso IA",
-        link: "#"
+        time: "20 min",
+        image: "🎓",
+        link: "#",
+        tags: ["Cursos", "Online", "Educação", "Passiva"]
       },
       {
         id: 8,
-        title: "Como Ganhar com Tradução Automática Melhorada por IA",
-        description: "Combine ferramentas de tradução com IA para oferecer serviços mais rápidos e baratos.",
+        title: "Tradução Profissional Aprimorada por IA",
+        description: "Combine ferramentas de tradução automática com revisão humana para oferecer serviços rápidos e de qualidade. Dicas para o mercado moçambicano.",
         category: "freelancing",
-        time: "14 min",
-        image: "🌐 Tradução IA",
-        link: "#"
+        time: "15 min",
+        image: "🌐",
+        link: "#",
+        tags: ["Tradução", "Idiomas", "Revisão", "Serviços"]
       },
       {
         id: 9,
-        title: "Marketing com IA para Pequenos Negócios",
-        description: "Estratégias de marketing digital usando IA para atrair mais clientes com menos custo.",
+        title: "Marketing Digital com IA para Pequenas Empresas",
+        description: "Estratégias de marketing usando IA para criar conteúdo, analisar resultados e automatizar campanhas. Focado em orçamentos limitados e realidade local.",
         category: "negocios",
-        time: "16 min",
-        image: "📈 Marketing IA",
-        link: "#"
+        time: "19 min",
+        image: "📈",
+        link: "#",
+        tags: ["Marketing", "Digital", "Empresas", "Automação"]
       },
       {
         id: 10,
-        title: "Como Criar Imagens para Venda com IA",
-        description: "Gere imagens exclusivas com IA e venda em marketplaces de stock ou para clientes.",
+        title: "Venda de Imagens Digitais Criadas com IA",
+        description: "Como criar e vender imagens exclusivas geradas por IA em marketplaces internacionais e plataformas locais. Direitos autorais e precificação.",
         category: "conteudo",
         time: "17 min",
-        image: "🖼️ Imagem IA",
-        link: "#"
+        image: "🖼️",
+        link: "#",
+        tags: ["Imagens", "Arte Digital", "Vendas", "Stock"]
+      },
+      {
+        id: 11,
+        title: "Gestão de Redes Sociais com IA - Aumente Seus Resultados",
+        description: "Ferramentas e estratégias para gerenciar múltiplas redes sociais usando IA. Agendamento, análise e criação de conteúdo automatizado.",
+        category: "negocios",
+        time: "21 min",
+        image: "📱",
+        link: "#",
+        tags: ["Redes Sociais", "Gestão", "Automação", "Conteúdo"]
+      },
+      {
+        id: 12,
+        title: "Criar Podcasts com Narração por IA",
+        description: "Guia completo para criar podcasts profissionais usando vozes sintéticas geradas por IA. Edição, publicação e monetização no contexto moçambicano.",
+        category: "conteudo",
+        time: "23 min",
+        image: "🎤",
+        link: "#",
+        tags: ["Podcast", "Áudio", "Narração", "Conteúdo"]
       }
     ];
 
-    // Função para renderizar tutoriais
+    // Sistema de navegação com transições suaves
+    function navigateTo(page) {
+      const transition = document.getElementById('pageTransition');
+      transition.classList.add('active');
+      
+      setTimeout(() => {
+        if (page === 'index.html' || page === '/') {
+          window.location.href = 'index.html';
+        } else {
+          window.location.href = page;
+        }
+      }, 600);
+    }
+
+    // Renderizar tutoriais
     function renderTutorials(tutorials) {
       const tutorialsGrid = document.getElementById('tutorialsGrid');
+      
+      if (tutorials.length === 0) {
+        tutorialsGrid.innerHTML = `
+          <div class="empty-state fade-in-up">
+            <i class="ri-search-eye-line"></i>
+            <h3>Nenhum tutorial encontrado</h3>
+            <p>Tente selecionar outra categoria ou voltar para ver todos os tutoriais disponíveis.</p>
+            <span class="btn btn-primary" onclick="showAllTutorials()" style="margin-top: 2rem;">
+              <i class="ri-refresh-line"></i> Ver Todos os Tutoriais
+            </span>
+          </div>
+        `;
+        return;
+      }
+      
       tutorialsGrid.innerHTML = '';
-
-      tutorials.forEach(tutorial => {
+      
+      tutorials.forEach((tutorial, index) => {
         const tutorialCard = document.createElement('div');
-        tutorialCard.className = 'tutorial-card slide-in';
+        tutorialCard.className = 'tutorial-card fade-in-up';
+        tutorialCard.style.animationDelay = `${index * 0.1}s`;
+        
+        const categoryName = tutorial.category === 'freelancing' ? 'Freelancing' :
+                           tutorial.category === 'negocios' ? 'Negócios' :
+                           tutorial.category === 'conteudo' ? 'Conteúdo' : 'Renda Passiva';
+        
         tutorialCard.innerHTML = `
           <div class="tutorial-image">${tutorial.image}</div>
           <div class="tutorial-content">
-            <span class="tutorial-tag">${tutorial.category.charAt(0).toUpperCase() + tutorial.category.slice(1)}</span>
+            <span class="tutorial-tag">${categoryName}</span>
             <h3>${tutorial.title}</h3>
             <p>${tutorial.description}</p>
             <div class="tutorial-meta">
-              <span>${tutorial.time}</span>
+              <span><i class="ri-time-line"></i> ${tutorial.time} de leitura</span>
+              <span><i class="ri-eye-line"></i> Tutorial Prático</span>
             </div>
-            <a href="${tutorial.link}" class="tutorial-link">
-              <i class="ri-arrow-right-line"></i> Ler Tutorial
-            </a>
+            <span class="tutorial-link" onclick="viewTutorial(${tutorial.id})">
+              <i class="ri-book-open-line"></i> Ler Tutorial Completo
+            </span>
           </div>
         `;
         tutorialsGrid.appendChild(tutorialCard);
       });
     }
 
-    // Função para filtrar tutoriais
+    // Filtrar por categoria
     function filterCategory(category) {
-      if (category === 'all') {
-        renderTutorials(tutorialsData);
-      } else {
-        const filtered = tutorialsData.filter(t => t.category === category);
-        renderTutorials(filtered);
+      const filtered = tutorialsData.filter(t => t.category === category);
+      renderTutorials(filtered);
+      
+      // Atualizar categorias ativas
+      document.querySelectorAll('.category-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      
+      // Destacar a categoria selecionada
+      const selectedCard = Array.from(document.querySelectorAll('.category-card')).find(card => 
+        card.querySelector('h3').textContent.includes(category === 'freelancing' ? 'Freelancing' :
+          category === 'negocios' ? 'Negócios' :
+          category === 'conteudo' ? 'Criação' : 'Renda Passiva')
+      );
+      
+      if (selectedCard) {
+        selectedCard.classList.add('active');
+        selectedCard.style.transform = 'translateY(-10px)';
+        selectedCard.style.boxShadow = 'var(--shadow-hover)';
       }
     }
 
-    // Eventos
-    document.addEventListener('DOMContentLoaded', () => {
-      // Carregar todos os tutoriais
+    // Mostrar todos os tutoriais
+    function showAllTutorials() {
       renderTutorials(tutorialsData);
+      
+      // Remover destaque das categorias
+      document.querySelectorAll('.category-card').forEach(card => {
+        card.classList.remove('active');
+        card.style.transform = '';
+        card.style.boxShadow = '';
+      });
+    }
 
-      // Menu Mobile
+    // Visualizar tutorial (simulado)
+    function viewTutorial(tutorialId) {
+      const tutorial = tutorialsData.find(t => t.id === tutorialId);
+      if (tutorial) {
+        const transition = document.getElementById('pageTransition');
+        transition.classList.add('active');
+        
+        setTimeout(() => {
+          alert(`Abrindo tutorial: ${tutorial.title}\n\nEste é um exemplo de como o tutorial seria exibido. Em uma versão completa, você seria redirecionado para uma página detalhada do tutorial.`);
+          transition.classList.remove('active');
+        }, 500);
+      }
+    }
+
+    // Menu mobile e inicialização
+    document.addEventListener('DOMContentLoaded', () => {
       const navToggle = document.getElementById('navToggle');
       const navMenu = document.getElementById('navMenu');
-
+      
       navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        navToggle.innerHTML = navMenu.classList.contains('active') ? 
-          '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
+        navToggle.innerHTML = navMenu.classList.contains('active') 
+          ? '<i class="ri-close-line"></i>' 
+          : '<i class="ri-menu-line"></i>';
       });
-
+      
+      // Fechar menu ao clicar em link
       document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
           navMenu.classList.remove('active');
           navToggle.innerHTML = '<i class="ri-menu-line"></i>';
         });
       });
+      
+      // Inicializar com todos os tutoriais
+      renderTutorials(tutorialsData);
+      
+      // Animações no scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.fade-in-up, .slide-in-left').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+      
+      // Remover loading
+      setTimeout(() => {
+        document.getElementById('pageTransition').classList.remove('active');
+      }, 1000);
+    });
+    
+    // Fechar menu ao rolar
+    window.addEventListener('scroll', () => {
+      const navMenu = document.getElementById('navMenu');
+      if (navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        document.getElementById('navToggle').innerHTML = '<i class="ri-menu-line"></i>';
+      }
     });
   </script>
 </body>
