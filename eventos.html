@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos e Webinars de IA em Moçambique — MozaIA</title>
+  <meta name="description" content="Participe de eventos, webinars e encontros da comunidade de IA em Moçambique. Aprenda, conecte-se e descubra oportunidades de renda com IA.">
+  <meta name="keywords" content="eventos IA Moçambique, webinars IA MZ, encontros IA Moçambique, conferências IA MZ, oportunidades IA Moçambique, comunidade IA MZ">
+  <meta name="author" content="MozaIA">
+  <meta property="og:title" content="Eventos e Webinars de IA em Moçambique — MozaIA">
+  <meta property="og:description" content="Participe de eventos, webinars e encontros da comunidade de IA em Moçambique. Aprenda, conecte-se e descubra oportunidades de renda com IA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benjanuario.github.io/MozaIA/eventos.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #0B4A7A;
+      --primary-green: #2ECF8F;
+      --secondary-purple: #8B5CF6;
+      --accent-orange: #FF8A3D;
+      --bg-dark: #0F172A;
+      --bg-light: #F8FAFC;
+      --text-dark: #1E293B;
+      --text-light: #F1F5F9;
+      --card-bg: #FFFFFF;
+      --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+      --gradient-secondary: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
+      --gradient-tertiary: linear-gradient(135deg, #1e3a8a, #0d9488);
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animação de Entrada */
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide-in {
+      animation: slideIn 0.8s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Header */
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-icon {
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+    }
+
+    .logo-text {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-dark);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: var(--transition);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-blue);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--gradient-tertiary);
+      color: var(--text-light);
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Events Section */
+    .events-section {
+      padding: 4rem 1.5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .events-filters {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: #f0f9ff;
+      color: var(--primary-blue);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--gradient-secondary);
+      color: white;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .event-image {
+      height: 200px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .event-content {
+      padding: 1.5rem;
+    }
+
+    .event-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--primary-green);
+      color: white;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .event-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .event-card p {
+      color: var(--text-dark);
+      opacity: 0.7;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .event-details {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .event-details h4 {
+      margin-bottom: 0.5rem;
+      color: var(--primary-blue);
+    }
+
+    .event-details ul {
+      margin: 0;
+      padding-left: 1rem;
+    }
+
+    .event-details li {
+      margin-bottom: 0.3rem;
+    }
+
+    .event-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      opacity: 0.6;
+    }
+
+    .event-link {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      background: var(--gradient-secondary);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .event-link:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .register-btn {
+      background: var(--primary-green);
+    }
+
+    .learn-btn {
+      background: var(--primary-blue);
+    }
+
+    /* Upcoming Events Section */
+    .upcoming-section {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      padding: 4rem 1.5rem;
+    }
+
+    .upcoming-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .upcoming-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--primary-blue);
+    }
+
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .upcoming-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .upcoming-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .upcoming-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .upcoming-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .upcoming-card p {
+      color: var(--text-dark);
+      opacity: 0.7;
+    }
+
+    /* Past Events Section */
+    .past-section {
+      padding: 4rem 1.5rem;
+    }
+
+    .past-events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .past-event-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .past-event-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .past-event-card h4 {
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+      font-size: 1.2rem;
+    }
+
+    .past-event-card p {
+      color: var(--text-dark);
+      opacity: 0.7;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .past-event-link {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #f0f9ff;
+      color: var(--primary-blue);
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .past-event-link:hover {
+      background: var(--gradient-secondary);
+      color: white;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--gradient-primary);
+      color: white;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .cta-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 18px 36px;
+      background: white;
+      color: var(--primary-blue);
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 4rem 1.5rem 2rem;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      opacity: 0.8;
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--primary-green);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .upcoming-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .past-events-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="/MozaIA/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">MozaIA</span>
+      </a>
+      <button class="nav-toggle" id="navToggle">
+        <i class="ri-menu-line"></i>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="/MozaIA/" class="nav-link">Início</a></li>
+        <li class="nav-item"><a href="/MozaIA/sobre.html" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a href="/MozaIA/tutoriais.html" class="nav-link">Tutoriais</a></li>
+        <li class="nav-item"><a href="/MozaIA/ferramentas.html" class="nav-link">Ferramentas</a></li>
+        <li class="nav-item"><a href="/MozaIA/eventos.html" class="nav-link">Eventos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero fade-in">
+    <h1>Eventos e Webinars de IA em Moçambique</h1>
+    <p>Participe de sessões ao vivo, workshops e conferências sobre Inteligência Artificial. Conecte-se com outros entusiastas e descubra oportunidades de renda com IA.</p>
+    
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Eventos Realizados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2K+</div>
+        <div class="stat-label">Participantes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Palestrantes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Moçambique</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events-section" id="events">
+    <div class="section-header slide-in">
+      <h2>Próximos Eventos</h2>
+      <p>Confira os próximos eventos e webinars sobre IA em Moçambique.</p>
+    </div>
+    
+    <div class="events-filters">
+      <button class="filter-btn active" onclick="filterEvents('all')">Todos</button>
+      <button class="filter-btn" onclick="filterEvents('webinar')">Webinars</button>
+      <button class="filter-btn" onclick="filterEvents('workshop')">Workshops</button>
+      <button class="filter-btn" onclick="filterEvents('conferencia')">Conferências</button>
+      <button class="filter-btn" onclick="filterEvents('local')">Eventos Locais</button>
+    </div>
+    
+    <div class="events-grid" id="eventsGrid">
+      <!-- Os eventos serão carregados via JS -->
+    </div>
+  </section>
+
+  <!-- Upcoming Events Section -->
+  <section class="upcoming-section">
+    <div class="upcoming-content fade-in">
+      <h2>Por que Participar?</h2>
+      <p>Benefícios de participar dos nossos eventos de IA em Moçambique.</p>
+      
+      <div class="upcoming-grid">
+        <div class="upcoming-card slide-in" style="animation-delay: 0.1s;">
+          <div class="upcoming-icon">
+            <i class="ri-group-line"></i>
+          </div>
+          <h3>Conecte-se</h3>
+          <p>Encontre outros entusiastas de IA em Moçambique e construa sua rede profissional.</p>
+        </div>
+        <div class="upcoming-card slide-in" style="animation-delay: 0.2s;">
+          <div class="upcoming-icon">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+          <h3>Aprenda</h3>
+          <p>Atualize seus conhecimentos com palestrantes e especialistas em IA.</p>
+        </div>
+        <div class="upcoming-card slide-in" style="animation-delay: 0.3s;">
+          <div class="upcoming-icon">
+            <i class="ri-briefcase-line"></i>
+          </div>
+          <h3>Oportunidades</h3>
+          <p>Descubra oportunidades de carreira e negócios com IA em Moçambique.</p>
+        </div>
+        <div class="upcoming-card slide-in" style="animation-delay: 0.4s;">
+          <div class="upcoming-icon">
+            <i class="ri-gift-line"></i>
+          </div>
+          <h3>Recursos</h3>
+          <p>Receba materiais exclusivos e recursos para continuar aprendendo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Past Events Section -->
+  <section class="past-section">
+    <div class="section-header slide-in">
+      <h2>Eventos Anteriores</h2>
+      <p>Reviva os conteúdos e aprendizados dos eventos passados.</p>
+    </div>
+    <div class="past-events-grid" id="pastEventsGrid">
+      <!-- Os eventos anteriores serão carregados via JS -->
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content fade-in">
+      <h2>Não Perca os Próximos Eventos</h2>
+      <p>Inscreva-se na nossa newsletter para receber atualizações sobre novos eventos, webinars e oportunidades.</p>
+      <a href="/MozaIA/ajuda.html" class="cta-btn">
+        <i class="ri-calendar-check-line"></i> Inscrever-se
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>MozaIA</h3>
+        <p>O primeiro hub de Inteligência Artificial Gratuita em Moçambique, criado para transformar vidas com tecnologia acessível.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="/MozaIA/"><i class="ri-home-line"></i> Início</a></li>
+          <li><a href="/MozaIA/sobre.html"><i class="ri-information-line"></i> Sobre</a></li>
+          <li><a href="/MozaIA/tutoriais.html"><i class="ri-book-open-line"></i> Tutoriais</a></li>
+          <li><a href="/MozaIA/ferramentas.html"><i class="ri-tools-line"></i> Ferramentas</a></li>
+          <li><a href="/MozaIA/eventos.html"><i class="ri-calendar-line"></i> Eventos</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Recursos</h3>
+        <ul class="footer-links">
+          <li><a href="/MozaIA/recursos.html#prompts"><i class="ri-chat-3-line"></i> Prompts Prontos</a></li>
+          <li><a href="/MozaIA/recursos.html#planilhas"><i class="ri-file-chart-line"></i> Planilhas</a></li>
+          <li><a href="/MozaIA/recursos.html#ebooks"><i class="ri-book-open-line"></i> E-books</a></li>
+          <li><a href="/MozaIA/recursos.html#templates"><i class="ri-file-text-line"></i> Templates</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:info@mozaia.mz"><i class="ri-mail-line"></i> info@mozaia.mz</a></li>
+          <li><a href="https://wa.me/258841234567"><i class="ri-whatsapp-line"></i> WhatsApp</a></li>
+          <li><a href="/MozaIA/contacto.html"><i class="ri-phone-line"></i> Fale Conosco</a></li>
+          <li><a href="/MozaIA/ajuda.html"><i class="ri-question-line"></i> Central de Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 MozaIA. O Primeiro Hub de IA Gratuita em Moçambique. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dados dos próximos eventos (em produção, viria de um JSON)
+    const eventsData = [
+      {
+        id: 1,
+        title: "Webinar: IA para Estudantes em Moçambique",
+        description: "Aprenda como usar IA para melhorar seu desempenho escolar e universitário.",
+        category: "webinar",
+        date: "15/12/2025",
+        time: "18:00 - 19:30",
+        location: "Online (Zoom)",
+        capacity: "100 participantes",
+        image: "🎓 Webinar Estudos",
+        details: [
+          "Como usar ChatGPT para estudar",
+          "Ferramentas de IA para organizar estudos",
+          "Casos de sucesso de estudantes em Moçambique",
+          "Perguntas e respostas ao vivo"
+        ],
+        link: "#",
+        registerLink: "#"
+      },
+      {
+        id: 2,
+        title: "Workshop: Criar Conteúdo com IA",
+        description: "Aprenda a criar vídeos, imagens e textos profissionais usando ferramentas de IA.",
+        category: "workshop",
+        date: "20/12/2025",
+        time: "09:00 - 12:00",
+        location: "Maputo - Centro de Convenções",
+        capacity: "50 participantes",
+        image: "🎨 Workshop Conteúdo",
+        details: [
+          "Introdução às ferramentas de IA para conteúdo",
+          "Como criar vídeos com IA",
+          "Geração de imagens profissionais",
+          "Monetização de conteúdo criado com IA"
+        ],
+        link: "#",
+        registerLink: "#"
+      },
+      {
+        id: 3,
+        title: "Conferência: IA em Negócios em MZ",
+        description: "Como pequenos e médios negócios em Moçambique podem usar IA para crescer.",
+        category: "conferencia",
+        date: "25/12/2025",
+        time: "10:00 - 16:00",
+        location: "Beira - Hotel Avenida",
+        capacity: "200 participantes",
+        image: "💼 Conferência Negócios",
+        details: [
+          "Automação de processos com IA",
+          "Marketing digital com IA",
+          "Atendimento ao cliente com IA",
+          "Casos de sucesso em Moçambique"
+        ],
+        link: "#",
+        registerLink: "#"
+      },
+      {
+        id: 4,
+        title: "Evento Local: IA em Nampula",
+        description: "Encontro da comunidade de IA em Nampula com palestras e networking.",
+        category: "local",
+        date: "28/12/2025",
+        time: "14:00 - 17:00",
+        location: "Nampula - Universidade Católica",
+        capacity: "80 participantes",
+        image: "📍 Evento Nampula",
+        details: [
+          "Introdução à IA para iniciantes",
+          "Oportunidades com IA em Nampula",
+          "Networking e troca de experiências",
+          "Demonstrações práticas de ferramentas"
+        ],
+        link: "#",
+        registerLink: "#"
+      },
+      {
+        id: 5,
+        title: "Webinar: Oportunidades com IA em MZ",
+        description: "Como ganhar dinheiro com IA em Moçambique. Estratégias reais e comprovadas.",
+        category: "webinar",
+        date: "05/01/2026",
+        time: "19:00 - 20:30",
+        location: "Online (YouTube)",
+        capacity: "Ilimitado",
+        image: "💰 Webinar Oportunidades",
+        details: [
+          "Freelancing com IA",
+          "Serviços digitais com IA",
+          "E-commerce com IA",
+          "Plataformas de renda passiva"
+        ],
+        link: "#",
+        registerLink: "#"
+      },
+      {
+        id: 6,
+        title: "Workshop: IA para Professores",
+        description: "Como educadores em Moçambique podem usar IA para melhorar o ensino.",
+        category: "workshop",
+        date: "10/01/2026",
+        time: "13:00 - 16:00",
+        location: "Tete - Escola Secundária",
+        capacity: "30 participantes",
+        image: "👨‍🏫 Workshop Professores",
+        details: [
+          "Ferramentas de IA para planejamento de aulas",
+          "Geração de materiais didáticos",
+          "Avaliação e feedback com IA",
+          "Integração de IA no currículo"
+        ],
+        link: "#",
+        registerLink: "#"
+      }
+    ];
+
+    // Dados dos eventos anteriores (em produção, viria de um JSON)
+    const pastEventsData = [
+      {
+        id: 1,
+        title: "Webinar: IA para Iniciantes",
+        date: "08/12/2025",
+        location: "Online",
+        participants: 150,
+        link: "#"
+      },
+      {
+        id: 2,
+        title: "Encontro: IA em Negócios",
+        date: "01/12/2025",
+        location: "Maputo",
+        participants: 85,
+        link: "#"
+      },
+      {
+        id: 3,
+        title: "Workshop: Geração de Imagens",
+        date: "25/11/2025",
+        location: "Beira",
+        participants: 40,
+        link: "#"
+      },
+      {
+        id: 4,
+        title: "Webinar: Estudar com IA",
+        date: "18/11/2025",
+        location: "Online",
+        participants: 200,
+        link: "#"
+      },
+      {
+        id: 5,
+        title: "Evento Local: IA em Tete",
+        date: "11/11/2025",
+        location: "Tete",
+        participants: 60,
+        link: "#"
+      },
+      {
+        id: 6,
+        title: "Conferência: Futuro da IA em MZ",
+        date: "04/11/2025",
+        location: "Nampula",
+        participants: 120,
+        link: "#"
+      }
+    ];
+
+    // Função para renderizar eventos
+    function renderEvents(events) {
+      const eventsGrid = document.getElementById('eventsGrid');
+      eventsGrid.innerHTML = '';
+
+      events.forEach(event => {
+        const eventCard = document.createElement('div');
+        eventCard.className = 'event-card slide-in';
+        eventCard.innerHTML = `
+          <div class="event-image">${event.image}</div>
+          <div class="event-content">
+            <span class="event-tag">${event.category.charAt(0).toUpperCase() + event.category.slice(1)}</span>
+            <h3>${event.title}</h3>
+            <p>${event.description}</p>
+            <div class="event-details">
+              <h4>Detalhes:</h4>
+              <ul>
+                ${event.details.map(detail => `<li>${detail}</li>`).join('')}
+              </ul>
+            </div>
+            <div class="event-meta">
+              <span>${event.date}</span>
+              <span>${event.time}</span>
+              <span>${event.location}</span>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <a href="${event.link}" class="event-link learn-btn">
+                <i class="ri-eye-line"></i> Mais Info
+              </a>
+              <a href="${event.registerLink}" class="event-link register-btn">
+                <i class="ri-calendar-check-line"></i> Inscrever-se
+              </a>
+            </div>
+          </div>
+        `;
+        eventsGrid.appendChild(eventCard);
+      });
+    }
+
+    // Função para renderizar eventos anteriores
+    function renderPastEvents(events) {
+      const pastEventsGrid = document.getElementById('pastEventsGrid');
+      pastEventsGrid.innerHTML = '';
+
+      events.forEach(event => {
+        const pastEventCard = document.createElement('div');
+        pastEventCard.className = 'past-event-card slide-in';
+        pastEventCard.innerHTML = `
+          <h4>${event.title}</h4>
+          <p>${event.date} • ${event.location} • ${event.participants} participantes</p>
+          <a href="${event.link}" class="past-event-link">Ver Resumo</a>
+        `;
+        pastEventsGrid.appendChild(pastEventCard);
+      });
+    }
+
+    // Função para filtrar eventos
+    function filterEvents(category) {
+      // Atualizar botões ativos
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      if (category === 'all') {
+        renderEvents(eventsData);
+      } else {
+        const filtered = eventsData.filter(e => e.category === category);
+        renderEvents(filtered);
+      }
+    }
+
+    // Eventos
+    document.addEventListener('DOMContentLoaded', () => {
+      // Carregar todos os eventos
+      renderEvents(eventsData);
+      // Carregar todos os eventos anteriores
+      renderPastEvents(pastEventsData);
+
+      // Menu Mobile
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.innerHTML = navMenu.classList.contains('active') ? 
+          '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
+      });
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          navToggle.innerHTML = '<i class="ri-menu-line"></i>';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

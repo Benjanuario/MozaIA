@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos Gratuitos de IA — MozaIA</title>
+  <meta name="description" content="Acesse recursos gratuitos de IA em Moçambique: prompts prontos, planilhas inteligentes, e-books e ferramentas para estudantes e empreendedores.">
+  <meta name="keywords" content="recursos IA Moçambique, prompts IA grátis, planilhas IA MZ, e-books IA grátis, ferramentas IA Moçambique">
+  <meta name="author" content="MozaIA">
+  <meta property="og:title" content="Recursos Gratuitos de IA — MozaIA">
+  <meta property="og:description" content="Acesse recursos gratuitos de IA em Moçambique: prompts prontos, planilhas inteligentes, e-books e ferramentas para estudantes e empreendedores.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benjanuario.github.io/MozaIA/recursos.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #0B4A7A;
+      --primary-green: #2ECF8F;
+      --secondary-purple: #8B5CF6;
+      --accent-orange: #FF8A3D;
+      --bg-dark: #0F172A;
+      --bg-light: #F8FAFC;
+      --text-dark: #1E293B;
+      --text-light: #F1F5F9;
+      --card-bg: #FFFFFF;
+      --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+      --gradient-secondary: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
+      --gradient-tertiary: linear-gradient(135deg, #1e3a8a, #0d9488);
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animação de Entrada */
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide-in {
+      animation: slideIn 0.8s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Header */
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-icon {
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+    }
+
+    .logo-text {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-dark);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: var(--transition);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-blue);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--gradient-tertiary);
+      color: var(--text-light);
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+
+    /* Categories Section */
+    .categories {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .category-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .category-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .category-card p {
+      color: var(--text-dark);
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+
+    .category-count {
+      display: inline-block;
+      background: #f0f9ff;
+      color: var(--primary-blue);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Resources Grid */
+    .resources-section {
+      padding: 0 1.5rem 4rem;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .resource-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .resource-image {
+      height: 180px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .resource-content {
+      padding: 1.5rem;
+    }
+
+    .resource-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--primary-green);
+      color: white;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .resource-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .resource-card p {
+      color: var(--text-dark);
+      opacity: 0.7;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .resource-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      opacity: 0.6;
+    }
+
+    .resource-link {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      background: var(--gradient-secondary);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .resource-link:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .download-btn {
+      background: var(--primary-green);
+    }
+
+    .view-btn {
+      background: var(--primary-blue);
+    }
+
+    /* Features Section */
+    .features-section {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      padding: 4rem 1.5rem;
+    }
+
+    .features-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .features-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--primary-blue);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .feature-card p {
+      color: var(--text-dark);
+      opacity: 0.7;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 4rem 1.5rem 2rem;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      opacity: 0.8;
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--primary-green);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="/MozaIA/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">MozaIA</span>
+      </a>
+      <button class="nav-toggle" id="navToggle">
+        <i class="ri-menu-line"></i>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="/MozaIA/" class="nav-link">Início</a></li>
+        <li class="nav-item"><a href="/MozaIA/sobre.html" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a href="/MozaIA/tutoriais.html" class="nav-link">Tutoriais</a></li>
+        <li class="nav-item"><a href="/MozaIA/ferramentas.html" class="nav-link">Ferramentas</a></li>
+        <li class="nav-item"><a href="/MozaIA/recursos.html" class="nav-link">Recursos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero fade-in">
+    <h1>Recursos Gratuitos de IA</h1>
+    <p>Acesse prompts prontos, planilhas inteligentes, e-books e ferramentas para acelerar seu aprendizado e negócios com IA em Moçambique.</p>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories slide-in">
+    <div class="section-header">
+      <h2>Categorias de Recursos</h2>
+      <p>Explore nossa coleção organizada por tipo e finalidade.</p>
+    </div>
+    <div class="categories-grid">
+      <div class="category-card" onclick="filterCategory('prompts')">
+        <div class="category-icon">
+          <i class="ri-chat-3-line"></i>
+        </div>
+        <h3>Prompts Prontos</h3>
+        <p>Comandos prontos para ChatGPT, Midjourney e outros</p>
+        <span class="category-count">50+ Recursos</span>
+      </div>
+      <div class="category-card" onclick="filterCategory('planilhas')">
+        <div class="category-icon">
+          <i class="ri-file-chart-line"></i>
+        </div>
+        <h3>Planilhas Inteligentes</h3>
+        <p>Ferramentas para organização e cálculos</p>
+        <span class="category-count">15+ Planilhas</span>
+      </div>
+      <div class="category-card" onclick="filterCategory('ebooks')">
+        <div class="category-icon">
+          <i class="ri-book-open-line"></i>
+        </div>
+        <h3>E-books Gratuitos</h3>
+        <p>Guias completos em formato digital</p>
+        <span class="category-count">10+ E-books</span>
+      </div>
+      <div class="category-card" onclick="filterCategory('templates')">
+        <div class="category-icon">
+          <i class="ri-file-text-line"></i>
+        </div>
+        <h3>Templates</h3>
+        <p>Modelos prontos para documentos e projetos</p>
+        <span class="category-count">25+ Templates</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="resources-section slide-in">
+    <div class="section-header">
+      <h2>Recursos Recentes</h2>
+      <p>Últimos recursos adicionados à nossa biblioteca.</p>
+    </div>
+    <div class="resources-grid" id="resourcesGrid">
+      <!-- Os recursos serão carregados via JS -->
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="features-content fade-in">
+      <h2>Por que Usar Nossos Recursos?</h2>
+      <p>Recursos profissionais e gratuitos otimizados para contexto moçambicano.</p>
+      
+      <div class="features-grid">
+        <div class="feature-card slide-in" style="animation-delay: 0.1s;">
+          <div class="feature-icon">
+            <i class="ri-check-line"></i>
+          </div>
+          <h3>Gratuitos</h3>
+          <p>Todos os recursos são completamente gratuitos.</p>
+        </div>
+        <div class="feature-card slide-in" style="animation-delay: 0.2s;">
+          <div class="feature-icon">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+          <h3>Práticos</h3>
+          <p>Prontos para usar em seus projetos reais.</p>
+        </div>
+        <div class="feature-card slide-in" style="animation-delay: 0.3s;">
+          <div class="feature-icon">
+            <i class="ri-global-line"></i>
+          </div>
+          <h3>Contexto Local</h3>
+          <p>Exemplos e linguagem adaptados para Moçambique.</p>
+        </div>
+        <div class="feature-card slide-in" style="animation-delay: 0.4s;">
+          <div class="feature-icon">
+            <i class="ri-download-line"></i>
+          </div>
+          <h3>Fácil Download</h3>
+          <p>Baixe e comece a usar imediatamente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>MozaIA</h3>
+        <p>O primeiro hub de Inteligência Artificial Gratuita em Moçambique, criado para transformar vidas com tecnologia acessível.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="/MozaIA/"><i class="ri-home-line"></i> Início</a></li>
+          <li><a href="/MozaIA/sobre.html"><i class="ri-information-line"></i> Sobre</a></li>
+          <li><a href="/MozaIA/tutoriais.html"><i class="ri-book-open-line"></i> Tutoriais</a></li>
+          <li><a href="/MozaIA/ferramentas.html"><i class="ri-tools-line"></i> Ferramentas</a></li>
+          <li><a href="/MozaIA/recursos.html"><i class="ri-folder-line"></i> Recursos</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Recursos</h3>
+        <ul class="footer-links">
+          <li><a href="/MozaIA/recursos.html#prompts"><i class="ri-chat-3-line"></i> Prompts Prontos</a></li>
+          <li><a href="/MozaIA/recursos.html#planilhas"><i class="ri-file-chart-line"></i> Planilhas</a></li>
+          <li><a href="/MozaIA/recursos.html#ebooks"><i class="ri-book-open-line"></i> E-books</a></li>
+          <li><a href="/MozaIA/recursos.html#templates"><i class="ri-file-text-line"></i> Templates</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:info@mozaia.mz"><i class="ri-mail-line"></i> info@mozaia.mz</a></li>
+          <li><a href="https://wa.me/258841234567"><i class="ri-whatsapp-line"></i> WhatsApp</a></li>
+          <li><a href="/MozaIA/contacto.html"><i class="ri-phone-line"></i> Fale Conosco</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 MozaIA. O Primeiro Hub de IA Gratuita em Moçambique. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dados dos recursos (em produção, viria de um JSON)
+    const resourcesData = [
+      {
+        id: 1,
+        title: "Prompts para ChatGPT - Estudos",
+        description: "Coleção de 20 prompts otimizados para ChatGPT para auxiliar nos estudos em Moçambique.",
+        category: "prompts",
+        type: "PDF",
+        size: "1.1 MB",
+        downloads: 3420,
+        image: "💬 Prompts Estudo",
+        link: "#"
+      },
+      {
+        id: 2,
+        title: "Planilha de Orçamento Pessoal",
+        description: "Planilha para controle de despesas pessoais com IA em Moçambique.",
+        category: "planilhas",
+        type: "Excel",
+        size: "0.8 MB",
+        downloads: 890,
+        image: "📊 Orçamento",
+        link: "#"
+      },
+      {
+        id: 3,
+        title: "E-book: IA para Iniciantes",
+        description: "Guia completo para começar com IA em Moçambique - 100 páginas.",
+        category: "ebooks",
+        type: "PDF",
+        size: "15.2 MB",
+        downloads: 5670,
+        image: "📚 E-book IA",
+        link: "#"
+      },
+      {
+        id: 4,
+        title: "Template de Proposta Freelance",
+        description: "Modelo profissional para propostas freelance usando IA em Moçambique.",
+        category: "templates",
+        type: "Word",
+        size: "2.3 MB",
+        downloads: 1250,
+        image: "📄 Proposta Freelance",
+        link: "#"
+      },
+      {
+        id: 5,
+        title: "Prompts para Midjourney",
+        description: "100 prompts prontos para gerar imagens realistas com Midjourney.",
+        category: "prompts",
+        type: "TXT",
+        size: "0.5 MB",
+        downloads: 4320,
+        image: "🎨 Prompts Imagem",
+        link: "#"
+      },
+      {
+        id: 6,
+        title: "Planilha de Gestão de Tempo",
+        description: "Ferramenta para otimizar seu tempo com técnicas de produtividade.",
+        category: "planilhas",
+        type: "Excel",
+        size: "1.2 MB",
+        downloads: 1560,
+        image: "⏱️ Gestão Tempo",
+        link: "#"
+      },
+      {
+        id: 7,
+        title: "E-book: Negócios com IA",
+        description: "Como criar e escalar negócios usando IA em Moçambique.",
+        category: "ebooks",
+        type: "PDF",
+        size: "18.7 MB",
+        downloads: 3210,
+        image: "💼 Negócios IA",
+        link: "#"
+      },
+      {
+        id: 8,
+        title: "Template de Email Profissional",
+        description: "Modelos de emails profissionais gerados com IA para Moçambique.",
+        category: "templates",
+        type: "Word",
+        size: "1.5 MB",
+        downloads: 2100,
+        image: "📧 Email Profissional",
+        link: "#"
+      }
+    ];
+
+    // Função para renderizar recursos
+    function renderResources(resources) {
+      const resourcesGrid = document.getElementById('resourcesGrid');
+      resourcesGrid.innerHTML = '';
+
+      resources.forEach(resource => {
+        const resourceCard = document.createElement('div');
+        resourceCard.className = 'resource-card slide-in';
+        resourceCard.innerHTML = `
+          <div class="resource-image">${resource.image}</div>
+          <div class="resource-content">
+            <span class="resource-tag">${resource.category.charAt(0).toUpperCase() + resource.category.slice(1)}</span>
+            <h3>${resource.title}</h3>
+            <p>${resource.description}</p>
+            <div class="resource-meta">
+              <span>${resource.type}</span>
+              <span>${resource.size}</span>
+              <span>${resource.downloads} downloads</span>
+            </div>
+            <a href="${resource.link}" class="resource-link download-btn">
+              <i class="ri-download-line"></i> Baixar
+            </a>
+          </div>
+        `;
+        resourcesGrid.appendChild(resourceCard);
+      });
+    }
+
+    // Função para filtrar recursos
+    function filterCategory(category) {
+      if (category === 'all') {
+        renderResources(resourcesData);
+      } else {
+        const filtered = resourcesData.filter(r => r.category === category);
+        renderResources(filtered);
+      }
+    }
+
+    // Eventos
+    document.addEventListener('DOMContentLoaded', () => {
+      // Carregar todos os recursos
+      renderResources(resourcesData);
+
+      // Menu Mobile
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.innerHTML = navMenu.classList.contains('active') ? 
+          '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
+      });
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          navToggle.innerHTML = '<i class="ri-menu-line"></i>';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

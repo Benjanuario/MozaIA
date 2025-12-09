@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajuda e Suporte — MozaIA</title>
+  <meta name="description" content="Central de ajuda do MozaIA. Encontre respostas para suas dúvidas sobre IA em Moçambique. Tutoriais, suporte e como usar nossos recursos.">
+  <meta name="keywords" content="ajuda IA Moçambique, suporte MozaIA, perguntas frequentes IA, tutorial IA MZ, como usar IA, suporte IA Moçambique">
+  <meta name="author" content="MozaIA">
+  <meta property="og:title" content="Ajuda e Suporte — MozaIA">
+  <meta property="og:description" content="Central de ajuda do MozaIA. Encontre respostas para suas dúvidas sobre IA em Moçambique. Tutoriais, suporte e como usar nossos recursos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benjanuario.github.io/MozaIA/ajuda.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #0B4A7A;
+      --primary-green: #2ECF8F;
+      --secondary-purple: #8B5CF6;
+      --accent-orange: #FF8A3D;
+      --bg-dark: #0F172A;
+      --bg-light: #F8FAFC;
+      --text-dark: #1E293B;
+      --text-light: #F1F5F9;
+      --card-bg: #FFFFFF;
+      --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+      --gradient-secondary: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
+      --gradient-tertiary: linear-gradient(135deg, #1e3a8a, #0d9488);
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animação de Entrada */
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide-in {
+      animation: slideIn 0.8s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Header */
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-icon {
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+    }
+
+    .logo-text {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-dark);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: var(--transition);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-blue);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--gradient-tertiary);
+      color: var(--text-light);
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+
+    /* Search Section */
+    .search-section {
+      background: white;
+      padding: 2.5rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .search-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .search-form {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 16px 24px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 3px rgba(11, 74, 122, 0.1);
+    }
+
+    .search-btn {
+      padding: 16px 32px;
+      background: var(--gradient-secondary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .search-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Categories Section */
+    .categories-section {
+      padding: 4rem 1.5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .category-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .category-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .category-card p {
+      color: var(--text-dark);
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+
+    .category-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #f0f9ff;
+      color: var(--primary-blue);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .category-link:hover {
+      background: var(--gradient-secondary);
+      color: white;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .faq-header h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--primary-blue);
+    }
+
+    .faq-header p {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      opacity: 0.7;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .faq-accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--bg-light);
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      background: white;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .faq-item.active .faq-question::after {
+      content: '−';
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 1.5rem;
+      max-height: 500px;
+    }
+
+    .faq-answer p {
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      padding: 4rem 1.5rem;
+    }
+
+    .contact-content {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-header h2 {
+      font-size: 1.8rem;
+      color: var(--primary-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-header p {
+      color: var(--text-dark);
+      opacity: 0.7;
+    }
+
+    .contact-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .contact-option {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: #f8fafc;
+      transition: var(--transition);
+    }
+
+    .contact-option:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .contact-option h3 {
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .contact-option p {
+      color: var(--text-dark);
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+
+    .contact-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--gradient-secondary);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .contact-link:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 4rem 1.5rem 2rem;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      opacity: 0.8;
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--primary-green);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .search-form {
+        flex-direction: column;
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-section {
+        padding: 3rem 1rem;
+      }
+
+      .contact-options {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-content {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="/MozaIA/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">MozaIA</span>
+      </a>
+      <button class="nav-toggle" id="navToggle">
+        <i class="ri-menu-line"></i>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="/MozaIA/" class="nav-link">Início</a></li>
+        <li class="nav-item"><a href="/MozaIA/sobre.html" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a href="/MozaIA/tutoriais.html" class="nav-link">Tutoriais</a></li>
+        <li class="nav-item"><a href="/MozaIA/ferramentas.html" class="nav-link">Ferramentas</a></li>
+        <li class="nav-item"><a href="/MozaIA/contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero fade-in">
+    <h1>Ajuda e Suporte</h1>
+    <p>Encontre respostas para suas dúvidas sobre IA em Moçambique. Tutoriais, suporte e como usar nossos recursos.</p>
+  </section>
+
+  <!-- Search Section -->
+  <section class="search-section">
+    <div class="search-content fade-in">
+      <h2>Como podemos ajudar?</h2>
+      <form class="search-form">
+        <input type="text" class="search-input" placeholder="Digite sua dúvida ou pergunta...">
+        <button type="submit" class="search-btn">Buscar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories-section">
+    <div class="section-header slide-in">
+      <h2>Categorias de Ajuda</h2>
+      <p>Explore nossas categorias para encontrar respostas específicas.</p>
+    </div>
+    <div class="categories-grid">
+      <div class="category-card slide-in" style="animation-delay: 0.1s;">
+        <div class="category-icon">
+          <i class="ri-user-line"></i>
+        </div>
+        <h3>Para Iniciantes</h3>
+        <p>Conceitos básicos e primeiros passos com IA.</p>
+        <a href="/MozaIA/tutoriais.html#iniciantes" class="category-link">Ver Tutoriais</a>
+      </div>
+      <div class="category-card slide-in" style="animation-delay: 0.2s;">
+        <div class="category-icon">
+          <i class="ri-briefcase-line"></i>
+        </div>
+        <h3>Para Negócios</h3>
+        <p>Como usar IA para crescer seu negócio.</p>
+        <a href="/MozaIA/tutoriais.html#negocios" class="category-link">Ver Tutoriais</a>
+      </div>
+      <div class="category-card slide-in" style="animation-delay: 0.3s;">
+        <div class="category-icon">
+          <i class="ri-graduation-cap-line"></i>
+        </div>
+        <h3>Para Estudos</h3>
+        <p>Como usar IA para melhorar seu aprendizado.</p>
+        <a href="/MozaIA/tutoriais.html#estudos" class="category-link">Ver Tutoriais</a>
+      </div>
+      <div class="category-card slide-in" style="animation-delay: 0.4s;">
+        <div class="category-icon">
+          <i class="ri-tools-line"></i>
+        </div>
+        <h3>Ferramentas</h3>
+        <p>Como usar e configurar nossas ferramentas.</p>
+        <a href="/MozaIA/ferramentas.html" class="category-link">Ver Ferramentas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-header slide-in">
+      <h2>Perguntas Frequentes</h2>
+      <p>Respostas para as dúvidas mais comuns sobre IA em Moçambique.</p>
+    </div>
+    <div class="faq-accordion" id="faqAccordion">
+      <!-- As perguntas frequentes serão carregadas via JS -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-content fade-in">
+      <div class="contact-header">
+        <h2>Não encontrou sua resposta?</h2>
+        <p>Entre em contacto connosco para obter ajuda personalizada.</p>
+      </div>
+      <div class="contact-options">
+        <div class="contact-option slide-in" style="animation-delay: 0.1s;">
+          <div class="contact-icon">
+            <i class="ri-mail-line"></i>
+          </div>
+          <h3>Email</h3>
+          <p>info@mozaia.mz</p>
+          <a href="mailto:info@mozaia.mz" class="contact-link">Enviar Email</a>
+        </div>
+        <div class="contact-option slide-in" style="animation-delay: 0.2s;">
+          <div class="contact-icon">
+            <i class="ri-whatsapp-line"></i>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>+258 84 123 4567</p>
+          <a href="https://wa.me/258841234567" class="contact-link">Enviar Mensagem</a>
+        </div>
+        <div class="contact-option slide-in" style="animation-delay: 0.3s;">
+          <div class="contact-icon">
+            <i class="ri-group-line"></i>
+          </div>
+          <h3>Comunidade</h3>
+          <p>Fórum de discussão</p>
+          <a href="/MozaIA/comunidade.html" class="contact-link">Acessar Comunidade</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>MozaIA</h3>
+        <p>O primeiro hub de Inteligência Artificial Gratuita em Moçambique, criado para transformar vidas com tecnologia acessível.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="/MozaIA/"><i class="ri-home-line"></i> Início</a></li>
+          <li><a href="/MozaIA/sobre.html"><i class="ri-information-line"></i> Sobre</a></li>
+          <li><a href="/MozaIA/tutoriais.html"><i class="ri-book-open-line"></i> Tutoriais</a></li>
+          <li><a href="/MozaIA/ferramentas.html"><i class="ri-tools-line"></i> Ferramentas</a></li>
+          <li><a href="/MozaIA/ajuda.html"><i class="ri-question-line"></i> Ajuda</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Ferramentas Grátis</h3>
+        <ul class="footer-links">
+          <li><a href="/MozaIA/ferramentas.html#texto"><i class="ri-file-text-line"></i> Geração de Texto</a></li>
+          <li><a href="/MozaIA/ferramentas.html#imagens"><i class="ri-image-line"></i> Geração de Imagens</a></li>
+          <li><a href="/MozaIA/ferramentas.html#produtividade"><i class="ri-check-double-line"></i> Produtividade</a></li>
+          <li><a href="/MozaIA/ferramentas.html#estudos"><i class="ri-graduation-cap-line"></i> Para Estudos</a></li>
+          <li><a href="/MozaIA/ferramentas.html#negocios"><i class="ri-briefcase-line"></i> Para Negócios</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:info@mozaia.mz"><i class="ri-mail-line"></i> info@mozaia.mz</a></li>
+          <li><a href="https://wa.me/258841234567"><i class="ri-whatsapp-line"></i> WhatsApp</a></li>
+          <li><a href="/MozaIA/contacto.html"><i class="ri-phone-line"></i> Fale Conosco</a></li>
+          <li><a href="/MozaIA/ajuda.html"><i class="ri-question-line"></i> Central de Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 MozaIA. O Primeiro Hub de IA Gratuita em Moçambique. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dados das perguntas frequentes (em produção, viria de um JSON)
+    const faqData = [
+      {
+        question: "O que é Inteligência Artificial e como posso usá-la em Moçambique?",
+        answer: "Inteligência Artificial (IA) é a capacidade de máquinas aprenderem e tomarem decisões. Em Moçambique, você pode usar IA para automatizar tarefas, melhorar estudos, criar conteúdo e gerar renda. Nossos guias explicam como começar com ferramentas acessíveis."
+      },
+      {
+        question: "Preciso de equipamentos caros para usar IA?",
+        answer: "Não! A maioria das ferramentas de IA pode ser usada com um telemóvel comum ou computador básico. Muitas ferramentas são gratuitas ou têm versões acessíveis. O mais importante é a conexão à internet."
+      },
+      {
+        question: "Como posso ganhar dinheiro com IA em Moçambique?",
+        answer: "Existem várias formas: criando conteúdo com IA, oferecendo serviços freelance, automatizando negócios, participando de pesquisas pagas e usando ferramentas de IA para criar produtos digitais. Nossos tutoriais mostram estratégias específicas para o contexto moçambicano."
+      },
+      {
+        question: "É seguro usar ferramentas de IA?",
+        answer: "Sim, desde que você use ferramentas confiáveis e siga as melhores práticas de segurança. Nunca compartilhe informações pessoais sensíveis e sempre leia os termos de uso. Recomendamos ferramentas verificadas e testadas."
+      },
+      {
+        question: "Como posso aprender IA sozinho?",
+        answer: "Comece com nossos guias para iniciantes, use ferramentas de IA gratuitas como ChatGPT, pratique com prompts simples e participe da nossa comunidade. A prática constante e a curiosidade são as melhores formas de aprender."
+      },
+      {
+        question: "Posso usar IA para melhorar meus estudos?",
+        answer: "Sim! IA pode ajudar a resumir conteúdos, explicar conceitos difíceis, criar flashcards e até gerar exercícios de revisão. Muitos estudantes em Moçambique já estão usando IA para melhorar seu desempenho escolar."
+      },
+      {
+        question: "Quais são as melhores ferramentas de IA para iniciantes?",
+        answer: "Comece com ChatGPT para textos, Canva para design e Midjourney para imagens. São ferramentas intuitivas e com versões gratuitas. Nossa seção de ferramentas tem recomendações específicas para o contexto moçambicano."
+      },
+      {
+        question: "Como posso automatizar meu pequeno negócio com IA?",
+        answer: "Use IA para atendimento ao cliente (chatbots), marketing (geração de conteúdo), gestão (planilhas inteligentes) e análise de dados. Comece com pequenas automações e vá aumentando conforme aprende."
+      }
+    ];
+
+    // Função para renderizar FAQ
+    function renderFAQ(faqs) {
+      const faqAccordion = document.getElementById('faqAccordion');
+      faqAccordion.innerHTML = '';
+
+      faqs.forEach((faq, index) => {
+        const faqItem = document.createElement('div');
+        faqItem.className = 'faq-item';
+        faqItem.innerHTML = `
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            ${faq.question}
+          </button>
+          <div class="faq-answer">
+            <p>${faq.answer}</p>
+          </div>
+        `;
+        faqAccordion.appendChild(faqItem);
+      });
+    }
+
+    // Função para alternar FAQ
+    function toggleFAQ(button) {
+      const item = button.parentElement;
+      item.classList.toggle('active');
+    }
+
+    // Eventos
+    document.addEventListener('DOMContentLoaded', () => {
+      // Carregar FAQ
+      renderFAQ(faqData);
+
+      // Evento do formulário de busca
+      document.querySelector('.search-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const query = e.target.querySelector('.search-input').value;
+        if (query.trim()) {
+          alert(`Buscando por: "${query}"\nResultados seriam exibidos aqui.`);
+        }
+      });
+
+      // Menu Mobile
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.innerHTML = navMenu.classList.contains('active') ? 
+          '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
+      });
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          navToggle.innerHTML = '<i class="ri-menu-line"></i>';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
