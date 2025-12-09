@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://benjanuario.github.io/MozaIA/ferramentas.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <style>
     :root {
@@ -21,6 +21,7 @@
       --primary-green: #2ECF8F;
       --secondary-purple: #8B5CF6;
       --accent-orange: #FF8A3D;
+      --accent-pink: #EC4899;
       --bg-dark: #0F172A;
       --bg-light: #F8FAFC;
       --text-dark: #1E293B;
@@ -29,9 +30,11 @@
       --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
       --gradient-secondary: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
       --gradient-tertiary: linear-gradient(135deg, #1e3a8a, #0d9488);
-      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --gradient-rainbow: linear-gradient(90deg, #0B4A7A, #2ECF8F, #8B5CF6, #FF8A3D);
+      --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 25px 50px rgba(0, 0, 0, 0.15);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --border-radius: 20px;
     }
 
     * {
@@ -40,173 +43,298 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg-light);
       color: var(--text-dark);
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
+      position: relative;
     }
 
-    /* Animação de Entrada */
-    .fade-in {
-      animation: fadeIn 1s ease-out forwards;
+    /* Container de largura total */
+    .full-width-container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Animções modernas */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
-    .slide-in {
-      animation: slideIn 0.8s ease-out forwards;
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-30px); }
-      to { opacity: 1; transform: translateX(0); }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
 
-    /* Header */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Header moderno */
     .header {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      position: sticky;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      position: fixed;
+      width: 100%;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
       transition: var(--transition);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .navbar {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1.2rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Menu à esquerda */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-toggle {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--primary-blue);
+      transition: var(--transition);
+      order: -1;
+    }
+
+    .nav-toggle:hover {
+      transform: rotate(90deg);
+      color: var(--primary-green);
     }
 
     .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 2rem;
+      font-weight: 900;
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-    }
-
-    .logo-icon {
-      font-size: 1.5rem;
-      color: var(--primary-blue);
-    }
-
-    .logo-text {
-      background: var(--gradient-primary);
+      background: var(--gradient-rainbow);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
+      letter-spacing: -0.5px;
       cursor: pointer;
-      color: var(--text-dark);
     }
 
     .nav-menu {
       display: flex;
       list-style: none;
       gap: 2rem;
+      align-items: center;
     }
 
     .nav-link {
       text-decoration: none;
       color: var(--text-dark);
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      transition: var(--transition);
       position: relative;
-      padding: 0.5rem 0;
-      transition: var(--transition);
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gradient-primary);
-      transition: var(--transition);
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
+      overflow: hidden;
+      cursor: pointer;
     }
 
     .nav-link:hover {
+      background: linear-gradient(135deg, rgba(11, 74, 122, 0.1), rgba(46, 207, 143, 0.1));
       color: var(--primary-blue);
+      transform: translateY(-2px);
     }
 
-    /* Hero Section */
+    .nav-link.active {
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    /* Hero Section otimizada */
     .hero {
       background: var(--gradient-tertiary);
       color: var(--text-light);
-      padding: 4rem 2rem;
+      padding: 8rem 5% 5rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(46, 207, 143, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      background: linear-gradient(to right, #ffffff, #e0f2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero p {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       max-width: 800px;
-      margin: 0 auto 2rem;
-      opacity: 0.9;
+      margin: 0 auto 3rem;
+      opacity: 0.95;
+      line-height: 1.6;
+      font-weight: 400;
     }
 
-    /* Filters Section */
-    .filters {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 3rem 2rem 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
+    /* Botões modernos */
+    .btn {
+      display: inline-flex;
       align-items: center;
-      background: white;
+      justify-content: center;
+      padding: 18px 36px;
       border-radius: 16px;
-      margin-top: 2rem;
-      box-shadow: var(--shadow);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.1rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      gap: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: 0.6s;
+    }
+
+    .btn:hover::after {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: var(--gradient-secondary);
+      color: white;
+      box-shadow: 0 20px 40px rgba(46, 207, 143, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 30px 60px rgba(46, 207, 143, 0.35);
+    }
+
+    /* Filtros modernos */
+    .filters-section {
+      padding: 3rem 5%;
+      background: white;
+      position: relative;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .filters-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
 
     .filter-group {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.8rem;
     }
 
     .filter-label {
-      font-weight: 600;
-      color: var(--text-dark);
-      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .filter-select, .filter-input {
-      padding: 10px 15px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 2px solid #e2e8f0;
       background: white;
-      font-size: 0.9rem;
-      min-width: 180px;
+      font-size: 1rem;
       transition: var(--transition);
+      font-family: 'Inter', sans-serif;
     }
 
     .filter-select:focus, .filter-input:focus {
@@ -215,151 +343,329 @@
       box-shadow: 0 0 0 3px rgba(11, 74, 122, 0.1);
     }
 
-    /* Tools Grid */
+    .filter-buttons {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+
+    .filter-btn {
+      padding: 14px 28px;
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(11, 74, 122, 0.2);
+    }
+
+    .filter-btn.reset {
+      background: #f1f5f9;
+      color: var(--text-dark);
+    }
+
+    /* Tools Section moderna */
     .tools-section {
-      max-width: 1400px;
-      margin: 3rem auto;
-      padding: 0 2rem;
+      padding: 5rem 5%;
+      background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+      position: relative;
+      width: 100%;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .section-header h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
       background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      font-weight: 900;
+      line-height: 1.2;
     }
 
     .section-header p {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
       color: var(--text-dark);
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
+      opacity: 0.85;
+      line-height: 1.6;
     }
 
+    /* Categorias de filtro */
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 4rem;
+    }
+
+    .category-btn {
+      padding: 12px 28px;
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .category-btn:hover {
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+      transform: translateY(-3px);
+    }
+
+    .category-btn.active {
+      background: var(--gradient-primary);
+      color: white;
+      border-color: transparent;
+    }
+
+    /* Grid de ferramentas */
     .tools-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     .tool-card {
       background: white;
-      border-radius: 16px;
+      border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: var(--transition);
+      position: relative;
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .tool-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-15px);
       box-shadow: var(--shadow-hover);
     }
 
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--gradient-secondary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .tool-card:hover::before {
+      transform: scaleX(1);
+    }
+
     .tool-image {
-      height: 180px;
-      background: var(--gradient-primary);
+      height: 220px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 1.1rem;
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.6s;
+    }
+
+    .tool-card:hover .tool-image::after {
+      left: 100%;
+    }
+
+    .tool-image img {
+      max-width: 140px;
+      max-height: 140px;
+      object-fit: contain;
+      transition: var(--transition);
+      z-index: 1;
+    }
+
+    .tool-card:hover .tool-image img {
+      transform: scale(1.1) rotate(5deg);
     }
 
     .tool-content {
-      padding: 1.5rem;
+      padding: 2.5rem;
     }
 
     .tool-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .tool-tag {
       display: inline-block;
-      padding: 4px 10px;
-      background: var(--primary-green);
-      color: white;
-      border-radius: 15px;
-      font-size: 0.75rem;
-      font-weight: 600;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, rgba(46, 207, 143, 0.1), rgba(255, 138, 61, 0.1));
+      color: var(--primary-green);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
     .tool-tag.price {
-      background: #f0f9ff;
+      background: linear-gradient(135deg, rgba(11, 74, 122, 0.1), rgba(139, 92, 246, 0.1));
       color: var(--primary-blue);
     }
 
     .tool-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
       color: var(--text-dark);
+      font-weight: 800;
+      line-height: 1.3;
     }
 
     .tool-card p {
       color: var(--text-dark);
-      opacity: 0.7;
-      margin-bottom: 1rem;
-      line-height: 1.6;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      font-size: 1.1rem;
     }
 
     .tool-meta {
       display: flex;
       justify-content: space-between;
       margin-bottom: 1.5rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-dark);
-      opacity: 0.6;
+      opacity: 0.7;
+      font-weight: 500;
+    }
+
+    .tool-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .tool-link {
-      display: block;
-      text-align: center;
-      padding: 12px;
-      background: var(--gradient-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px;
+      background: var(--gradient-primary);
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
+      border-radius: 12px;
+      font-weight: 800;
       transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-size: 1.05rem;
     }
 
     .tool-link:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(11, 74, 122, 0.2);
     }
 
-    /* Footer */
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 6rem 2rem;
+      grid-column: 1 / -1;
+    }
+
+    .empty-state i {
+      font-size: 5rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+    }
+
+    .empty-state h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .empty-state p {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      opacity: 0.7;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Footer moderno */
     .footer {
       background: var(--bg-dark);
       color: var(--text-light);
-      padding: 4rem 2rem 2rem;
+      padding: 6rem 5% 3rem;
+      position: relative;
+      width: 100%;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
     }
 
     .footer-grid {
-      max-width: 1400px;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      margin-bottom: 3rem;
+      gap: 4rem;
+      max-width: 1400px;
+      margin: 0 auto 4rem;
     }
 
     .footer-section h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
       background: var(--gradient-secondary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      font-weight: 800;
     }
 
     .footer-links {
@@ -367,159 +673,312 @@
     }
 
     .footer-links li {
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 0.5rem;
+      border-radius: 8px;
     }
 
-    .footer-links a {
+    .footer-links li:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateX(10px);
+    }
+
+    .footer-links li span {
       color: var(--text-light);
       opacity: 0.8;
       text-decoration: none;
       transition: var(--transition);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1rem;
+      font-size: 1.1rem;
     }
 
-    .footer-links a:hover {
+    .footer-links li:hover span {
       opacity: 1;
       color: var(--primary-green);
+      gap: 1.2rem;
     }
 
     .footer-bottom {
       max-width: 1400px;
       margin: 0 auto;
-      padding-top: 2rem;
+      padding-top: 3rem;
       border-top: 1px solid rgba(255,255,255,0.1);
       text-align: center;
       opacity: 0.7;
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
+    /* Responsividade */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 3.2rem;
       }
+      
+      .section-header h2 {
+        font-size: 2.8rem;
+      }
+      
+      .tools-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
 
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+      }
+      
+      .nav-toggle {
+        order: -1;
+      }
+      
       .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 80px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
-        background: white;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 2rem;
+        padding: 2rem;
         transition: var(--transition);
         z-index: 999;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
       }
-
+      
       .nav-menu.active {
         left: 0;
       }
-
-      .hero h1 {
-        font-size: 2.2rem;
+      
+      .hero {
+        padding: 7rem 5% 4rem;
       }
-
-      .filters {
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      .filters-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .filter-buttons {
         flex-direction: column;
         align-items: stretch;
       }
-
-      .filter-group {
+      
+      .filter-btn {
         width: 100%;
       }
-
-      .filter-select, .filter-input {
-        min-width: 100%;
+      
+      .section-header h2 {
+        font-size: 2.2rem;
       }
-
+      
+      .section-header p {
+        font-size: 1.2rem;
+      }
+      
       .tools-grid {
         grid-template-columns: 1fr;
       }
+      
+      .tool-card {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+      
+      .categories {
+        gap: 0.5rem;
+      }
+      
+      .category-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+      
+      .tool-image {
+        height: 180px;
+      }
+      
+      .tool-content {
+        padding: 2rem;
+      }
+      
+      .tool-card h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Loading overlay para transições */
+    .page-transition {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+    }
+
+    .page-transition.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
+  <!-- Loading overlay -->
+  <div class="page-transition" id="pageTransition">
+    <div class="loader"></div>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <nav class="navbar">
-      <a href="/MozaIA/" class="logo">
-        <span class="logo-icon">🧠</span>
-        <span class="logo-text">MozaIA</span>
-      </a>
-      <button class="nav-toggle" id="navToggle">
-        <i class="ri-menu-line"></i>
-      </button>
+      <div class="nav-left">
+        <button class="nav-toggle" id="navToggle">
+          <i class="ri-menu-line"></i>
+        </button>
+        <span class="logo" onclick="navigateTo('index.html')">
+          <i class="ri-brain-line"></i>
+          <span>MozaIA</span>
+        </span>
+      </div>
       <ul class="nav-menu" id="navMenu">
-        <li class="nav-item"><a href="/MozaIA/" class="nav-link">Início</a></li>
-        <li class="nav-item"><a href="/MozaIA/sobre.html" class="nav-link">Sobre</a></li>
-        <li class="nav-item"><a href="/MozaIA/tutoriais.html" class="nav-link">Tutoriais</a></li>
-        <li class="nav-item"><a href="/MozaIA/ferramentas.html" class="nav-link">Ferramentas</a></li>
-        <li class="nav-item"><a href="/MozaIA/contacto.html" class="nav-link">Contacto</a></li>
+        <li><span class="nav-link" onclick="navigateTo('index.html')">Início</span></li>
+        <li><span class="nav-link" onclick="navigateTo('sobre.html')">Sobre</span></li>
+        <li><span class="nav-link" onclick="navigateTo('tutoriais.html')">Tutoriais</span></li>
+        <li><span class="nav-link active" onclick="navigateTo('ferramentas.html')">Ferramentas</span></li>
+        <li><span class="nav-link" onclick="navigateTo('oportunidade.html')">Oportunidades</span></li>
+        <li><span class="nav-link" onclick="navigateTo('contacto.html')">Contacto</span></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero fade-in">
-    <h1>Ferramentas de IA 100% Grátis</h1>
-    <p>Descubra o melhor da IA gratuitamente. Filtre por tipo, preço e tarefa para encontrar a ferramenta perfeita para você em Moçambique.</p>
+  <section class="hero fade-in-up">
+    <h1>Descubra as Melhores Ferramentas de IA 100% Grátis</h1>
+    <p>Explore nosso catálogo completo de ferramentas de Inteligência Artificial gratuitas. Filtre por tipo, preço e tarefa para encontrar a IA perfeita para suas necessidades em Moçambique.</p>
   </section>
 
   <!-- Filters Section -->
-  <section class="filters slide-in">
-    <div class="filter-group">
-      <span class="filter-label">Tipo:</span>
-      <select class="filter-select" id="typeFilter">
-        <option value="">Todos os Tipos</option>
-        <option value="texto">Geração de Texto</option>
-        <option value="imagens">Geração de Imagens</option>
-        <option value="video">Geração de Vídeo</option>
-        <option value="audio">Áudio & Voz</option>
-        <option value="produtividade">Produtividade</option>
-        <option value="estudos">Estudos</option>
-        <option value="negocios">Negócios</option>
-      </select>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Preço:</span>
-      <select class="filter-select" id="priceFilter">
-        <option value="">Todos os Preços</option>
-        <option value="gratuito">Gratuito</option>
-        <option value="freemium">Freemium</option>
-        <option value="pago">Pago</option>
-      </select>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Tarefa:</span>
-      <select class="filter-select" id="taskFilter">
-        <option value="">Todas as Tarefas</option>
-        <option value="escrever">Escrever Textos</option>
-        <option value="criar-imagens">Criar Imagens</option>
-        <option value="editar-video">Editar Vídeos</option>
-        <option value="gerar-voz">Gerar Voz</option>
-        <option value="automatizar">Automatizar Tarefas</option>
-        <option value="estudar">Estudar & Aprender</option>
-        <option value="ganhar-dinheiro">Ganhar Dinheiro</option>
-      </select>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Buscar:</span>
-      <input type="text" class="filter-input" id="searchInput" placeholder="Nome ou descrição...">
+  <section class="filters-section slide-in-left">
+    <div class="filters-container">
+      <div class="filter-group">
+        <span class="filter-label"><i class="ri-filter-line"></i> Tipo de IA:</span>
+        <select class="filter-select" id="typeFilter">
+          <option value="">Todos os Tipos</option>
+          <option value="texto">Geração de Texto</option>
+          <option value="imagens">Geração de Imagens</option>
+          <option value="video">Geração de Vídeo</option>
+          <option value="audio">Áudio & Voz</option>
+          <option value="produtividade">Produtividade</option>
+          <option value="estudos">Estudos & Educação</option>
+          <option value="negocios">Negócios</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label"><i class="ri-money-dollar-circle-line"></i> Preço:</span>
+        <select class="filter-select" id="priceFilter">
+          <option value="">Todos os Preços</option>
+          <option value="gratuito">Totalmente Grátis</option>
+          <option value="freemium">Freemium (Gratuito + Pago)</option>
+          <option value="pago">Versões Pagas</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label"><i class="ri-task-line"></i> Tarefa:</span>
+        <select class="filter-select" id="taskFilter">
+          <option value="">Todas as Tarefas</option>
+          <option value="escrever">Escrever Textos</option>
+          <option value="criar-imagens">Criar Imagens</option>
+          <option value="editar-video">Editar Vídeos</option>
+          <option value="gerar-voz">Gerar Voz</option>
+          <option value="automatizar">Automatizar Tarefas</option>
+          <option value="estudar">Estudar & Aprender</option>
+          <option value="ganhar-dinheiro">Ganhar Dinheiro</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label"><i class="ri-search-line"></i> Buscar:</span>
+        <input type="text" class="filter-input" id="searchInput" placeholder="Nome ou descrição da ferramenta...">
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn" onclick="filterTools()">Filtrar Ferramentas</button>
+        <button class="filter-btn reset" onclick="resetFilters()">Limpar Filtros</button>
+      </div>
     </div>
   </section>
 
-  <!-- Tools Section -->
+  <!-- Tools Categories -->
   <section class="tools-section">
-    <div class="section-header slide-in">
-      <h2>Ferramentas Recomendadas</h2>
-      <p>Uma seleção curada de ferramentas de IA com foco em gratuitidade e utilidade em Moçambique.</p>
+    <div class="section-header fade-in-up">
+      <h2>Ferramentas Recomendadas para Moçambique</h2>
+      <p>Uma seleção curada de ferramentas de IA com foco em gratuitidade, utilidade e funcionamento em Moçambique.</p>
     </div>
+
+    <div class="categories">
+      <span class="category-btn active" onclick="filterByCategory('todas')">
+        <i class="ri-apps-line"></i> Todas
+      </span>
+      <span class="category-btn" onclick="filterByCategory('texto')">
+        <i class="ri-file-text-line"></i> Texto & Escrita
+      </span>
+      <span class="category-btn" onclick="filterByCategory('imagens')">
+        <i class="ri-image-line"></i> Imagens & Arte
+      </span>
+      <span class="category-btn" onclick="filterByCategory('video')">
+        <i class="ri-video-line"></i> Vídeo & Áudio
+      </span>
+      <span class="category-btn" onclick="filterByCategory('produtividade')">
+        <i class="ri-tools-line"></i> Produtividade
+      </span>
+      <span class="category-btn" onclick="filterByCategory('estudos')">
+        <i class="ri-graduation-cap-line"></i> Estudos
+      </span>
+    </div>
+
     <div class="tools-grid" id="toolsGrid">
-      <!-- As ferramentas serão carregadas via JS -->
+      <!-- As ferramentas serão carregadas via JavaScript -->
     </div>
   </section>
 
@@ -528,203 +987,419 @@
     <div class="footer-grid">
       <div class="footer-section">
         <h3>MozaIA</h3>
-        <p>O primeiro hub de Inteligência Artificial Gratuita em Moçambique, criado para transformar vidas com tecnologia acessível.</p>
+        <p style="color: var(--text-light); opacity: 0.8; line-height: 1.6;">
+          O hub definitivo para aprender a ganhar dinheiro e automatizar tarefas com IA gratuita em Moçambique. Democratizando tecnologia, criando oportunidades.
+        </p>
       </div>
+      
       <div class="footer-section">
-        <h3>Links Rápidos</h3>
+        <h3>Explorar</h3>
         <ul class="footer-links">
-          <li><a href="/MozaIA/"><i class="ri-home-line"></i> Início</a></li>
-          <li><a href="/MozaIA/sobre.html"><i class="ri-information-line"></i> Sobre</a></li>
-          <li><a href="/MozaIA/tutoriais.html"><i class="ri-book-open-line"></i> Tutoriais</a></li>
-          <li><a href="/MozaIA/ferramentas.html"><i class="ri-tools-line"></i> Ferramentas</a></li>
-          <li><a href="/MozaIA/contacto.html"><i class="ri-mail-line"></i> Contacto</a></li>
+          <li onclick="navigateTo('index.html')">
+            <span><i class="ri-home-line"></i> Página Inicial</span>
+          </li>
+          <li onclick="navigateTo('sobre.html')">
+            <span><i class="ri-information-line"></i> Sobre Nós</span>
+          </li>
+          <li onclick="navigateTo('tutoriais.html')">
+            <span><i class="ri-book-open-line"></i> Tutoriais IA</span>
+          </li>
+          <li onclick="navigateTo('ferramentas.html')">
+            <span><i class="ri-tools-line"></i> Ferramentas Grátis</span>
+          </li>
+          <li onclick="navigateTo('oportunidade.html')">
+            <span><i class="ri-money-dollar-circle-line"></i> Oportunidades</span>
+          </li>
         </ul>
       </div>
+      
       <div class="footer-section">
-        <h3>Ferramentas Grátis</h3>
+        <h3>Categorias</h3>
         <ul class="footer-links">
-          <li><a href="/MozaIA/ferramentas.html#texto"><i class="ri-file-text-line"></i> Geração de Texto</a></li>
-          <li><a href="/MozaIA/ferramentas.html#imagens"><i class="ri-image-line"></i> Geração de Imagens</a></li>
-          <li><a href="/MozaIA/ferramentas.html#produtividade"><i class="ri-check-double-line"></i> Produtividade</a></li>
-          <li><a href="/MozaIA/ferramentas.html#estudos"><i class="ri-graduation-cap-line"></i> Para Estudos</a></li>
-          <li><a href="/MozaIA/ferramentas.html#negocios"><i class="ri-briefcase-line"></i> Para Negócios</a></li>
+          <li onclick="filterByCategory('texto')">
+            <span><i class="ri-file-text-line"></i> Ferramentas de Texto</span>
+          </li>
+          <li onclick="filterByCategory('imagens')">
+            <span><i class="ri-image-line"></i> Ferramentas de Imagem</span>
+          </li>
+          <li onclick="filterByCategory('video')">
+            <span><i class="ri-video-line"></i> Ferramentas de Vídeo</span>
+          </li>
+          <li onclick="filterByCategory('produtividade')">
+            <span><i class="ri-tools-line"></i> Produtividade</span>
+          </li>
+          <li onclick="filterByCategory('estudos')">
+            <span><i class="ri-graduation-cap-line"></i> Para Estudos</span>
+          </li>
         </ul>
       </div>
+      
       <div class="footer-section">
-        <h3>Contacto</h3>
+        <h3>Contacte-nos</h3>
         <ul class="footer-links">
-          <li><a href="mailto:info@mozaia.mz"><i class="ri-mail-line"></i> info@mozaia.mz</a></li>
-          <li><a href="https://wa.me/258841234567"><i class="ri-whatsapp-line"></i> WhatsApp</a></li>
-          <li><a href="/MozaIA/contacto.html"><i class="ri-phone-line"></i> Fale Conosco</a></li>
+          <li onclick="window.open('mailto:info@mozaia.mz')">
+            <span><i class="ri-mail-line"></i> info@mozaia.mz</span>
+          </li>
+          <li onclick="window.open('https://wa.me/258841234567')">
+            <span><i class="ri-whatsapp-line"></i> WhatsApp</span>
+          </li>
+          <li onclick="window.open('https://facebook.com/mozaia')">
+            <span><i class="ri-facebook-line"></i> Facebook</span>
+          </li>
+          <li onclick="navigateTo('contacto.html')">
+            <span><i class="ri-phone-line"></i> Contacto</span>
+          </li>
         </ul>
       </div>
     </div>
+    
     <div class="footer-bottom">
-      <p>&copy; 2025 MozaIA. O Primeiro Hub de IA Gratuita em Moçambique. Todos os direitos reservados.</p>
+      <p>&copy; 2025 MozaIA. O Portal de IA Gratuita para Moçambicanos. Transformando vidas com tecnologia acessível.</p>
+      <p style="margin-top: 1rem; font-size: 1rem;">🇲🇿 Orgulhosamente Moçambicano • Feito com ❤️ para Moçambique</p>
     </div>
   </footer>
 
   <script>
-    // Dados das ferramentas (em produção, viria de um JSON externo)
+    // Dados das ferramentas com imagens locais
     const toolsData = [
       {
         id: 1,
-        name: "ChatGPT (Versão Gratuita)",
-        description: "A IA mais popular para geração de textos, respostas e ideias criativas. Perfeita para estudar e trabalhar.",
+        name: "ChatGPT (OpenAI)",
+        description: "IA conversacional mais avançada para escrita, ideias, programação e muito mais. Totalmente grátis com limite de uso. Ideal para estudantes e profissionais.",
         type: "texto",
         price: "gratuito",
         task: ["escrever", "estudar", "ganhar-dinheiro"],
-        image: "💬 ChatGPT",
-        link: "https://chat.openai.com"
+        image: "icones/iconechatgpt.png",
+        link: "https://chat.openai.com",
+        tags: ["Texto", "Conversação", "Código", "Educação"]
       },
       {
         id: 2,
         name: "Bing Image Creator",
-        description: "Crie imagens impressionantes a partir de descrições de texto com IA. Totalmente grátis e integrado ao Bing.",
+        description: "Crie imagens impressionantes a partir de descrições de texto com IA DALL-E 3. Totalmente grátis e integrado ao Bing. Perfeito para designers e criadores de conteúdo.",
         type: "imagens",
         price: "gratuito",
         task: ["criar-imagens", "ganhar-dinheiro"],
-        image: "🎨 Bing Image",
-        link: "https://www.bing.com/images/create"
+        image: "icones/iconebing.png",
+        link: "https://www.bing.com/images/create",
+        tags: ["Imagens", "Arte", "Design", "Marketing"]
       },
       {
         id: 3,
-        name: "Canva (Versão Gratuita)",
-        description: "Plataforma completa para design gráfico com recursos de IA integrados. Ótimo para apresentações e marketing.",
-        type: "produtividade",
+        name: "Gemini (Google)",
+        description: "Assistente IA do Google para escrita, pesquisa avançada, análise de documentos e muito mais. Competidor direto do ChatGPT com integração com serviços Google.",
+        type: "texto",
         price: "gratuito",
-        task: ["automatizar", "criar-imagens", "ganhar-dinheiro"],
-        image: "🖼️ Canva",
-        link: "https://www.canva.com"
+        task: ["escrever", "pesquisar", "analisar"],
+        image: "icones/iconegemini.png",
+        link: "https://gemini.google.com",
+        tags: ["Pesquisa", "Análise", "Texto", "Google"]
       },
       {
         id: 4,
-        name: "Khan Academy Kids",
-        description: "Plataforma educacional com IA para aprendizado personalizado. Ideal para estudantes em Moçambique.",
-        type: "estudos",
-        price: "gratuito",
-        task: ["estudar"],
-        image: "📚 Khan Academy",
-        link: "https://khanacademy.org"
+        name: "Canva AI Tools",
+        description: "Suite completa de design com IA integrada. Magic Write, Magic Design, Background Remover. Versão gratuita com muitas funcionalidades. Ideal para marketing e social media.",
+        type: "imagens",
+        price: "freemium",
+        task: ["criar-imagens", "automatizar", "ganhar-dinheiro"],
+        image: "icones/iconecanva.png",
+        link: "https://www.canva.com",
+        tags: ["Design", "Apresentações", "Social Media", "Marketing"]
       },
       {
         id: 5,
-        name: "Runway ML (Free Tier)",
-        description: "Ferramenta para edição de vídeo e geração de conteúdo com IA. Versão grátis com funcionalidades poderosas.",
+        name: "Runway ML",
+        description: "Edição de vídeo com IA avançada. Remova fundos, gere vídeos a partir de texto, animações, efeitos especiais. Versão free com limitações mas muito poderosa.",
         type: "video",
         price: "freemium",
         task: ["editar-video", "ganhar-dinheiro"],
-        image: "🎬 Runway ML",
-        link: "https://runwayml.com"
+        image: "icones/iconerunway.png",
+        link: "https://runwayml.com",
+        tags: ["Vídeo", "Edição", "Animação", "Efeitos"]
       },
       {
         id: 6,
         name: "Hugging Face",
-        description: "Plataforma com modelos de IA abertos e gratuitos para experimentar. Ótimo para desenvolvedores e curiosos.",
-        type: "desenvolvedores",
+        description: "Plataforma com milhares de modelos de IA gratuitos e open-source. Para desenvolvedores, pesquisadores e entusiastas que querem experimentar IA avançada.",
+        type: "produtividade",
         price: "gratuito",
-        task: ["automatizar", "ganhar-dinheiro"],
-        image: "🤗 Hugging Face",
-        link: "https://huggingface.co"
+        task: ["automatizar", "desenvolver", "pesquisar"],
+        image: "icones/iconehuggingface.png",
+        link: "https://huggingface.co",
+        tags: ["Desenvolvimento", "Modelos", "Open Source", "Pesquisa"]
       },
       {
         id: 7,
-        name: "Descript (Versão Gratuita)",
-        description: "Edite áudio e vídeo como se estivesse editando texto. A versão grátis tem limites, mas é poderosa.",
+        name: "ElevenLabs",
+        description: "Gere vozes sintéticas realistas em Português e outros idiomas. Perfeito para narração, conteúdo de áudio, podcasts e acessibilidade. Versão gratuita limitada.",
         type: "audio",
         price: "freemium",
-        task: ["editar-video", "gerar-voz"],
-        image: "🎤 Descript",
-        link: "https://www.descript.com"
+        task: ["gerar-voz", "ganhar-dinheiro"],
+        image: "icones/iconeelevenlabs.png",
+        link: "https://elevenlabs.io",
+        tags: ["Áudio", "Voz", "Narração", "Podcast"]
       },
       {
         id: 8,
-        name: "Synthesia (Demo)",
-        description: "Crie vídeos com avatares digitais. Acesso limitado grátis para experimentar. Ideal para conteúdo profissional.",
-        type: "video",
+        name: "Khan Academy",
+        description: "Aprendizado personalizado com IA. Tutoriais em todas as disciplinas, exercícios adaptativos, relatórios de progresso. 100% grátis e em português.",
+        type: "estudos",
         price: "gratuito",
-        task: ["editar-video", "ganhar-dinheiro"],
-        image: "👤 Synthesia",
-        link: "https://www.synthesia.io"
+        task: ["estudar", "aprender"],
+        image: "icones/iconekhan.png",
+        link: "https://khanacademy.org",
+        tags: ["Educação", "Tutoriais", "Estudo", "Cursos"]
+      },
+      {
+        id: 9,
+        name: "Notion AI",
+        description: "Organize projetos, escreva documentos, crie bases de conhecimento e automatize tarefas com IA integrada. Versão gratuita para uso pessoal.",
+        type: "produtividade",
+        price: "freemium",
+        task: ["automatizar", "escrever", "organizar"],
+        image: "icones/iconenotion.png",
+        link: "https://notion.com",
+        tags: ["Produtividade", "Organização", "Escrita", "Projetos"]
+      },
+      {
+        id: 10,
+        name: "Midjourney",
+        description: "Uma das melhores IAs para geração de imagens artísticas e realistas. Acesso via Discord com alguns créditos gratuitos para teste.",
+        type: "imagens",
+        price: "freemium",
+        task: ["criar-imagens", "ganhar-dinheiro"],
+        image: "icones/iconemidjourney.png",
+        link: "https://midjourney.com",
+        tags: ["Arte", "Imagens", "Design", "Criativo"]
+      },
+      {
+        id: 11,
+        name: "Grammarly",
+        description: "Assistente de escrita com IA que corrige gramática, estilo, tom e clareza. Versão gratuita com correções básicas. Essencial para quem escreve em inglês.",
+        type: "texto",
+        price: "freemium",
+        task: ["escrever", "corrigir"],
+        image: "icones/iconegrammarly.png",
+        link: "https://grammarly.com",
+        tags: ["Escrita", "Gramática", "Correção", "Inglês"]
+      },
+      {
+        id: 12,
+        name: "Otter.ai",
+        description: "Transcrição automática de áudio para texto com IA. Perfeito para reuniões, entrevistas, aulas. Versão gratuita com limite de minutos mensais.",
+        type: "audio",
+        price: "freemium",
+        task: ["transcrever", "organizar"],
+        image: "icones/iconeotter.png",
+        link: "https://otter.ai",
+        tags: ["Transcrição", "Áudio", "Texto", "Produtividade"]
       }
     ];
 
-    // Função para renderizar ferramentas
+    // Sistema de navegação com transições suaves
+    function navigateTo(page) {
+      const transition = document.getElementById('pageTransition');
+      transition.classList.add('active');
+      
+      setTimeout(() => {
+        if (page === 'index.html' || page === '/') {
+          window.location.href = 'index.html';
+        } else {
+          window.location.href = page;
+        }
+      }, 600);
+    }
+
+    // Renderizar ferramentas
     function renderTools(tools) {
       const toolsGrid = document.getElementById('toolsGrid');
+      
+      if (tools.length === 0) {
+        toolsGrid.innerHTML = `
+          <div class="empty-state fade-in-up">
+            <i class="ri-search-eye-line"></i>
+            <h3>Nenhuma ferramenta encontrada</h3>
+            <p>Tente ajustar seus filtros ou buscar por outros termos. Temos certeza que você encontrará a ferramenta perfeita!</p>
+            <button class="btn btn-primary" onclick="resetFilters()" style="margin-top: 2rem;">
+              <i class="ri-refresh-line"></i> Limpar Filtros
+            </button>
+          </div>
+        `;
+        return;
+      }
+      
       toolsGrid.innerHTML = '';
-
-      tools.forEach(tool => {
+      
+      tools.forEach((tool, index) => {
         const toolCard = document.createElement('div');
-        toolCard.className = 'tool-card slide-in';
+        toolCard.className = 'tool-card fade-in-up';
+        toolCard.style.animationDelay = `${index * 0.1}s`;
+        
+        const priceText = tool.price === 'gratuito' ? 'Totalmente Grátis' : 
+                         tool.price === 'freemium' ? 'Freemium' : 'Versão Paga';
+        
         toolCard.innerHTML = `
-          <div class="tool-image">${tool.image}</div>
+          <div class="tool-image">
+            <img src="${tool.image}" alt="${tool.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23f0f9ff%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 font-size=%2224%22 font-weight=%22bold%22 fill=%22%230B4A7A%22>${tool.name.charAt(0)}</text></svg>'">
+          </div>
           <div class="tool-content">
             <div class="tool-tags">
               <span class="tool-tag">${tool.type.charAt(0).toUpperCase() + tool.type.slice(1)}</span>
-              <span class="tool-tag price">${tool.price === 'gratuito' ? 'Grátis' : tool.price === 'freemium' ? 'Freemium' : 'Pago'}</span>
+              <span class="tool-tag price">${priceText}</span>
             </div>
             <h3>${tool.name}</h3>
             <p>${tool.description}</p>
             <div class="tool-meta">
-              <span>${tool.task.map(t => t.replace('-', ' ')).join(', ')}</span>
+              <span><i class="ri-task-line"></i> ${tool.task.map(t => t.replace('-', ' ')).join(', ')}</span>
             </div>
-            <a href="${tool.link}" target="_blank" class="tool-link">
+            <span class="tool-link" onclick="window.open('${tool.link}', '_blank')">
               <i class="ri-external-link-line"></i> Acessar Ferramenta
-            </a>
+            </span>
           </div>
         `;
         toolsGrid.appendChild(toolCard);
       });
     }
 
-    // Função para filtrar ferramentas
+    // Filtrar ferramentas
     function filterTools() {
       const type = document.getElementById('typeFilter').value;
       const price = document.getElementById('priceFilter').value;
       const task = document.getElementById('taskFilter').value;
       const search = document.getElementById('searchInput').value.toLowerCase();
-
+      
+      // Atualizar botões de categoria
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      if (type) {
+        document.querySelector(`.category-btn[onclick*="${type}"]`)?.classList.add('active');
+      } else {
+        document.querySelector('.category-btn[onclick*="todas"]').classList.add('active');
+      }
+      
       let filtered = toolsData.filter(tool => {
         const matchesType = !type || tool.type === type;
         const matchesPrice = !price || tool.price === price;
         const matchesTask = !task || tool.task.includes(task);
         const matchesSearch = !search || 
-                              tool.name.toLowerCase().includes(search) || 
-                              tool.description.toLowerCase().includes(search);
+                            tool.name.toLowerCase().includes(search) || 
+                            tool.description.toLowerCase().includes(search) ||
+                            tool.tags.some(tag => tag.toLowerCase().includes(search));
         return matchesType && matchesPrice && matchesTask && matchesSearch;
       });
-
+      
       renderTools(filtered);
+      
+      // Animação de transição
+      const grid = document.getElementById('toolsGrid');
+      grid.style.opacity = '0';
+      setTimeout(() => {
+        grid.style.opacity = '1';
+        grid.style.transition = 'opacity 0.3s ease';
+      }, 300);
     }
 
-    // Eventos de filtro
-    document.getElementById('typeFilter').addEventListener('change', filterTools);
-    document.getElementById('priceFilter').addEventListener('change', filterTools);
-    document.getElementById('taskFilter').addEventListener('change', filterTools);
-    document.getElementById('searchInput').addEventListener('input', filterTools);
+    // Filtrar por categoria
+    function filterByCategory(category) {
+      if (category === 'todas') {
+        document.getElementById('typeFilter').value = '';
+        document.getElementById('priceFilter').value = '';
+        document.getElementById('taskFilter').value = '';
+        document.getElementById('searchInput').value = '';
+      } else {
+        document.getElementById('typeFilter').value = category;
+        document.getElementById('priceFilter').value = '';
+        document.getElementById('taskFilter').value = '';
+      }
+      
+      // Atualizar botões ativos
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      
+      filterTools();
+    }
 
-    // Eventos
+    // Limpar filtros
+    function resetFilters() {
+      document.getElementById('typeFilter').value = '';
+      document.getElementById('priceFilter').value = '';
+      document.getElementById('taskFilter').value = '';
+      document.getElementById('searchInput').value = '';
+      
+      // Atualizar botões ativos
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector('.category-btn[onclick*="todas"]').classList.add('active');
+      
+      filterTools();
+    }
+
+    // Menu mobile e inicialização
     document.addEventListener('DOMContentLoaded', () => {
-      // Carregar todas as ferramentas
-      renderTools(toolsData);
-
-      // Menu Mobile
       const navToggle = document.getElementById('navToggle');
       const navMenu = document.getElementById('navMenu');
-
+      
       navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        navToggle.innerHTML = navMenu.classList.contains('active') ? 
-          '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
+        navToggle.innerHTML = navMenu.classList.contains('active') 
+          ? '<i class="ri-close-line"></i>' 
+          : '<i class="ri-menu-line"></i>';
       });
-
+      
+      // Fechar menu ao clicar em link
       document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
           navMenu.classList.remove('active');
           navToggle.innerHTML = '<i class="ri-menu-line"></i>';
         });
       });
+      
+      // Inicializar ferramentas
+      renderTools(toolsData);
+      
+      // Eventos de filtro
+      document.getElementById('typeFilter').addEventListener('change', filterTools);
+      document.getElementById('priceFilter').addEventListener('change', filterTools);
+      document.getElementById('taskFilter').addEventListener('change', filterTools);
+      document.getElementById('searchInput').addEventListener('input', filterTools);
+      
+      // Animações no scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.fade-in-up, .slide-in-left').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+      
+      // Remover loading
+      setTimeout(() => {
+        document.getElementById('pageTransition').classList.remove('active');
+      }, 1000);
+    });
+    
+    // Fechar menu ao rolar
+    window.addEventListener('scroll', () => {
+      const navMenu = document.getElementById('navMenu');
+      if (navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        document.getElementById('navToggle').innerHTML = '<i class="ri-menu-line"></i>';
+      }
     });
   </script>
 </body>

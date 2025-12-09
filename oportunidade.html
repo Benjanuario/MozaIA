@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://benjanuario.github.io/MozaIA/oportunidades.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <style>
     :root {
@@ -21,6 +21,7 @@
       --primary-green: #2ECF8F;
       --secondary-purple: #8B5CF6;
       --accent-orange: #FF8A3D;
+      --accent-pink: #EC4899;
       --bg-dark: #0F172A;
       --bg-light: #F8FAFC;
       --text-dark: #1E293B;
@@ -29,9 +30,11 @@
       --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
       --gradient-secondary: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
       --gradient-tertiary: linear-gradient(135deg, #1e3a8a, #0d9488);
-      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --gradient-rainbow: linear-gradient(90deg, #0B4A7A, #2ECF8F, #8B5CF6, #FF8A3D);
+      --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 25px 50px rgba(0, 0, 0, 0.15);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --border-radius: 20px;
     }
 
     * {
@@ -40,154 +43,254 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg-light);
       color: var(--text-dark);
       line-height: 1.7;
       overflow-x: hidden;
+      position: relative;
     }
 
-    /* Animação de Entrada */
-    .fade-in {
-      animation: fadeIn 1s ease-out forwards;
+    /* Container de largura total */
+    .full-width-container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Animções modernas */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
-    .slide-in {
-      animation: slideIn 0.8s ease-out forwards;
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-30px); }
-      to { opacity: 1; transform: translateX(0); }
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
-    /* Header */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out forwards;
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Header moderno */
     .header {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      position: sticky;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      position: fixed;
+      width: 100%;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
       transition: var(--transition);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .navbar {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1.2rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Menu à esquerda */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-toggle {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--primary-blue);
+      transition: var(--transition);
+      order: -1;
+    }
+
+    .nav-toggle:hover {
+      transform: rotate(90deg);
+      color: var(--primary-green);
     }
 
     .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 2rem;
+      font-weight: 900;
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-    }
-
-    .logo-icon {
-      font-size: 1.5rem;
-      color: var(--primary-blue);
-    }
-
-    .logo-text {
-      background: var(--gradient-primary);
+      background: var(--gradient-rainbow);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--text-dark);
+      letter-spacing: -0.5px;
     }
 
     .nav-menu {
       display: flex;
       list-style: none;
-      gap: 1.8rem;
+      gap: 2rem;
+      align-items: center;
     }
 
     .nav-link {
       text-decoration: none;
       color: var(--text-dark);
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      transition: var(--transition);
       position: relative;
-      padding: 0.5rem 0;
-      transition: var(--transition);
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gradient-primary);
-      transition: var(--transition);
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
+      overflow: hidden;
     }
 
     .nav-link:hover {
+      background: linear-gradient(135deg, rgba(11, 74, 122, 0.1), rgba(46, 207, 143, 0.1));
       color: var(--primary-blue);
+      transform: translateY(-2px);
     }
 
-    /* Hero Section */
+    .nav-link.active {
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    /* Hero Section otimizada */
     .hero {
       background: var(--gradient-tertiary);
       color: var(--text-light);
-      padding: 6rem 1.5rem;
+      padding: 8rem 5% 6rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(46, 207, 143, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       margin-bottom: 1.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      background: linear-gradient(to right, #ffffff, #e0f2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero p {
-      font-size: 1.4rem;
-      max-width: 800px;
-      margin: 0 auto 2.5rem;
-      opacity: 0.9;
+      font-size: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      opacity: 0.95;
+      line-height: 1.6;
+      font-weight: 400;
     }
 
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
-      margin-top: 3rem;
+      margin-top: 4rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .stat-card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
-      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2.5rem;
+      border-radius: 20px;
       backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
 
     .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
+      font-size: 3.5rem;
+      font-weight: 900;
       margin-bottom: 0.5rem;
       background: var(--gradient-secondary);
       -webkit-background-clip: text;
@@ -196,89 +299,203 @@
     }
 
     .stat-label {
-      font-size: 1.1rem;
-      opacity: 0.8;
+      font-size: 1.2rem;
+      opacity: 0.9;
+      font-weight: 600;
     }
 
-    /* Content Sections */
+    /* Botões modernos */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 40px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.2rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      gap: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: 0.6s;
+    }
+
+    .btn:hover::after {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: var(--gradient-secondary);
+      color: white;
+      box-shadow: 0 20px 40px rgba(46, 207, 143, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 30px 60px rgba(46, 207, 143, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-8px);
+      border-color: white;
+    }
+
+    /* Content Sections modernizadas */
     .content-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 6rem 1.5rem;
+      padding: 6rem 5%;
+      position: relative;
+      width: 100%;
+    }
+
+    .content-section:nth-child(even) {
+      background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .section-header h2 {
-      font-size: 2.5rem;
+      font-size: 3.2rem;
       margin-bottom: 1.5rem;
       background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      font-weight: 900;
+      line-height: 1.2;
     }
 
     .section-header p {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       color: var(--text-dark);
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
-      opacity: 0.8;
+      opacity: 0.85;
+      line-height: 1.6;
     }
 
     .opportunity-card {
       background: white;
-      border-radius: 16px;
-      padding: 2.5rem;
+      border-radius: var(--border-radius);
+      padding: 3.5rem;
       box-shadow: var(--shadow);
       margin-bottom: 3rem;
       transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.05);
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .opportunity-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-15px);
       box-shadow: var(--shadow-hover);
     }
 
+    .opportunity-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--gradient-secondary);
+    }
+
     .opportunity-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
+      font-size: 4rem;
+      margin-bottom: 2rem;
       background: var(--gradient-secondary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      display: inline-block;
+      animation: float 4s ease-in-out infinite;
     }
 
     .opportunity-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
       color: var(--primary-blue);
+      font-weight: 800;
+      line-height: 1.3;
     }
 
     .opportunity-card h4 {
-      font-size: 1.4rem;
-      margin: 2rem 0 1rem 0;
+      font-size: 1.6rem;
+      margin: 2.5rem 0 1.5rem 0;
       color: var(--secondary-purple);
+      font-weight: 700;
     }
 
     .opportunity-card p {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
       line-height: 1.8;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      opacity: 0.9;
     }
 
+    /* Platform list modernizada */
     .platform-list {
-      background: #f8fafc;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid rgba(11, 74, 122, 0.1);
     }
 
     .platform-list h5 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       color: var(--primary-green);
+      font-size: 1.3rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .platform-list h5::before {
+      content: '✓';
+      background: var(--primary-green);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
     }
 
     .platform-list ul {
@@ -287,11 +504,19 @@
     }
 
     .platform-list li {
-      padding: 0.8rem 0;
-      border-bottom: 1px solid #eee;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: var(--transition);
+    }
+
+    .platform-list li:hover {
+      background: rgba(255, 255, 255, 0.5);
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-radius: 10px;
     }
 
     .platform-list li:last-child {
@@ -299,134 +524,205 @@
     }
 
     .platform-name {
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-dark);
     }
 
     .platform-link {
       display: inline-block;
-      padding: 6px 12px;
-      background: var(--primary-blue);
+      padding: 10px 20px;
+      background: var(--gradient-primary);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 0.9rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
       transition: var(--transition);
+      border: none;
+      cursor: pointer;
     }
 
     .platform-link:hover {
-      background: var(--primary-green);
-      transform: translateY(-1px);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(11, 74, 122, 0.2);
     }
 
+    /* Steps list melhorada */
     .steps-list {
-      padding-left: 1.5rem;
+      padding-left: 1.8rem;
+      margin: 1.5rem 0;
     }
 
     .steps-list li {
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       line-height: 1.7;
+      padding-left: 0.5rem;
+      position: relative;
+      font-size: 1.1rem;
+    }
+
+    .steps-list li::before {
+      content: '→';
+      position: absolute;
+      left: -1.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+    }
+
+    /* Boxes melhoradas */
+    .highlight-box, .tip-box, .warning-box {
+      padding: 2rem;
+      border-radius: 16px;
+      margin: 2.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlight-box::before, .tip-box::before, .warning-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
     }
 
     .highlight-box {
-      background: rgba(46, 207, 143, 0.1);
-      border-left: 4px solid var(--primary-green);
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 2rem 0;
+      background: linear-gradient(135deg, rgba(46, 207, 143, 0.08), rgba(46, 207, 143, 0.15));
+      border-left: 6px solid var(--primary-green);
+    }
+
+    .highlight-box::before {
+      background: var(--primary-green);
     }
 
     .highlight-box h4 {
       color: var(--primary-green);
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .tip-box {
-      background: rgba(255, 138, 61, 0.1);
-      border-left: 4px solid var(--accent-orange);
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 2rem 0;
+      background: linear-gradient(135deg, rgba(255, 138, 61, 0.08), rgba(255, 138, 61, 0.15));
+      border-left: 6px solid var(--accent-orange);
+    }
+
+    .tip-box::before {
+      background: var(--accent-orange);
     }
 
     .tip-box h4 {
       color: var(--accent-orange);
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .warning-box {
-      background: rgba(255, 77, 79, 0.1);
-      border-left: 4px solid #ef4444;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 2rem 0;
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.15));
+      border-left: 6px solid #ef4444;
+    }
+
+    .warning-box::before {
+      background: #ef4444;
     }
 
     .warning-box h4 {
       color: #ef4444;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    /* CTA Section */
+    /* CTA Section moderna */
     .cta-section {
-      padding: 6rem 1.5rem;
+      padding: 8rem 5%;
       background: var(--gradient-primary);
       color: white;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="white" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .cta-content h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      font-weight: 900;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      line-height: 1.2;
     }
 
     .cta-content p {
-      font-size: 1.3rem;
-      margin-bottom: 2.5rem;
-      opacity: 0.9;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+      opacity: 0.95;
+      line-height: 1.6;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 18px 36px;
-      background: white;
-      color: var(--primary-blue);
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1.2rem;
-      transition: var(--transition);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    /* Footer */
+    /* Footer moderno */
     .footer {
       background: var(--bg-dark);
       color: var(--text-light);
-      padding: 4rem 1.5rem 2rem;
+      padding: 6rem 5% 3rem;
+      position: relative;
+      width: 100%;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
     }
 
     .footer-grid {
-      max-width: 1200px;
-      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 4rem;
+      max-width: 1400px;
+      margin: 0 auto 4rem;
     }
 
     .footer-section h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1.2rem;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
       background: var(--gradient-secondary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      font-weight: 800;
     }
 
     .footer-links {
@@ -434,106 +730,232 @@
     }
 
     .footer-links li {
-      margin-bottom: 0.7rem;
+      margin-bottom: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 0.5rem;
+      border-radius: 8px;
     }
 
-    .footer-links a {
+    .footer-links li:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateX(10px);
+    }
+
+    .footer-links li span {
       color: var(--text-light);
       opacity: 0.8;
       text-decoration: none;
       transition: var(--transition);
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 1rem;
+      font-size: 1.1rem;
     }
 
-    .footer-links a:hover {
+    .footer-links li:hover span {
       opacity: 1;
       color: var(--primary-green);
+      gap: 1.2rem;
     }
 
     .footer-bottom {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding-top: 2rem;
+      padding-top: 3rem;
       border-top: 1px solid rgba(255,255,255,0.1);
       text-align: center;
       opacity: 0.7;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
+    /* Responsividade */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 3.2rem;
       }
+      
+      .section-header h2 {
+        font-size: 2.8rem;
+      }
+      
+      .opportunity-card {
+        padding: 2.5rem;
+      }
+    }
 
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+      }
+      
+      .nav-toggle {
+        order: -1;
+      }
+      
       .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 80px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
-        background: white;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 2rem;
+        padding: 2rem;
         transition: var(--transition);
         z-index: 999;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
       }
-
+      
       .nav-menu.active {
         left: 0;
       }
-
+      
+      .hero {
+        padding: 7rem 5% 4rem;
+      }
+      
       .hero h1 {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
       }
-
+      
       .hero p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
-
-      .section-header h2 {
-        font-size: 2rem;
+      
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
       }
-
-      .opportunity-card {
+      
+      .stat-card {
         padding: 1.8rem;
       }
-
-      .opportunity-card h3 {
-        font-size: 1.5rem;
+      
+      .stat-number {
+        font-size: 2.8rem;
       }
+      
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+      
+      .section-header p {
+        font-size: 1.2rem;
+      }
+      
+      .opportunity-card {
+        padding: 2rem;
+      }
+      
+      .opportunity-card h3 {
+        font-size: 1.8rem;
+      }
+      
+      .cta-content h2 {
+        font-size: 2.5rem;
+      }
+      
+      .cta-content p {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+      
+      .platform-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      
+      .platform-link {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* Loading overlay para transições */
+    .page-transition {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+    }
+
+    .page-transition.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
+  <!-- Loading overlay -->
+  <div class="page-transition" id="pageTransition">
+    <div class="loader"></div>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <nav class="navbar">
-      <a href="/MozaIA/" class="logo">
-        <span class="logo-icon">🧠</span>
-        <span class="logo-text">MozaIA</span>
-      </a>
-      <button class="nav-toggle" id="navToggle">
-        <i class="ri-menu-line"></i>
-      </button>
+      <div class="nav-left">
+        <button class="nav-toggle" id="navToggle">
+          <i class="ri-menu-line"></i>
+        </button>
+        <span class="logo" onclick="navigateTo('index.html')">
+          <i class="ri-brain-line"></i>
+          <span>MozaIA</span>
+        </span>
+      </div>
       <ul class="nav-menu" id="navMenu">
-        <li class="nav-item"><a href="/MozaIA/" class="nav-link">Início</a></li>
-        <li class="nav-item"><a href="/MozaIA/sobre.html" class="nav-link">Sobre</a></li>
-        <li class="nav-item"><a href="/MozaIA/tutoriais.html" class="nav-link">Tutoriais</a></li>
-        <li class="nav-item"><a href="/MozaIA/ferramentas.html" class="nav-link">Ferramentas</a></li>
-        <li class="nav-item"><a href="/MozaIA/oportunidades.html" class="nav-link">Oportunidades</a></li>
+        <li><span class="nav-link" onclick="navigateTo('index.html')">Início</span></li>
+        <li><span class="nav-link" onclick="navigateTo('sobre.html')">Sobre</span></li>
+        <li><span class="nav-link" onclick="navigateTo('tutoriais.html')">Tutoriais</span></li>
+        <li><span class="nav-link" onclick="navigateTo('ferramentas.html')">Ferramentas</span></li>
+        <li><span class="nav-link active" onclick="navigateTo('oportunidade.html')">Oportunidades</span></li>
+        <li><span class="nav-link" onclick="navigateTo('contacto.html')">Contacto</span></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero fade-in">
-    <h1>Oportunidades de Renda com IA em Moçambique</h1>
-    <p>Descubra como ganhar dinheiro com Inteligência Artificial em Moçambique. Plataformas reais que pagam, freelancing, pesquisas, assistência de vídeo e muito mais. Estratégias comprovadas para transformar sua vida financeira.</p>
+  <section class="hero fade-in-up">
+    <h1>Transforme IA em Renda Extra em Moçambique</h1>
+    <p>Descubra estratégias reais e comprovadas para ganhar dinheiro com Inteligência Artificial. Plataformas verificadas, métodos testados e histórias de sucesso de moçambicanos que já estão a transformar suas vidas.</p>
     
     <div class="hero-stats">
       <div class="stat-card">
@@ -556,13 +978,13 @@
   </section>
 
   <!-- Introduction Section -->
-  <section class="content-section slide-in">
-    <div class="section-header">
+  <section class="content-section">
+    <div class="section-header slide-in-left">
       <h2>Como Ganhar Dinheiro com IA em Moçambique</h2>
-      <p>Uma visão geral das principais oportunidades reais e comprovadas para gerar renda usando IA.</p>
+      <p>Descubra as principais oportunidades reais e comprovadas para gerar renda usando IA. Cada método inclui plataformas verificadas, passos práticos e exemplos reais de moçambicanos.</p>
     </div>
     
-    <div class="opportunity-card">
+    <div class="opportunity-card fade-in-up">
       <div class="opportunity-icon">
         <i class="ri-coins-line"></i>
       </div>
@@ -574,13 +996,13 @@
   </section>
 
   <!-- Section 1: Freelancing com IA -->
-  <section class="content-section slide-in">
-    <div class="section-header">
+  <section class="content-section">
+    <div class="section-header slide-in-left">
       <h2>1. Freelancing com IA</h2>
-      <p>Ganhe dinheiro oferecendo serviços online usando ferramentas de IA para acelerar seu trabalho.</p>
+      <p>Ganhe dinheiro oferecendo serviços online usando ferramentas de IA para acelerar seu trabalho e aumentar sua produtividade.</p>
     </div>
 
-    <div class="opportunity-card">
+    <div class="opportunity-card fade-in-up">
       <div class="opportunity-icon">
         <i class="ri-briefcase-line"></i>
       </div>
@@ -599,19 +1021,19 @@
         <ul>
           <li>
             <span class="platform-name">Upwork</span>
-            <a href="https://www.upwork.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://www.upwork.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Fiverr</span>
-            <a href="https://www.fiverr.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://www.fiverr.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Freelancer.com</span>
-            <a href="https://www.freelancer.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://www.freelancer.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">PeoplePerHour</span>
-            <a href="https://www.peopleperhour.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://www.peopleperhour.com', '_blank')">Acessar</span>
           </li>
         </ul>
       </div>
@@ -620,11 +1042,11 @@
         <ul>
           <li>
             <span class="platform-name">MozFreelancer (Exemplo)</span>
-            <a href="#" class="platform-link">Em Breve</a>
+            <span class="platform-link" style="background: #ccc; cursor: not-allowed;">Em Breve</span>
           </li>
           <li>
             <span class="platform-name">Kuda Jobs (Exemplo)</span>
-            <a href="#" class="platform-link">Em Breve</a>
+            <span class="platform-link" style="background: #ccc; cursor: not-allowed;">Em Breve</span>
           </li>
         </ul>
       </div>
@@ -638,24 +1060,24 @@
         <li><strong>Construa sua reputação:</strong> Avaliações positivas aumentam sua visibilidade e taxas.</li>
       </ol>
       <div class="highlight-box">
-        <h4>Exemplo Real:</h4>
+        <h4><i class="ri-check-line"></i> Exemplo Real:</h4>
         <p>José, de Maputo, começou a oferecer serviços de escrita de artigos usando ChatGPT para acelerar a produção. Hoje ganha MZN 40.000 por mês apenas com freelancing, ajudando empresas a criar conteúdo para blogs e redes sociais.</p>
       </div>
       <div class="tip-box">
-        <h4>Dica Pro:</h4>
+        <h4><i class="ri-lightbulb-line"></i> Dica Pro:</h4>
         <p>Combine ferramentas de IA para oferecer serviços mais complexos. Por exemplo, use ChatGPT para escrever um roteiro, Midjourney para criar imagens, e CapCut para montar um vídeo curto. Isso permite cobrar mais por pacotes de conteúdo completo.</p>
       </div>
     </div>
   </section>
 
   <!-- Section 2: Pesquisas Pagas -->
-  <section class="content-section slide-in">
-    <div class="section-header">
+  <section class="content-section">
+    <div class="section-header slide-in-left">
       <h2>2. Pesquisas Pagas com IA</h2>
-      <p>Participe em pesquisas online e ganhe dinheiro respondendo a perguntas. Plataformas reais que pagam em Moçambique.</p>
+      <p>Participe em pesquisas online e ganhe dinheiro respondendo a perguntas. Plataformas reais que pagam em Moçambique com métodos de pagamento verificados.</p>
     </div>
 
-    <div class="opportunity-card">
+    <div class="opportunity-card fade-in-up">
       <div class="opportunity-icon">
         <i class="ri-questionnaire-line"></i>
       </div>
@@ -672,43 +1094,43 @@
         <ul>
           <li>
             <span class="platform-name">Kingoponion</span>
-            <a href="https://kingoponion.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://kingoponion.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Survimo</span>
-            <a href="https://survimo.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://survimo.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Surveoo</span>
-            <a href="https://surveoo.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://surveoo.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Premise</span>
-            <a href="https://premise.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://premise.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">YouGov</span>
-            <a href="https://yougov.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://yougov.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Swagbucks</span>
-            <a href="https://swagbucks.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://swagbucks.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Toluna</span>
-            <a href="https://toluna.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://toluna.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">PanelClix</span>
-            <a href="https://panelclix.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://panelclix.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">i-Say</span>
-            <a href="https://i-say.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://i-say.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">MyPoints</span>
-            <a href="https://mypoints.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://mypoints.com', '_blank')">Acessar</span>
           </li>
         </ul>
       </div>
@@ -716,34 +1138,34 @@
       <ol class="steps-list">
         <li><strong>Crie contas em múltiplas plataformas:</strong> Isso aumenta suas chances de receber convites para pesquisas.</li>
         <li><strong>Complete seu perfil:</strong> Forneça informações precisas para ser convidado para pesquisas relevantes.</li>
-        <li><li><strong>Responda pesquisas com atenção:</strong> Respostas inconsistentes ou muito rápidas podem resultar em exclusão.</li>
+        <li><strong>Responda pesquisas com atenção:</strong> Respostas inconsistentes ou muito rápidas podem resultar em exclusão.</li>
         <li><strong>Verifique regularmente:</strong> Novas pesquisas são adicionadas constantemente.</li>
         <li><strong>Escolha métodos de pagamento convenientes:</strong> Alguns pagam via PayPal, outros via cartões de presente (Amazon, etc.). Verifique quais métodos funcionam em Moçambique.</li>
         <li><strong>Seja honesto:</strong> As plataformas verificam padrões de resposta. Respostas falsas ou inconsistentes levam à exclusão.</li>
       </ol>
       <div class="highlight-box">
-        <h4>Exemplo Real:</h4>
+        <h4><i class="ri-check-line"></i> Exemplo Real:</h4>
         <p>Maria, estudante em Beira, participa regularmente de pesquisas no Survimo e Surveoo. Ela dedica cerca de 30 minutos por dia e consegue ganhar entre MZN 3.000 a MZN 5.000 por mês, dinheiro que usa para comprar livros e materiais escolares.</p>
       </div>
       <div class="tip-box">
-        <h4>Dica Pro:</h4>
+        <h4><i class="ri-lightbulb-line"></i> Dica Pro:</h4>
         <p>Algumas plataformas pagam mais por participar de grupos focais ou por responder a pesquisas mais longas. Fique atento a essas oportunidades para maximizar seus ganhos.</p>
       </div>
       <div class="warning-box">
-        <h4>Aviso Importante:</h4>
+        <h4><i class="ri-alert-line"></i> Aviso Importante:</h4>
         <p>Nunca pague taxas para se inscrever ou para receber pagamentos. Plataformas legítimas de pesquisa NUNCA cobram dinheiro dos participantes. Seja cauteloso com golpes.</p>
       </div>
     </div>
   </section>
 
   <!-- Section 3: Assistência de Vídeo -->
-  <section class="content-section slide-in">
-    <div class="section-header">
+  <section class="content-section">
+    <div class="section-header slide-in-left">
       <h2>3. Assistência de Vídeo e Micro-Tarefas</h2>
-      <p>Ganhe dinheiro assistindo vídeos, completando micro-tarefas e interagindo com conteúdo digital.</p>
+      <p>Ganhe dinheiro assistindo vídeos, completando micro-tarefas e interagindo com conteúdo digital. Método simples e acessível para todos.</p>
     </div>
 
-    <div class="opportunity-card">
+    <div class="opportunity-card fade-in-up">
       <div class="opportunity-icon">
         <i class="ri-video-line"></i>
       </div>
@@ -766,35 +1188,35 @@
         <ul>
           <li>
             <span class="platform-name">Timesbugs</span>
-            <a href="https://timesbugs.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://timesbugs.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Clickworker</span>
-            <a href="https://clickworker.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://clickworker.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">MicroWorkers</span>
-            <a href="https://microworkers.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://microworkers.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Appen</span>
-            <a href="https://appen.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://appen.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Lionbridge</span>
-            <a href="https://lionbridge.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://lionbridge.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">SmartCaptcha</span>
-            <a href="https://smartcaptcha.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://smartcaptcha.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Toluna Influencers</span>
-            <a href="https://influencers.toluna.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://influencers.toluna.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">UserTesting</span>
-            <a href="https://usertesting.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://usertesting.com', '_blank')">Acessar</span>
           </li>
         </ul>
       </div>
@@ -808,24 +1230,24 @@
         <li><strong>Seja consistente:</strong> Ganhar com micro-tarefas exige dedicação diária, mas pode se tornar uma renda significativa com o tempo.</li>
       </ol>
       <div class="highlight-box">
-        <h4>Exemplo Real:</h4>
+        <h4><i class="ri-check-line"></i> Exemplo Real:</h4>
         <p>Carlos, de Nampula, assiste a vídeos no Timesbugs durante sua hora de almoço e antes de dormir. Em 3 meses, conseguiu juntar MZN 15.000, dinheiro que usou para pagar a primeira parcela do seu telemóvel novo.</p>
       </div>
       <div class="tip-box">
-        <h4>Dica Pro:</h4>
+        <h4><i class="ri-lightbulb-line"></i> Dica Pro:</h4>
         <p>Combine assistência de vídeo com outras atividades passivas, como esperar por alguém ou durante intervalos. Isso maximiza seu tempo produtivo.</p>
       </div>
     </div>
   </section>
 
   <!-- Section 4: Criação de Conteúdo -->
-  <section class="content-section slide-in">
-    <div class="section-header">
+  <section class="content-section">
+    <div class="section-header slide-in-left">
       <h2>4. Criação de Conteúdo com IA</h2>
-      <p>Ganhe dinheiro criando vídeos, imagens e textos profissionais usando ferramentas de IA.</p>
+      <p>Ganhe dinheiro criando vídeos, imagens e textos profissionais usando ferramentas de IA. Transforme sua criatividade em renda real.</p>
     </div>
 
-    <div class="opportunity-card">
+    <div class="opportunity-card fade-in-up">
       <div class="opportunity-icon">
         <i class="ri-edit-line"></i>
       </div>
@@ -843,19 +1265,19 @@
         <ul>
           <li>
             <span class="platform-name">ChatGPT / Claude / Gemini</span>
-            <a href="https://chat.openai.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://chat.openai.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Midjourney / DALL·E / Stable Diffusion</span>
-            <a href="https://midjourney.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://midjourney.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">RunwayML / Pictory / Synthesia</span>
-            <a href="https://runwayml.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://runwayml.com', '_blank')">Acessar</span>
           </li>
           <li>
             <span class="platform-name">Canva / Adobe Express</span>
-            <a href="https://canva.com" target="_blank" class="platform-link">Acessar</a>
+            <span class="platform-link" onclick="window.open('https://canva.com', '_blank')">Acessar</span>
           </li>
         </ul>
       </div>
@@ -864,29 +1286,29 @@
         <li><strong>Escolha seu nicho de conteúdo:</strong> O que você gosta de criar? Vídeos, imagens, textos?</li>
         <li><strong>Aprenda as ferramentas:</strong> Pratique com as ferramentas de IA gratuitas primeiro.</li>
         <li><strong>Crie um portfólio:</strong> Mostre exemplos do seu trabalho em redes sociais ou um site simples.</li>
-        <li><li><strong>Monetize seu conteúdo:</strong> Venda produtos digitais, ofereça serviços, participe de programas de afiliados.</li>
+        <li><strong>Monetize seu conteúdo:</strong> Venda produtos digitais, ofereça serviços, participe de programas de afiliados.</li>
         <li><strong>Construa sua audiência:</strong> Poste regularmente e interaja com seu público.</li>
         <li><strong>Automatize processos:</strong> Use IA para gerar ideias, rascunhos e até partes completas do conteúdo.</li>
       </ol>
       <div class="highlight-box">
-        <h4>Exemplo Real:</h4>
+        <h4><i class="ri-check-line"></i> Exemplo Real:</h4>
         <p>Ana, designer gráfica em Tete, começou a usar Midjourney para criar capas de livros e posters para clientes locais. A velocidade e qualidade aumentaram tanto que ela triplicou sua carteira de clientes e agora ganha MZN 60.000 por mês.</p>
       </div>
       <div class="tip-box">
-        <h4>Dica Pro:</h4>
+        <h4><i class="ri-lightbulb-line"></i> Dica Pro:</h4>
         <p>Crie conteúdo em português de Moçambique. Há uma grande demanda por materiais em nosso idioma e contexto local, o que pode te diferenciar da concorrência internacional.</p>
       </div>
     </div>
   </section>
 
   <!-- Section 5: Negócios Automatizados -->
-  <section class="content-section slide-in">
-    <div class="section-header">
+  <section class="content-section">
+    <div class="section-header slide-in-left">
       <h2>5. Negócios Automatizados com IA</h2>
-      <p>Crie e gerencie negócios online que funcionam automaticamente com IA, gerando renda passiva.</p>
+      <p>Crie e gerencie negócios online que funcionam automaticamente com IA, gerando renda passiva e escalável.</p>
     </div>
 
-    <div class="opportunity-card">
+    <div class="opportunity-card fade-in-up">
       <div class="opportunity-icon">
         <i class="ri-robot-line"></i>
       </div>
@@ -911,29 +1333,29 @@
         <li><strong>Identifique um problema a resolver:</strong> Qual necessidade específica você pode atender?</li>
         <li><strong>Desenhe o modelo de negócio:</strong> Como você vai gerar receita?</li>
         <li><strong>Escolha as ferramentas de IA:</strong> Quais ferramentas vão automatizar as tarefas?</li>
-        <li><li><strong>Desenvolva o MVP (Produto Mínimo Viável):</strong> Comece com uma versão simples e evolua.</li>
+        <li><strong>Desenvolva o MVP (Produto Mínimo Viável):</strong> Comece com uma versão simples e evolua.</li>
         <li><strong>Teste e itere:</strong> Obtenha feedback e melhore constantemente.</li>
         <li><strong>Automatize e escale:</strong> Use IA para reduzir intervenção humana e aumentar a eficiência.</li>
       </ol>
       <div class="highlight-box">
-        <h4>Exemplo Real:</h4>
+        <h4><i class="ri-check-line"></i> Exemplo Real:</h4>
         <p>Paulo, em Chimoio, criou uma plataforma que gera relatórios financeiros personalizados para pequenas empresas usando IA. O sistema é quase totalmente automatizado, e ele agora ganha MZN 150.000 por mês em receita recorrente.</p>
       </div>
       <div class="tip-box">
-        <h4>Dica Pro:</h4>
+        <h4><i class="ri-lightbulb-line"></i> Dica Pro:</h4>
         <p>Comece pequeno e automatize uma tarefa de cada vez. A automação total leva tempo, mas cada processo automatizado economiza horas valiosas que você pode investir em crescer o negócio.</p>
       </div>
     </div>
   </section>
 
   <!-- Section 6: Estratégias Complementares -->
-  <section class="content-section slide-in">
-    <div class="section-header">
+  <section class="content-section">
+    <div class="section-header slide-in-left">
       <h2>6. Estratégias Complementares</h2>
-      <p>Otimize seus ganhos com IA usando estratégias de marketing, networking e educação contínua.</p>
+      <p>Otimize seus ganhos com IA usando estratégias de marketing, networking e educação contínua para maximizar seus resultados.</p>
     </div>
 
-    <div class="opportunity-card">
+    <div class="opportunity-card fade-in-up">
       <div class="opportunity-icon">
         <i class="ri-lightbulb-line"></i>
       </div>
@@ -964,20 +1386,20 @@
         <li>Reinvestir em publicidade para seus próprios serviços ou produtos</li>
       </ul>
       <div class="highlight-box">
-        <h4>Exemplo Real:</h4>
+        <h4><i class="ri-check-line"></i> Exemplo Real:</h4>
         <p>Lucas, de Quelimane, começou ganhando MZN 5.000 por mês com pesquisas. Ele reinvestiu parte do dinheiro para aprender mais sobre freelancing com IA. Hoje, ganha MZN 80.000 por mês como designer freelancer, graças à constante aprendizagem e networking.</p>
       </div>
     </div>
   </section>
 
   <!-- Section 7: Mitos e Verdades -->
-  <section class="content-section slide-in">
-    <div class="section-header">
+  <section class="content-section">
+    <div class="section-header slide-in-left">
       <h2>7. Mitos e Verdades sobre Ganhar Dinheiro com IA</h2>
-      <p>Desmistifique conceitos e entenda o que é realista e o que não é.</p>
+      <p>Desmistifique conceitos e entenda o que é realista e o que não é. Evite ilusões e foque em estratégias comprovadas.</p>
     </div>
 
-    <div class="opportunity-card">
+    <div class="opportunity-card fade-in-up">
       <div class="opportunity-icon">
         <i class="ri-shield-check-line"></i>
       </div>
@@ -993,20 +1415,20 @@
       <h4>Mito: "A IA vai substituir todos os trabalhos."</h4>
       <p><strong>Verdade:</strong> A IA é uma ferramenta poderosa que pode <em>aumentar</em> sua produtividade e criar novas oportunidades, não necessariamente substituir.</p>
       <div class="tip-box">
-        <h4>Dica Pro:</h4>
+        <h4><i class="ri-lightbulb-line"></i> Dica Pro:</h4>
         <p>Seja crítico com ofertas que parecem boas demais para serem verdade. Aprenda a identificar sinais de golpes (pedidos de dinheiro, promessas irreais, falta de transparência).</p>
       </div>
     </div>
   </section>
 
   <!-- Section 8: Conclusão e Próximos Passos -->
-  <section class="content-section slide-in">
-    <div class="section-header">
+  <section class="content-section">
+    <div class="section-header slide-in-left">
       <h2>8. Conclusão e Próximos Passos</h2>
-      <p>Como começar hoje e construir uma renda sustentável com IA em Moçambique.</p>
+      <p>Como começar hoje e construir uma renda sustentável com IA em Moçambique. Sua jornada começa agora!</p>
     </div>
 
-    <div class="opportunity-card">
+    <div class="opportunity-card fade-in-up">
       <div class="opportunity-icon">
         <i class="ri-rocket-line"></i>
       </div>
@@ -1024,7 +1446,7 @@
       </ol>
       <p>Lembre-se: <strong>Você não precisa de permissão para começar. A IA está aqui, e as oportunidades também.</strong></p>
       <div class="highlight-box">
-        <h4>Mensagem Final:</h4>
+        <h4><i class="ri-check-line"></i> Mensagem Final:</h4>
         <p>O futuro pertence àqueles que abraçam a mudança. A IA não é o futuro, é o presente. Em Moçambique, você tem o potencial de ser pioneiro. Comece pequeno, pense grande e persista. Sua independência financeira com IA começa agora.</p>
       </div>
     </div>
@@ -1032,12 +1454,15 @@
 
   <!-- CTA Section -->
   <section class="cta-section">
-    <div class="cta-content fade-in">
-      <h2>Pronto para Começar?</h2>
-      <p>Escolha uma oportunidade, registre-se e comece a transformar sua vida financeira com IA hoje mesmo.</p>
-      <a href="/MozaIA/ferramentas.html" class="btn">
-        <i class="ri-external-link-line"></i> Acessar Ferramentas de IA
-      </a>
+    <div class="cta-content fade-in-up">
+      <h2>Pronto para Transformar Sua Vida Financeira?</h2>
+      <p>Comece hoje mesmo sua jornada com IA. Escolha uma oportunidade, registre-se e dê o primeiro passo rumo à sua independência financeira.</p>
+      <span class="btn btn-primary" onclick="navigateTo('ferramentas.html')">
+        <i class="ri-tools-line"></i> Acessar Ferramentas de IA
+      </span>
+      <span class="btn btn-secondary" onclick="navigateTo('tutoriais.html')" style="margin-left: 1rem;">
+        <i class="ri-book-open-line"></i> Ver Tutoriais
+      </span>
     </div>
   </section>
 
@@ -1046,60 +1471,139 @@
     <div class="footer-grid">
       <div class="footer-section">
         <h3>MozaIA</h3>
-        <p>O primeiro hub de Inteligência Artificial Gratuita em Moçambique, criado para transformar vidas com tecnologia acessível.</p>
+        <p style="color: var(--text-light); opacity: 0.8; line-height: 1.6;">
+          O hub definitivo para aprender a ganhar dinheiro e automatizar tarefas com IA gratuita em Moçambique. Democratizando tecnologia, criando oportunidades.
+        </p>
       </div>
+      
       <div class="footer-section">
-        <h3>Links Rápidos</h3>
+        <h3>Aprender</h3>
         <ul class="footer-links">
-          <li><a href="/MozaIA/"><i class="ri-home-line"></i> Início</a></li>
-          <li><a href="/MozaIA/sobre.html"><i class="ri-information-line"></i> Sobre</a></li>
-          <li><a href="/MozaIA/tutoriais.html"><i class="ri-book-open-line"></i> Tutoriais</a></li>
-          <li><a href="/MozaIA/ferramentas.html"><i class="ri-tools-line"></i> Ferramentas</a></li>
-          <li><a href="/MozaIA/oportunidades.html"><i class="ri-coins-line"></i> Oportunidades</a></li>
+          <li onclick="navigateTo('index.html')">
+            <span><i class="ri-home-line"></i> Página Inicial</span>
+          </li>
+          <li onclick="navigateTo('sobre.html')">
+            <span><i class="ri-information-line"></i> Sobre Nós</span>
+          </li>
+          <li onclick="navigateTo('tutoriais.html')">
+            <span><i class="ri-book-open-line"></i> Tutoriais IA</span>
+          </li>
+          <li onclick="navigateTo('ferramentas.html')">
+            <span><i class="ri-tools-line"></i> Ferramentas Grátis</span>
+          </li>
         </ul>
       </div>
+      
       <div class="footer-section">
-        <h3>Recursos</h3>
+        <h3>Legal</h3>
         <ul class="footer-links">
-          <li><a href="/MozaIA/recursos.html#prompts"><i class="ri-chat-3-line"></i> Prompts Prontos</a></li>
-          <li><a href="/MozaIA/recursos.html#planilhas"><i class="ri-file-chart-line"></i> Planilhas</a></li>
-          <li><a href="/MozaIA/recursos.html#ebooks"><i class="ri-book-open-line"></i> E-books</a></li>
-          <li><a href="/MozaIA/recursos.html#templates"><i class="ri-file-text-line"></i> Templates</a></li>
+          <li onclick="navigateTo('termos.html')">
+            <span><i class="ri-shield-keyhole-line"></i> Termos de Uso</span>
+          </li>
+          <li onclick="navigateTo('privacidade.html')">
+            <span><i class="ri-lock-line"></i> Política de Privacidade</span>
+          </li>
+          <li onclick="navigateTo('cookies.html')">
+            <span><i class="ri-cookie-line"></i> Política de Cookies</span>
+          </li>
+          <li onclick="navigateTo('faq.html')">
+            <span><i class="ri-question-line"></i> FAQ & Ajuda</span>
+          </li>
         </ul>
       </div>
+      
       <div class="footer-section">
-        <h3>Contacto</h3>
+        <h3>Contacte-nos</h3>
         <ul class="footer-links">
-          <li><a href="mailto:info@mozaia.mz"><i class="ri-mail-line"></i> info@mozaia.mz</a></li>
-          <li><a href="https://wa.me/258841234567"><i class="ri-whatsapp-line"></i> WhatsApp</a></li>
-          <li><a href="/MozaIA/contacto.html"><i class="ri-phone-line"></i> Fale Conosco</a></li>
-          <li><a href="/MozaIA/ajuda.html"><i class="ri-question-line"></i> Ajuda</a></li>
+          <li onclick="window.open('mailto:info@mozaia.mz')">
+            <span><i class="ri-mail-line"></i> info@mozaia.mz</span>
+          </li>
+          <li onclick="window.open('https://wa.me/258841234567')">
+            <span><i class="ri-whatsapp-line"></i> WhatsApp</span>
+          </li>
+          <li onclick="window.open('https://facebook.com/mozaia')">
+            <span><i class="ri-facebook-line"></i> Facebook</span>
+          </li>
+          <li onclick="navigateTo('contacto.html')">
+            <span><i class="ri-phone-line"></i> Contacto</span>
+          </li>
         </ul>
       </div>
     </div>
+    
     <div class="footer-bottom">
-      <p>&copy; 2025 MozaIA. O Primeiro Hub de IA Gratuita em Moçambique. Todos os direitos reservados.</p>
+      <p>&copy; 2025 MozaIA. O Portal de IA Gratuita para Moçambicanos. Transformando vidas com tecnologia acessível.</p>
+      <p style="margin-top: 1rem; font-size: 1rem;">🇲🇿 Orgulhosamente Moçambicano • Feito com ❤️ para Moçambique</p>
     </div>
   </footer>
 
   <script>
-    // Menu Mobile
+    // Sistema de navegação com transições suaves
+    function navigateTo(page) {
+      const transition = document.getElementById('pageTransition');
+      transition.classList.add('active');
+      
+      setTimeout(() => {
+        if (page === 'index.html' || page === '/') {
+          window.location.href = 'index.html';
+        } else {
+          window.location.href = page;
+        }
+      }, 600);
+    }
+
+    // Menu mobile
     document.addEventListener('DOMContentLoaded', () => {
       const navToggle = document.getElementById('navToggle');
       const navMenu = document.getElementById('navMenu');
-
+      
       navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        navToggle.innerHTML = navMenu.classList.contains('active') ? 
-          '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
+        navToggle.innerHTML = navMenu.classList.contains('active') 
+          ? '<i class="ri-close-line"></i>' 
+          : '<i class="ri-menu-line"></i>';
       });
-
+      
+      // Fechar menu ao clicar em link
       document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
           navMenu.classList.remove('active');
           navToggle.innerHTML = '<i class="ri-menu-line"></i>';
         });
       });
+      
+      // Animações no scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+      
+      // Remover loading se estiver na página
+      setTimeout(() => {
+        document.getElementById('pageTransition').classList.remove('active');
+      }, 1000);
+    });
+    
+    // Fechar menu ao rolar
+    window.addEventListener('scroll', () => {
+      const navMenu = document.getElementById('navMenu');
+      if (navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        document.getElementById('navToggle').innerHTML = '<i class="ri-menu-line"></i>';
+      }
     });
   </script>
 </body>
