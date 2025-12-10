@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termos e Políticas de Uso — MozaIA</title>
+  <meta name="description" content="Termos de Uso e Políticas de Privacidade do MozaIA. Conheça nossos compromissos com a comunidade moçambicana de IA.">
+  <meta name="keywords" content="termos de uso MozaIA, política privacidade IA Moçambique, condições uso site IA, direitos autorais IA MZ">
+  <meta name="author" content="MozaIA">
+  <meta property="og:title" content="Termos e Políticas de Uso — MozaIA">
+  <meta property="og:description" content="Termos de Uso e Políticas de Privacidade do MozaIA. Conheça nossos compromissos com a comunidade moçambicana de IA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benjanuario.github.io/MozaIA/termos.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #0B4A7A;
+      --primary-green: #2ECF8F;
+      --secondary-purple: #8B5CF6;
+      --accent-orange: #FF8A3D;
+      --accent-pink: #EC4899;
+      --bg-dark: #0F172A;
+      --bg-light: #F8FAFC;
+      --text-dark: #1E293B;
+      --text-light: #F1F5F9;
+      --card-bg: #FFFFFF;
+      --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+      --gradient-secondary: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
+      --gradient-tertiary: linear-gradient(135deg, #1e3a8a, #0d9488);
+      --gradient-rainbow: linear-gradient(90deg, #0B4A7A, #2ECF8F, #8B5CF6, #FF8A3D);
+      --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 25px 50px rgba(0, 0, 0, 0.15);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --border-radius: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Container de largura total */
+    .full-width-container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Animções modernas */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+
+    /* Header moderno */
+    .header {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Menu à esquerda */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-toggle {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--primary-blue);
+      transition: var(--transition);
+      order: -1;
+    }
+
+    .nav-toggle:hover {
+      transform: rotate(90deg);
+      color: var(--primary-green);
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gradient-rainbow);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+      cursor: pointer;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      background: linear-gradient(135deg, rgba(11, 74, 122, 0.1), rgba(46, 207, 143, 0.1));
+      color: var(--primary-blue);
+      transform: translateY(-2px);
+    }
+
+    .nav-link.active {
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    /* Hero Section otimizada */
+    .hero {
+      background: var(--gradient-tertiary);
+      color: var(--text-light);
+      padding: 8rem 5% 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(46, 207, 143, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      background: linear-gradient(to right, #ffffff, #e0f2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      opacity: 0.95;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* Content Section */
+    .content-section {
+      padding: 5rem 5%;
+      position: relative;
+      width: 100%;
+      background: white;
+    }
+
+    .content-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .content-header {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .content-header h2 {
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .content-header p {
+      font-size: 1.4rem;
+      color: var(--text-dark);
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    /* Terms Content */
+    .terms-content {
+      background: #f8fafc;
+      border-radius: var(--border-radius);
+      padding: 4rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary-blue);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-title i {
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .terms-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 2px solid rgba(0,0,0,0.05);
+    }
+
+    .terms-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .terms-section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      color: var(--secondary-purple);
+      font-weight: 700;
+    }
+
+    .terms-section p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      opacity: 0.9;
+    }
+
+    .terms-section ul {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+    }
+
+    .terms-section li {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      opacity: 0.9;
+      position: relative;
+    }
+
+    .terms-section li::before {
+      content: '•';
+      color: var(--primary-green);
+      font-weight: bold;
+      position: absolute;
+      left: -1.2rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(11, 74, 122, 0.08), rgba(139, 92, 246, 0.08));
+      border-left: 4px solid var(--primary-blue);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h4 {
+      color: var(--primary-blue);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.15));
+      border-left: 4px solid #ef4444;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+
+    .warning-box h4 {
+      color: #ef4444;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    /* Quick Navigation */
+    .quick-nav {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 3rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .quick-nav h3 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: var(--text-dark);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .nav-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .nav-item {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-item:hover {
+      background: var(--gradient-primary);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .nav-item:hover a {
+      color: white;
+    }
+
+    .nav-item a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: var(--transition);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 6rem 5%;
+      background: var(--gradient-primary);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circles" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23circles)"/></svg>');
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      font-weight: 900;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      line-height: 1.2;
+    }
+
+    .cta-content p {
+      font-size: 1.4rem;
+      margin-bottom: 3rem;
+      opacity: 0.95;
+      line-height: 1.6;
+    }
+
+    /* Botões modernos */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 36px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.1rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      gap: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: 0.6s;
+    }
+
+    .btn:hover::after {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: var(--gradient-secondary);
+      color: white;
+      box-shadow: 0 20px 40px rgba(46, 207, 143, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 30px 60px rgba(46, 207, 143, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-8px);
+      border-color: white;
+    }
+
+    /* Footer moderno */
+    .footer {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 6rem 5% 3rem;
+      position: relative;
+      width: 100%;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 4rem;
+      max-width: 1400px;
+      margin: 0 auto 4rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+
+    .footer-links li:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateX(10px);
+    }
+
+    .footer-links li span {
+      color: var(--text-light);
+      opacity: 0.8;
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-links li:hover span {
+      opacity: 1;
+      color: var(--primary-green);
+      gap: 1.2rem;
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      opacity: 0.7;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* Responsividade */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+      
+      .content-header h2 {
+        font-size: 2.8rem;
+      }
+      
+      .cta-content h2 {
+        font-size: 2.5rem;
+      }
+      
+      .terms-content {
+        padding: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+      }
+      
+      .nav-toggle {
+        order: -1;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 2rem;
+        transition: var(--transition);
+        z-index: 999;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .hero {
+        padding: 7rem 5% 4rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      .content-header h2 {
+        font-size: 2.2rem;
+      }
+      
+      .content-header p {
+        font-size: 1.2rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .terms-content {
+        padding: 2rem;
+      }
+      
+      .nav-links {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+      
+      .cta-content p {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .content-header h2 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .terms-section h3 {
+        font-size: 1.3rem;
+      }
+      
+      .cta-content h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Loading overlay para transições */
+    .page-transition {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+    }
+
+    .page-transition.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading overlay -->
+  <div class="page-transition" id="pageTransition">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-left">
+        <button class="nav-toggle" id="navToggle">
+          <i class="ri-menu-line"></i>
+        </button>
+        <span class="logo" onclick="navigateTo('index.html')">
+          <i class="ri-brain-line"></i>
+          <span>MozaIA</span>
+        </span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><span class="nav-link" onclick="navigateTo('index.html')">Início</span></li>
+        <li><span class="nav-link" onclick="navigateTo('sobre.html')">Sobre</span></li>
+        <li><span class="nav-link" onclick="navigateTo('tutoriais.html')">Tutoriais</span></li>
+        <li><span class="nav-link" onclick="navigateTo('ferramentas.html')">Ferramentas</span></li>
+        <li><span class="nav-link" onclick="navigateTo('recursos.html')">Recursos</span></li>
+        <li><span class="nav-link" onclick="navigateTo('oportunidade.html')">Oportunidades</span></li>
+        <li><span class="nav-link" onclick="navigateTo('contacto.html')">Contacto</span></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero fade-in-up">
+    <h1>Termos e Políticas de Uso</h1>
+    <p>Conheça nossos compromissos, direitos e responsabilidades. Transparência e confiança são fundamentais para nossa comunidade.</p>
+  </section>
+
+  <!-- Quick Navigation -->
+  <section class="content-section">
+    <div class="content-container">
+      <div class="quick-nav fade-in-up">
+        <h3>Navegação Rápida</h3>
+        <div class="nav-links">
+          <div class="nav-item" onclick="scrollToSection('termos-uso')">
+            <a href="#termos-uso">
+              <i class="ri-file-text-line"></i>
+              <span>Termos de Uso</span>
+            </a>
+          </div>
+          <div class="nav-item" onclick="scrollToSection('privacidade')">
+            <a href="#privacidade">
+              <i class="ri-shield-keyhole-line"></i>
+              <span>Política de Privacidade</span>
+            </a>
+          </div>
+          <div class="nav-item" onclick="scrollToSection('cookies')">
+            <a href="#cookies">
+              <i class="ri-cookie-line"></i>
+              <span>Política de Cookies</span>
+            </a>
+          </div>
+          <div class="nav-item" onclick="scrollToSection('direitos')">
+            <a href="#direitos">
+              <i class="ri-scale-line"></i>
+              <span>Direitos do Usuário</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terms Content -->
+      <div class="terms-content fade-in-up">
+        
+        <!-- Termos de Uso -->
+        <div class="terms-section" id="termos-uso">
+          <h2 class="section-title"><i class="ri-file-text-line"></i> Termos de Uso</h2>
+          
+          <div class="terms-section">
+            <h3>1. Aceitação dos Termos</h3>
+            <p>Ao acessar e usar o MozaIA, você concorda em cumprir estes Termos de Uso. Se não concordar com qualquer parte destes termos, não utilize nosso site.</p>
+          </div>
+
+          <div class="terms-section">
+            <h3>2. Descrição do Serviço</h3>
+            <p>O MozaIA é uma plataforma educacional que fornece:</p>
+            <ul>
+              <li>Informações sobre ferramentas de IA gratuitas</li>
+              <li>Tutoriais práticos para uso de IA</li>
+              <li>Recursos educacionais sobre inteligência artificial</li>
+              <li>Orientações para oportunidades de renda com IA</li>
+            </ul>
+            <p>Todos os serviços são oferecidos gratuitamente.</p>
+          </div>
+
+          <div class="terms-section">
+            <h3>3. Direitos de Propriedade Intelectual</h3>
+            <p>Todo o conteúdo disponível no MozaIA, incluindo textos, gráficos, logos e imagens, é propriedade do MozaIA ou de seus licenciadores e está protegido por leis de direitos autorais.</p>
+            <p>Você pode:</p>
+            <ul>
+              <li>Compartilhar nosso conteúdo com atribuição</li>
+              <li>Usar nossos recursos para aprendizado pessoal</li>
+              <li>Referenciar nosso material em trabalhos acadêmicos</li>
+            </ul>
+            <p>Você NÃO pode:</p>
+            <ul>
+              <li>Vender nosso conteúdo como seu próprio</li>
+              <li>Modificar e redistribuir sem permissão</li>
+              <li>Usar nossa marca para fins comerciais sem autorização</li>
+            </ul>
+          </div>
+
+          <div class="highlight-box">
+            <h4>💡 Informação Importante</h4>
+            <p>O MozaIA não é afiliado, patrocinado ou endossado pelas ferramentas de IA mencionadas no site. Somos uma fonte independente de informação educacional.</p>
+          </div>
+
+          <div class="terms-section">
+            <h3>4. Isenção de Responsabilidade</h3>
+            <p>O MozaIA fornece informações educacionais e não garante:</p>
+            <ul>
+              <li>Resultados financeiros específicos</li>
+              <li>Disponibilidade contínua de ferramentas mencionadas</li>
+              <li>Precisão absoluta de todas as informações</li>
+            </ul>
+            <p>Recomendamos que sempre verifique informações importantes diretamente com as fontes originais.</p>
+          </div>
+
+          <div class="warning-box">
+            <h4>⚠️ Aviso Legal</h4>
+            <p>As informações fornecidas no MozaIA são para fins educacionais e informativos. Não somos responsáveis por decisões tomadas com base em nosso conteúdo. Sempre busque aconselhamento profissional quando apropriado.</p>
+          </div>
+        </div>
+
+        <!-- Política de Privacidade -->
+        <div class="terms-section" id="privacidade">
+          <h2 class="section-title"><i class="ri-shield-keyhole-line"></i> Política de Privacidade</h2>
+          
+          <div class="terms-section">
+            <h3>1. Informações que Coletamos</h3>
+            <p>Coletamos apenas informações necessárias para melhorar sua experiência:</p>
+            <ul>
+              <li>Informações de uso do site (anônimas)</li>
+              <li>Dados de localização aproximada (país/cidade)</li>
+              <li>Preferências de navegação</li>
+            </ul>
+            <p>NÃO coletamos:</p>
+            <ul>
+              <li>Informações pessoais identificáveis</li>
+              <li>Dados financeiros ou bancários</li>
+              <li>Senhas ou informações sensíveis</li>
+            </ul>
+          </div>
+
+          <div class="terms-section">
+            <h3>2. Como Usamos Suas Informações</h3>
+            <p>Utilizamos dados para:</p>
+            <ul>
+              <li>Melhorar a experiência do usuário</li>
+              <li>Analisar tendências de uso</li>
+              <li>Personalizar conteúdo relevante</li>
+              <li>Manter a segurança do site</li>
+            </ul>
+          </div>
+
+          <div class="terms-section">
+            <h3>3. Compartilhamento de Informações</h3>
+            <p>Não vendemos, alugamos ou compartilhamos suas informações com terceiros para marketing.</p>
+            <p>Podemos compartilhar dados apenas quando:</p>
+            <ul>
+              <li>Exigido por lei</li>
+              <li>Para proteger nossos direitos legais</li>
+              <li>Com serviços de análise (Google Analytics)</li>
+            </ul>
+          </div>
+
+          <div class="highlight-box">
+            <h4>🔒 Segurança dos Dados</h4>
+            <p>Implementamos medidas de segurança adequadas para proteger suas informações contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+          </div>
+        </div>
+
+        <!-- Política de Cookies -->
+        <div class="terms-section" id="cookies">
+          <h2 class="section-title"><i class="ri-cookie-line"></i> Política de Cookies</h2>
+          
+          <div class="terms-section">
+            <h3>1. O que são Cookies?</h3>
+            <p>Cookies são pequenos arquivos de texto armazenados no seu dispositivo quando você visita nosso site. Eles nos ajudam a lembrar suas preferências e melhorar sua experiência.</p>
+          </div>
+
+          <div class="terms-section">
+            <h3>2. Tipos de Cookies que Usamos</h3>
+            <ul>
+              <li><strong>Cookies Essenciais:</strong> Necessários para o funcionamento básico do site</li>
+              <li><strong>Cookies de Desempenho:</strong> Coletam informações sobre como os visitantes usam nosso site</li>
+              <li><strong>Cookies de Funcionalidade:</strong> Lembram suas escolhas e preferências</li>
+            </ul>
+          </div>
+
+          <div class="terms-section">
+            <h3>3. Controle de Cookies</h3>
+            <p>Você pode controlar e/ou excluir cookies conforme desejar. Você pode excluir todos os cookies que já estão no seu dispositivo e configurar a maioria dos navegadores para impedir que sejam colocados.</p>
+          </div>
+        </div>
+
+        <!-- Direitos do Usuário -->
+        <div class="terms-section" id="direitos">
+          <h2 class="section-title"><i class="ri-scale-line"></i> Direitos do Usuário</h2>
+          
+          <div class="terms-section">
+            <h3>1. Seus Direitos</h3>
+            <p>Como usuário do MozaIA, você tem direito a:</p>
+            <ul>
+              <li>Acessar nosso conteúdo gratuitamente</li>
+              <li>Solicitar informações sobre seus dados</li>
+              <li>Solicitar a exclusão de seus dados</li>
+              <li>Reportar problemas ou preocupações</li>
+              <li>Sugerir melhorias para o site</li>
+            </ul>
+          </div>
+
+          <div class="terms-section">
+            <h3>2. Responsabilidades do Usuário</h3>
+            <p>Ao usar o MozaIA, você concorda em:</p>
+            <ul>
+              <li>Usar nosso conteúdo apenas para fins legais</li>
+              <li>Respeitar os direitos de propriedade intelectual</li>
+              <li>Não tentar comprometer a segurança do site</li>
+              <li>Fornecer feedback construtivo</li>
+            </ul>
+          </div>
+
+          <div class="terms-section">
+            <h3>3. Modificações nos Termos</h3>
+            <p>Reservamo-nos o direito de modificar estes termos a qualquer momento. As alterações entrarão em vigor imediatamente após sua publicação
