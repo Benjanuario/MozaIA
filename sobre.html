@@ -3,35 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Nós — MozaIA</title>
+  <title>Sobre Nós — MozaIA: O Futuro da IA em Moçambique</title>
   <meta name="description" content="Descubra o MozaIA, o primeiro hub de Inteligência Artificial Gratuita em Moçambique. Ajudamos você a usar IA para estudar, trabalhar e ganhar dinheiro.">
   <meta name="keywords" content="sobre MozaIA, IA gratuita Moçambique, usar IA em MZ, aprender IA grátis, MozaIA missão">
   <meta name="author" content="MozaIA">
-  <meta property="og:title" content="Sobre Nós — MozaIA">
+  <meta property="og:title" content="Sobre Nós — MozaIA: O Futuro da IA em Moçambique">
   <meta property="og:description" content="Descubra o MozaIA, o primeiro hub de Inteligência Artificial Gratuita em Moçambique. Ajudamos você a usar IA para estudar, trabalhar e ganhar dinheiro.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://benjanuario.github.io/MozaIA/sobre.html">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <style>
     :root {
-      --primary-blue: #0B4A7A;
-      --primary-green: #2ECF8F;
+      --primary-blue: #0066FF;
+      --primary-green: #00D68F;
       --secondary-purple: #8B5CF6;
-      --accent-orange: #FF8A3D;
-      --bg-dark: #0F172A;
-      --bg-light: #F8FAFC;
-      --text-dark: #1E293B;
-      --text-light: #F1F5F9;
-      --card-bg: #FFFFFF;
+      --accent-orange: #FF6B35;
+      --accent-pink: #FF3D77;
+      --bg-dark: #0A0F23;
+      --bg-darker: #050916;
+      --bg-card: #12172F;
+      --text-light: #FFFFFF;
+      --text-gray: #94A3B8;
       --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
       --gradient-secondary: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
-      --gradient-tertiary: linear-gradient(135deg, #1e3a8a, #0d9488);
-      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --gradient-accent: linear-gradient(135deg, var(--accent-pink), var(--secondary-purple));
+      --gradient-dark: linear-gradient(135deg, #0A0F23, #1A1F3A);
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.4);
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius: 20px;
+      --container-padding: 0 5%;
     }
 
     * {
@@ -40,65 +44,117 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg-light);
-      color: var(--text-dark);
-      line-height: 1.7;
+      background: var(--bg-darker);
+      color: var(--text-light);
+      line-height: 1.6;
       overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 20%);
     }
 
-    /* Animação de Entrada */
-    .fade-in {
-      animation: fadeIn 1s ease-out forwards;
+    /* Loading Overlay */
+    #loadingOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-darker);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border-top-color: var(--primary-blue);
+      animation: spin 1s ease-in-out infinite;
+      margin-bottom: 20px;
     }
 
-    .slide-in {
-      animation: slideIn 0.8s ease-out forwards;
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-30px); }
-      to { opacity: 1; transform: translateX(0); }
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .float {
+      animation: float 6s ease-in-out infinite;
     }
 
     /* Header */
     .header {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+      background: rgba(10, 15, 35, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       transition: var(--transition);
     }
 
     .navbar {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 1rem 2rem;
+      padding: 1.2rem 5%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-toggle {
+      background: var(--gradient-primary);
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      order: 1;
+    }
+
+    .nav-toggle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
     }
 
     .logo {
       font-size: 1.8rem;
-      font-weight: 700;
+      font-weight: 800;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
+      order: 2;
+      margin-right: auto;
     }
 
     .logo-icon {
-      font-size: 1.5rem;
-      color: var(--primary-blue);
+      font-size: 2rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .logo-text {
@@ -108,154 +164,106 @@
       background-clip: text;
     }
 
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--text-dark);
-    }
-
     .nav-menu {
       display: flex;
       list-style: none;
-      gap: 2rem;
+      gap: 1.5rem;
+      margin-left: 2rem;
+      order: 3;
     }
 
     .nav-link {
       text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 600;
-      position: relative;
-      padding: 0.5rem 0;
+      color: var(--text-gray);
+      font-weight: 500;
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
       transition: var(--transition);
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gradient-primary);
-      transition: var(--transition);
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .nav-link:hover {
-      color: var(--primary-blue);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-light);
+      transform: translateY(-2px);
+    }
+
+    .nav-link.active {
+      background: var(--gradient-primary);
+      color: white;
+      box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+    }
+
+    .nav-cta {
+      background: var(--gradient-secondary);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0, 214, 143, 0.3);
     }
 
     /* Hero Section */
     .hero {
-      background: var(--gradient-tertiary);
-      color: var(--text-light);
-      padding: 6rem 2rem;
+      padding: 8rem 5% 6rem;
+      background: var(--gradient-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
       text-align: center;
     }
 
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      opacity: 0.9;
-    }
-
-    /* About Content */
-    .about-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 6rem 2rem;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-image {
-      background: var(--gradient-primary);
-      height: 400px;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.2rem;
-      box-shadow: var(--shadow);
-    }
-
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .about-content h2 {
-      font-size: 2.5rem;
-      color: var(--primary-blue);
-      margin-bottom: 1rem;
-    }
-
-    .about-content p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .stat-card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      text-align: center;
-      transition: var(--transition);
-    }
-
-    .stat-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .stat-number {
-      font-size: 2.8rem;
-      font-weight: 700;
-      background: var(--gradient-secondary);
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #FFFFFF, var(--primary-green));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 0.5rem;
+      line-height: 1.2;
     }
 
-    .stat-label {
-      color: var(--text-dark);
-      opacity: 0.7;
-      font-size: 1rem;
+    .hero p {
+      font-size: 1.4rem;
+      color: var(--text-gray);
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
     }
 
-    /* Mission Section */
-    .mission-section {
-      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-      padding: 6rem 2rem;
+    /* Mission Statement */
+    .mission-statement {
+      padding: 6rem 5%;
+      background: var(--bg-card);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .mission-content {
@@ -265,70 +273,253 @@
     }
 
     .mission-content h2 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin-bottom: 2rem;
-      color: var(--primary-blue);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .mission-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
-      margin-top: 3rem;
+    .mission-text {
+      font-size: 1.3rem;
+      color: var(--text-gray);
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.8;
     }
 
-    .mission-card {
-      background: white;
-      padding: 3rem 2.5rem;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      text-align: center;
-    }
-
-    .mission-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .mission-icon {
-      font-size: 3.5rem;
-      margin-bottom: 1.5rem;
+    .mission-text strong {
+      color: var(--text-light);
       background: var(--gradient-secondary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    .mission-card h3 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: var(--text-dark);
+    /* Stats Section */
+    .stats-section {
+      padding: 6rem 5%;
+      background: var(--bg-darker);
     }
 
-    .mission-card p {
-      color: var(--text-dark);
-      opacity: 0.8;
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      padding: 3rem 2rem;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(0, 102, 255, 0.3);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-gray);
       font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* Values Section */
+    .values-section {
+      padding: 6rem 5%;
+      background: var(--gradient-dark);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-header p {
+      font-size: 1.3rem;
+      color: var(--text-gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .value-card {
+      background: var(--bg-card);
+      padding: 3rem;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(0, 214, 143, 0.3);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-secondary);
+    }
+
+    .value-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .value-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+
+    .value-card p {
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    /* Team Section */
+    .team-section {
+      padding: 6rem 5%;
+      background: var(--bg-card);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 4rem auto 0;
+    }
+
+    .team-card {
+      text-align: center;
+      background: var(--bg-darker);
+      padding: 3rem 2rem;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .team-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: white;
+    }
+
+    .team-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-light);
+    }
+
+    .team-role {
+      color: var(--primary-green);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .team-bio {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
     /* CTA Section */
     .cta-section {
-      padding: 6rem 2rem;
-      background: var(--gradient-primary);
-      color: white;
+      padding: 6rem 5%;
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
     }
 
     .cta-content h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1.5rem;
+      color: white;
     }
 
     .cta-content p {
       font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.9);
       margin-bottom: 2.5rem;
-      opacity: 0.9;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
@@ -338,15 +529,15 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 16px 32px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
+      gap: 0.8rem;
+      padding: 1.2rem 2.5rem;
       font-size: 1.1rem;
-      transition: var(--transition);
+      font-weight: 600;
       border: none;
+      border-radius: 12px;
       cursor: pointer;
-      gap: 0.5rem;
+      transition: var(--transition);
+      text-decoration: none;
     }
 
     .btn-primary {
@@ -356,32 +547,37 @@
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
+      box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
     }
 
     /* Footer */
     .footer {
       background: var(--bg-dark);
-      color: var(--text-light);
-      padding: 4rem 2rem 2rem;
+      padding: 5rem 5% 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .footer-grid {
-      max-width: 1400px;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 3rem;
-      margin-bottom: 3rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
     }
 
     .footer-section h3 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       margin-bottom: 1.5rem;
-      background: var(--gradient-secondary);
+      background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+    }
+
+    .footer-section p {
+      color: var(--text-gray);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
     }
 
     .footer-links {
@@ -389,183 +585,291 @@
     }
 
     .footer-links li {
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
     }
 
     .footer-links a {
-      color: var(--text-light);
-      opacity: 0.8;
+      color: var(--text-gray);
       text-decoration: none;
       transition: var(--transition);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
     }
 
     .footer-links a:hover {
-      opacity: 1;
-      color: var(--primary-green);
+      color: var(--text-light);
+      transform: translateX(5px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-link {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-gray);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--gradient-primary);
+      color: white;
+      transform: translateY(-3px);
     }
 
     .footer-bottom {
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
       padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
       text-align: center;
-      opacity: 0.7;
+      color: var(--text-gray);
+      font-size: 0.9rem;
     }
 
     /* Responsive */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .mission-content h2,
+      .section-header h2,
+      .cta-content h2 {
+        font-size: 2.5rem;
+      }
+    }
+
     @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
+      .navbar {
+        flex-wrap: wrap;
       }
 
       .nav-menu {
-        position: fixed;
-        top: 70px;
-        left: -100%;
+        display: none;
         width: 100%;
-        height: calc(100vh - 70px);
-        background: white;
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 2rem;
-        transition: var(--transition);
-        z-index: 999;
+        margin: 2rem 0 0;
+        order: 4;
       }
 
       .nav-menu.active {
-        left: 0;
+        display: flex;
+      }
+
+      .hero {
+        padding: 6rem 5% 4rem;
       }
 
       .hero h1 {
         font-size: 2.2rem;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+      .hero p {
+        font-size: 1.1rem;
       }
 
-      .about-image {
-        height: 250px;
-      }
-
-      .stats-grid {
+      .values-grid,
+      .team-grid {
         grid-template-columns: 1fr;
       }
+    }
 
-      .mission-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 480px) {
+      .stat-number {
+        font-size: 2.8rem;
+      }
+
+      .value-card,
+      .team-card {
+        padding: 2rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay">
+    <div class="loader"></div>
+    <div class="loader-text">A carregar o futuro...</div>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <nav class="navbar">
-      <a href="/MozaIA/" class="logo"> <!-- Ajuste para a raiz do projeto GitHub Pages -->
-        <span class="logo-icon">🧠</span>
-        <span class="logo-text">MozaIA</span>
-      </a>
       <button class="nav-toggle" id="navToggle">
         <i class="ri-menu-line"></i>
       </button>
+      
+      <a href="/MozaIA/" class="logo" onclick="navigateTo('/MozaIA/'); return false;">
+        <span class="logo-icon">🚀</span>
+        <span class="logo-text">MozaIA</span>
+      </a>
+
       <ul class="nav-menu" id="navMenu">
-        <li class="nav-item"><a href="/MozaIA/" class="nav-link">Início</a></li>
-        <li class="nav-item"><a href="/MozaIA/sobre.html" class="nav-link">Sobre</a></li>
-        <li class="nav-item"><a href="/MozaIA/tutoriais.html" class="nav-link">Tutoriais</a></li>
-        <li class="nav-item"><a href="/MozaIA/ferramentas.html" class="nav-link">Ferramentas</a></li>
-        <li class="nav-item"><a href="/MozaIA/contacto.html" class="nav-link">Contacto</a></li>
+        <li><a href="/MozaIA/" class="nav-link" onclick="navigateTo('/MozaIA/'); return false;">
+          <i class="ri-home-line"></i> Início
+        </a></li>
+        <li><a href="/MozaIA/sobre.html" class="nav-link active">
+          <i class="ri-information-line"></i> Sobre
+        </a></li>
+        <li><a href="/MozaIA/tutoriais.html" class="nav-link" onclick="navigateTo('/MozaIA/tutoriais.html'); return false;">
+          <i class="ri-book-open-line"></i> Tutoriais
+        </a></li>
+        <li><a href="/MozaIA/ferramentas.html" class="nav-link" onclick="navigateTo('/MozaIA/ferramentas.html'); return false;">
+          <i class="ri-tools-line"></i> Ferramentas
+        </a></li>
+        <li><a href="/MozaIA/newsletter.html" class="nav-link" onclick="navigateTo('/MozaIA/newsletter.html'); return false;">
+          <i class="ri-mail-line"></i> Newsletter
+        </a></li>
       </ul>
+
+      <a href="/MozaIA/ferramentas.html" class="nav-cta" onclick="navigateTo('/MozaIA/ferramentas.html'); return false;">
+        Começar Agora
+      </a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero fade-in">
+  <section class="hero">
     <div class="hero-content">
-      <h1>Sobre o MozaIA</h1>
-      <p>O primeiro hub de Inteligência Artificial Gratuita em Moçambique. Ajudamos você a usar IA para estudar, trabalhar e ganhar dinheiro — sem custos.</p>
+      <h1 class="float">Transformando Moçambique com IA Gratuita</h1>
+      <p>O MozaIA é mais que um projeto - é um movimento para democratizar a inteligência artificial em Moçambique. Mostramos como qualquer pessoa pode usar ferramentas de IA gratuitas para estudar melhor, trabalhar com mais eficiência e, o mais importante, <strong>gerar renda real</strong>.</p>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="about-section slide-in">
-    <div class="about-grid">
-      <div class="about-image slide-in" style="animation-delay: 0.1s;">
-        🧠 Equipe MozaIA
-      </div>
-      <div class="about-content slide-in" style="animation-delay: 0.2s;">
-        <h2>Nossa História</h2>
-        <p>O MozaIA nasceu da necessidade de democratizar o acesso à Inteligência Artificial em Moçambique. Muitos pensavam que IA era algo complexo ou caro, mas acreditamos que ferramentas poderosas podem ser 100% gratuitas.</p>
-        <p>Nosso objetivo é simples: mostrar como usar IA para estudar melhor, automatizar tarefas e, principalmente, <strong>ganhar dinheiro</strong> com métodos reais e comprovados em Moçambique.</p>
-        <p>Hoje, somos o principal ponto de referência para quem quer explorar o poder da IA sem gastar nada. Nossa comunidade cresce a cada dia, e você faz parte dela.</p>
-
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-number">10K+</div>
-            <div class="stat-label">Pessoas Atingidas</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">50+</div>
-            <div class="stat-label">Ferramentas Grátis</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">100+</div>
-            <div class="stat-label">Tutoriais Práticos</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">MZN 5M+</div>
-            <div class="stat-label">Renda Gerada</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mission Section -->
-  <section class="mission-section">
-    <div class="mission-content fade-in">
+  <!-- Mission Statement -->
+  <section class="mission-statement">
+    <div class="mission-content">
       <h2>Nossa Missão</h2>
-      <p>Transformar vidas em Moçambique através da Inteligência Artificial Gratuita, tornando-a acessível, prática e lucrativa para todos os moçambicanos.</p>
+      <p class="mission-text">
+        <strong>O objectivo deste sistema é dar uma visão geral de como ganhar dinheiro usando IA com diferentes métodos</strong>: desde gerar vídeos virais, criar imagens profissionais para posts sociais, desenvolver sites automatizados que vendem 24/7, até encontrar as melhores IAs gratuitas que automatizam tarefas do dia a dia.
+      </p>
+      <p class="mission-text" style="margin-top: 2rem;">
+        Ensinamos as pessoas a descobrir as <strong>melhores IA gratuitas</strong> para cada necessidade: IA de estudo que melhora notas, IA de imagens que cria conteúdo visual impressionante, IA de vídeo que produz conteúdo profissional, IA de texto que escreve melhor que humanos, IA de voz que narra áudios perfeitos e IA de animação que dá vida às ideias.
+      </p>
+    </div>
+  </section>
 
-      <div class="mission-grid">
-        <div class="mission-card slide-in" style="animation-delay: 0.1s;">
-          <div class="mission-icon">
-            <i class="ri-lightbulb-line"></i>
-          </div>
-          <h3>Educação Acessível</h3>
-          <p>Oferecer conteúdos práticos sobre IA em português de Moçambique, com exemplos reais e ferramentas grátis.</p>
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">10K+</div>
+        <div class="stat-label">Moçambicanos Transformados com IA</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">MZN 5M+</div>
+        <div class="stat-label">Renda Gerada por Nossa Comunidade</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Ferramentas de IA Gratuitas Catalogadas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Suporte e Atualizações Constantes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="section-header">
+      <h2>Nossos Valores</h2>
+      <p>Os pilares que guiam cada passo do MozaIA</p>
+    </div>
+    
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="ri-lock-unlock-line"></i>
         </div>
-        <div class="mission-card slide-in" style="animation-delay: 0.2s;">
-          <div class="mission-icon">
-            <i class="ri-coins-line"></i>
-          </div>
-          <h3>Oportunidades Econômicas</h3>
-          <p>Mostrar como usar IA para criar fontes de renda online, freelancing e negócios digitais.</p>
+        <h3>Acesso Gratuito</h3>
+        <p>Acreditamos que tecnologia transformadora deve ser acessível a todos. Todas as ferramentas e tutoriais são 100% gratuitos.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="ri-hand-coin-line"></i>
         </div>
-        <div class="mission-card slide-in" style="animation-delay: 0.3s;">
-          <div class="mission-icon">
-            <i class="ri-global-line"></i>
-          </div>
-          <h3>Inclusão Digital</h3>
-          <p>Reduzir a lacuna digital capacitando cidadãos com habilidades de IA relevantes para o futuro.</p>
+        <h3>Resultados Reais</h3>
+        <p>Focamos em estratégias que geram renda real em Moçambique. Cada tutorial tem casos comprovados de sucesso local.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="ri-community-line"></i>
         </div>
+        <h3>Comunidade Forte</h3>
+        <p>Construímos uma rede de apoio onde moçambicanos compartilham experiências e crescem juntos com IA.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="ri-lightbulb-flash-line"></i>
+        </div>
+        <h3>Inovação Contínua</h3>
+        <p>Estamos sempre atualizando com as melhores ferramentas e métodos que realmente funcionam no contexto moçambicano.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="section-header">
+      <h2>Conheça a Equipe</h2>
+      <p>Especialistas apaixonados por transformar vidas com tecnologia</p>
+    </div>
+    
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">
+          <i class="ri-user-line"></i>
+        </div>
+        <h3>Benjanuário</h3>
+        <div class="team-role"> Prodígio da Criatividade</div>
+        <p class="team-bio">Mais de 3 anos experenciando com IA aplicada. usou
+        várias IA's para gerar renda com ferramentas gratuitas.</p>
+      </div>
+      
+      <div class="team-card">
+        <div class="team-avatar">
+          <i class="ri-user-line"></i>
+        </div>
+        <h3>Chissube Issa</h3>
+        <div class="team-role">Especialista em Conteúdo</div>
+        <p class="team-bio">Cria tutoriais práticos e acessíveis focados no contexto moçambicano. Especialista em transformar complexidade em simplicidade.</p>
+      </div>
+      
+      <div class="team-card">
+        <div class="team-avatar">
+          <i class="ri-user-line"></i>
+        </div>
+        <h3>Benjanuário</h3>
+        <div class="team-role">Desenvolvedor de Soluções</div>
+        <p class="team-bio">Desenvolve ferramentas e automações personalizadas para necessidades específicas do mercado moçambicano.</p>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
   <section class="cta-section">
-    <div class="cta-content fade-in">
-      <h2>Pronto para Começar?</h2>
-      <p>Descubra como a IA pode mudar sua vida HOJE. Explore nossas ferramentas e tutoriais gratuitos.</p>
-      <a href="/MozaIA/ferramentas.html" class="btn btn-primary">
-        <i class="ri-rocket-line"></i> Explorar Ferramentas
+    <div class="cta-content">
+      <h2>Pronto para Transformar Sua Vida?</h2>
+      <p>Descubra como milhares de moçambicanos estão usando IA gratuita para estudar melhor, trabalhar com mais eficiência e gerar renda extra. O futuro começa agora.</p>
+      <a href="/MozaIA/ferramentas.html" class="btn btn-primary" onclick="navigateTo('/MozaIA/ferramentas.html'); return false;">
+        <i class="ri-rocket-line"></i> Explorar Ferramentas Grátis
       </a>
     </div>
   </section>
@@ -575,45 +879,94 @@
     <div class="footer-grid">
       <div class="footer-section">
         <h3>MozaIA</h3>
-        <p>O primeiro hub de Inteligência Artificial Gratuita em Moçambique, criado para transformar vidas com tecnologia acessível.</p>
+        <p>O hub definitivo de Inteligência Artificial Gratuita para Moçambique. Transformamos conhecimento em oportunidades reais de renda.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="ri-facebook-fill"></i></a>
+          <a href="#" class="social-link"><i class="ri-whatsapp-line"></i></a>
+          <a href="#" class="social-link"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="social-link"><i class="ri-youtube-line"></i></a>
+        </div>
       </div>
+      
       <div class="footer-section">
         <h3>Links Rápidos</h3>
         <ul class="footer-links">
-          <li><a href="/MozaIA/"><i class="ri-home-line"></i> Início</a></li>
-          <li><a href="/MozaIA/sobre.html"><i class="ri-information-line"></i> Sobre</a></li>
-          <li><a href="/MozaIA/tutoriais.html"><i class="ri-book-open-line"></i> Tutoriais</a></li>
-          <li><a href="/MozaIA/ferramentas.html"><i class="ri-tools-line"></i> Ferramentas</a></li>
-          <li><a href="/MozaIA/contacto.html"><i class="ri-mail-line"></i> Contacto</a></li>
+          <li><a href="/MozaIA/" onclick="navigateTo('/MozaIA/'); return false;">
+            <i class="ri-home-line"></i> Início
+          </a></li>
+          <li><a href="/MozaIA/sobre.html" onclick="navigateTo('/MozaIA/sobre.html'); return false;">
+            <i class="ri-information-line"></i> Sobre Nós
+          </a></li>
+          <li><a href="/MozaIA/tutoriais.html" onclick="navigateTo('/MozaIA/tutoriais.html'); return false;">
+            <i class="ri-book-open-line"></i> Tutoriais
+          </a></li>
+          <li><a href="/MozaIA/ferramentas.html" onclick="navigateTo('/MozaIA/ferramentas.html'); return false;">
+            <i class="ri-tools-line"></i> Ferramentas
+          </a></li>
         </ul>
       </div>
+      
       <div class="footer-section">
-        <h3>Ferramentas Grátis</h3>
+        <h3>IA por Categoria</h3>
         <ul class="footer-links">
-          <li><a href="/MozaIA/ferramentas.html#texto"><i class="ri-file-text-line"></i> Geração de Texto</a></li>
-          <li><a href="/MozaIA/ferramentas.html#imagens"><i class="ri-image-line"></i> Geração de Imagens</a></li>
-          <li><a href="/MozaIA/ferramentas.html#produtividade"><i class="ri-check-double-line"></i> Produtividade</a></li>
-          <li><a href="/MozaIA/ferramentas.html#estudos"><i class="ri-graduation-cap-line"></i> Para Estudos</a></li>
-          <li><a href="/MozaIA/ferramentas.html#negocios"><i class="ri-briefcase-line"></i> Para Negócios</a></li>
+          <li><a href="/MozaIA/ferramentas.html#estudos" onclick="navigateTo('/MozaIA/ferramentas.html#estudos'); return false;">
+            <i class="ri-graduation-cap-line"></i> IA para Estudos
+          </a></li>
+          <li><a href="/MozaIA/ferramentas.html#imagens" onclick="navigateTo('/MozaIA/ferramentas.html#imagens'); return false;">
+            <i class="ri-image-line"></i> IA para Imagens
+          </a></li>
+          <li><a href="/MozaIA/ferramentas.html#videos" onclick="navigateTo('/MozaIA/ferramentas.html#videos'); return false;">
+            <i class="ri-video-line"></i> IA para Vídeos
+          </a></li>
+          <li><a href="/MozaIA/ferramentas.html#texto" onclick="navigateTo('/MozaIA/ferramentas.html#texto'); return false;">
+            <i class="ri-file-text-line"></i> IA para Texto
+          </a></li>
         </ul>
       </div>
+      
       <div class="footer-section">
-        <h3>Contacto</h3>
+        <h3>Contacte-nos</h3>
         <ul class="footer-links">
-          <li><a href="mailto:info@mozaia.mz"><i class="ri-mail-line"></i> info@mozaia.mz</a></li>
-          <li><a href="https://wa.me/258841234567"><i class="ri-whatsapp-line"></i> WhatsApp</a></li>
-          <li><a href="/MozaIA/contacto.html"><i class="ri-phone-line"></i> Fale Conosco</a></li>
+          <li><a href="mailto:info@mozaia.mz">
+            <i class="ri-mail-line"></i> info@mozaia.mz
+          </a></li>
+          <li><a href="https://wa.me/258841234567">
+            <i class="ri-whatsapp-line"></i> +258 84 123 4567
+          </a></li>
+          <li><a href="/MozaIA/contacto.html" onclick="navigateTo('/MozaIA/contacto.html'); return false;">
+            <i class="ri-chat-3-line"></i> Suporte 24/7
+          </a></li>
         </ul>
       </div>
     </div>
+    
     <div class="footer-bottom">
-      <p>&copy; 2025 MozaIA. O Primeiro Hub de IA Gratuita em Moçambique. Todos os direitos reservados.</p>
+      <p>&copy; 2025 MozaIA. O Hub de IA Gratuita que Transforma Moçambique. Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <script>
-    // Menu Mobile
+    // Navigation system
+    function navigateTo(url) {
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      loadingOverlay.style.opacity = '1';
+      loadingOverlay.style.visibility = 'visible';
+      
+      setTimeout(() => {
+        window.location.href = url;
+      }, 800);
+    }
+
+    // Mobile menu toggle
     document.addEventListener('DOMContentLoaded', () => {
+      // Hide loading overlay
+      setTimeout(() => {
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        loadingOverlay.style.opacity = '0';
+        loadingOverlay.style.visibility = 'hidden';
+      }, 1000);
+
+      // Mobile menu
       const navToggle = document.getElementById('navToggle');
       const navMenu = document.getElementById('navMenu');
 
@@ -623,11 +976,22 @@
           '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
       });
 
-      // Fechar menu ao clicar em link
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
           navMenu.classList.remove('active');
           navToggle.innerHTML = '<i class="ri-menu-line"></i>';
+        }
+      });
+
+      // Add hover effects to all cards
+      document.querySelectorAll('.stat-card, .value-card, .team-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0)';
         });
       });
     });
